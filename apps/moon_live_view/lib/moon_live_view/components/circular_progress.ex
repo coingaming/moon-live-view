@@ -30,7 +30,7 @@ defmodule MoonLiveView.CircularProgress do
 
   defp render_progress_bar(assigns) do
     ~H"""
-    <div class={merge([@circular_progress_class, @class])} data-value={@normalized_value} {@rest}>
+    <div class={join([@circular_progress_class, @class])} data-value={@normalized_value} {@rest}>
       <div class="moon-circular-progress-bar"></div>
     </div>
     """

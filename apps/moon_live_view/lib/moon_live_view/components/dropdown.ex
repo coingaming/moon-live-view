@@ -10,7 +10,7 @@ defmodule MoonLiveView.Dropdown do
 
   def dropdown(assigns) do
     ~H"""
-    <div class={merge(["moon-dropdown", @class])} {@rest}>
+    <div class={join(["moon-dropdown", @class])} {@rest}>
       <.button tabindex="0">
         {render_slot(@trigger)}
       </.button>

@@ -13,7 +13,7 @@ defmodule MoonLiveView.BottomSheet do
 
   def bottom_sheet(assigns) do
     ~H"""
-    <dialog id={@id} class={merge(["moon-bottom-sheet", @class])} phx-hook="BottomSheetHook">
+    <dialog id={@id} class={join(["moon-bottom-sheet", @class])} phx-hook="BottomSheetHook">
       <div class="moon-bottom-sheet-box">
         <div :if={@has_handle} class="moon-bottom-sheet-handle"></div>
 

@@ -52,7 +52,7 @@ defmodule MoonLiveView.IconButton do
 
   defp render_button_content(%{link_type: "href"} = assigns) do
     ~H"""
-    <.link class={merge([@variant_class, @class])} href={@to} {@rest}>
+    <.link class={join([@variant_class, @class])} href={@to} {@rest}>
       {render_slot(@inner_block)}
     </.link>
     """
@@ -60,7 +60,7 @@ defmodule MoonLiveView.IconButton do
 
   defp render_button_content(%{link_type: "navigate"} = assigns) do
     ~H"""
-    <.link class={merge([@variant_class, @class])} navigate={@to} {@rest}>
+    <.link class={join([@variant_class, @class])} navigate={@to} {@rest}>
       {render_slot(@inner_block)}
     </.link>
     """
@@ -68,7 +68,7 @@ defmodule MoonLiveView.IconButton do
 
   defp render_button_content(%{link_type: "patch"} = assigns) do
     ~H"""
-    <.link class={merge([@variant_class, @class])} patch={@to} {@rest}>
+    <.link class={join([@variant_class, @class])} patch={@to} {@rest}>
       {render_slot(@inner_block)}
     </.link>
     """
@@ -76,7 +76,7 @@ defmodule MoonLiveView.IconButton do
 
   defp render_button_content(%{link_type: "button"} = assigns) do
     ~H"""
-    <button class={merge([@variant_class, @class])} disabled={@disabled} {@rest}>
+    <button class={join([@variant_class, @class])} disabled={@disabled} {@rest}>
       {render_slot(@inner_block)}
     </button>
     """

@@ -20,7 +20,7 @@ defmodule MoonLiveView.Select do
 
     ~H"""
     <%= if @label != [] || @hint != [] do %>
-      <div class={merge(["moon-form-group", get_error(@error)])}>
+      <div class={join(["moon-form-group", get_error(@error)])}>
         <.select_component {@attrs} />
         <p :if={@hint != []} class="moon-form-hint">{render_slot(@hint)}</p>
       </div>
@@ -49,7 +49,7 @@ defmodule MoonLiveView.Select do
         <select
           id={@id}
           class={
-            merge([
+            join([
               "moon-select",
               get_size(@size),
               get_variant(@variant),

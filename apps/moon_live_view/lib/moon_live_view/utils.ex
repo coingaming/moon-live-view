@@ -20,11 +20,6 @@ defmodule MoonLiveView.Utils do
     |> Enum.map(fn path -> path |> String.split("/") |> List.last() |> String.split(".") |> hd end)
   end
 
-  def merge(classes) when is_list(classes) do
-    classes
-    |> MoonLive.Merge.classes()
-  end
-
   def join(classes) when is_list(classes) do
     classes |> Enum.join(" ") |> String.trim()
   end

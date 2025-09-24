@@ -10,7 +10,7 @@ defmodule MoonLiveView.List do
 
   def list(assigns) do
     ~H"""
-    <ul class={merge(["moon-list", get_size_class(@size), @class])} {@rest}>
+    <ul class={join(["moon-list", get_size_class(@size), @class])} {@rest}>
       {render_slot(@inner_block)}
     </ul>
     """
