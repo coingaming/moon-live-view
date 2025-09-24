@@ -1,5 +1,9 @@
 # Used by "mix format"
 [
-  inputs: ["mix.exs", "config/*.exs"],
-  subdirectories: ["apps/*"]
+  import_deps: [:phoenix],
+  inputs: [
+    "**/*.{ex,exs,heex}"
+  ],
+  subdirectories: ["apps/*"],
+  line_length: 120
 ]
