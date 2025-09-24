@@ -11,7 +11,8 @@ defmodule MoonLiveView.MixProject do
       lockfile: "../../mix.lock",
       elixir: "~> 1.17",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      package: package()
     ]
   end
 
@@ -20,6 +21,18 @@ defmodule MoonLiveView.MixProject do
     [
       extra_applications: [:logger],
       mod: {MoonLiveView.Application, []}
+    ]
+  end
+
+  defp package do
+    [
+      organization: "coingaming",
+      licenses: ["MIT"],
+      links: %{
+        "GitHub" => "https://github.com/coingaming/moon-live-view"
+      },
+      description: "Moon Design System written in phoenix_live_view",
+      files: ~w(lib .formatter.exs mix.exs README* CHANGELOG* priv assets)
     ]
   end
 
