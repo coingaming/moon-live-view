@@ -1,4 +1,4 @@
-defmodule MoonLive.Merge.Custom do
+defmodule MoonLiveView.Merge.Custom do
   defmacro __using__(opts) do
     quote location: :keep,
           generated: true,
@@ -7,7 +7,7 @@ defmodule MoonLive.Merge.Custom do
             themes: opts[:themes],
             dark_themes: opts[:dark_themes]
           ] do
-      require MoonLive.Merge.Custom
+      require MoonLiveView.Merge.Custom
       otp_app = otp_app || :tails
 
       if otp_app == :tails do
@@ -38,12 +38,12 @@ defmodule MoonLive.Merge.Custom do
                    |> File.read!()
                    |> Jason.decode!()
 
-                 Map.merge(MoonLive.Merge.Colors.builtin_colors(), custom)
+                 Map.merge(MoonLiveView.Merge.Colors.builtin_colors(), custom)
                else
-                 MoonLive.Merge.Colors.builtin_colors()
+                 MoonLiveView.Merge.Colors.builtin_colors()
                end)
 
-      @all_colors MoonLive.Merge.Colors.all_color_classes(@colors) ++ @color_classes
+      @all_colors MoonLiveView.Merge.Colors.all_color_classes(@colors) ++ @color_classes
 
       @colors_by_size @all_colors |> Enum.group_by(&byte_size/1)
 
@@ -662,7 +662,7 @@ defmodule MoonLive.Merge.Custom do
       replacements =
         Enum.flat_map(@themes || [], fn {theme, replacements} ->
           replacements
-          |> MoonLive.Merge.Custom.replacements()
+          |> MoonLiveView.Merge.Custom.replacements()
           |> Enum.map(fn {key, replacement} ->
             {theme, key, replacement}
           end)
@@ -1401,7 +1401,7 @@ defmodule MoonLive.Merge.Custom do
 
       defimpl Inspect do
         def inspect(tailwind, _opts) do
-          "MoonLive.Merge.classes(\"#{to_string(tailwind)}\")"
+          "MoonLiveView.Merge.classes(\"#{to_string(tailwind)}\")"
         end
       end
 

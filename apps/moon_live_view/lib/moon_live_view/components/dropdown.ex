@@ -1,6 +1,6 @@
-defmodule MoonLive.Dropdown do
-  use MoonLive.Component
-  import MoonLive.Button
+defmodule MoonLiveView.Dropdown do
+  use MoonLiveView.Component
+  import MoonLiveView.Button
 
   attr :class, :string, default: "", doc: "Additional CSS classes for the dropdown"
   attr :rest, :global, doc: "Additional HTML attributes for the dropdown"

@@ -1,5 +1,5 @@
-defmodule MoonLive.Checkbox do
-  use MoonLive.Component
+defmodule MoonLiveView.Checkbox do
+  use MoonLiveView.Component
 
   attr :id, :string, default: nil, doc: "Unique identifier for the checkbox component"
   attr :checked, :boolean, default: false, doc: "Indicates whether the checkbox is checked"

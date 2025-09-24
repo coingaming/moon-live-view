@@ -1,5 +1,5 @@
-defmodule MoonLive.Components do
-  use MoonLive.Component
+defmodule MoonLiveView.Components do
+  use MoonLiveView.Component
 
   attr :for, :string, default: nil, doc: "Label 'for' attribute value"
   attr :class, :string, default: "", doc: "Additional styles for the label"

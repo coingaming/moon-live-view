@@ -1,4 +1,4 @@
-defmodule MoonLive.Merge.Colors do
+defmodule MoonLiveView.Merge.Colors do
   @moduledoc false
 
   @builtin_colors %{

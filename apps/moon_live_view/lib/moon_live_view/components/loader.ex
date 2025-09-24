@@ -1,5 +1,5 @@
-defmodule MoonLive.Loader do
-  use MoonLive.Component
+defmodule MoonLiveView.Loader do
+  use MoonLiveView.Component
 
   attr :class, :string, default: "", doc: "Additional CSS classes for the loader"
   attr :size, :string, values: ~w"2xs xs sm md lg", default: "md", doc: "Size of the loader"

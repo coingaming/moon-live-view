@@ -1,8 +1,8 @@
-defmodule MoonLive.Authenticator do
+defmodule MoonLiveView.Authenticator do
   @moduledoc false
-  import MoonLive.Components
+  import MoonLiveView.Components
 
-  use MoonLive.Component
+  use MoonLiveView.Component
 
   attr :id, :string, required: true, doc: "The id of the Authenticator."
   attr :count, :integer, default: 6, doc: "The number of input fields"

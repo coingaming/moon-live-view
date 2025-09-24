@@ -1,5 +1,5 @@
-defmodule MoonLive.Badge do
-  use MoonLive.Component
+defmodule MoonLiveView.Badge do
+  use MoonLiveView.Component
 
   attr :variant, :string, values: ~w"fill soft outline", default: "fill", doc: "The variant of the Badge"
 

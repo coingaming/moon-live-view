@@ -1,5 +1,5 @@
-defmodule MoonLive.Radio do
-  use MoonLive.Component
+defmodule MoonLiveView.Radio do
+  use MoonLiveView.Component
 
   attr :id, :string, default: nil, doc: "Unique identifier for the radio button component"
 

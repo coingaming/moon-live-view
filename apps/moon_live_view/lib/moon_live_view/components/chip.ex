@@ -1,5 +1,5 @@
-defmodule MoonLive.Chip do
-  use MoonLive.Component
+defmodule MoonLiveView.Chip do
+  use MoonLiveView.Component
 
   attr :variant, :string, values: ~w"fill soft outline", default: "fill", doc: "Variant of the Chip"
   attr :size, :string, values: ~w"sm md", default: "md", doc: "Size of the Chip"

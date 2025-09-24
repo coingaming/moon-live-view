@@ -1,5 +1,5 @@
-defmodule MoonLive.Breadcrumb do
-  use MoonLive.Component
+defmodule MoonLiveView.Breadcrumb do
+  use MoonLiveView.Component
 
   attr :class, :string, default: "", doc: "Additional CSS classes for the breadcrumb"
   attr :rest, :global, doc: "Additional HTML attributes for the breadcrumb"

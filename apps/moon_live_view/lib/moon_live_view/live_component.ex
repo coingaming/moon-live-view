@@ -1,4 +1,4 @@
-defmodule MoonLive.LiveComponent do
+defmodule MoonLiveView.LiveComponent do
   @moduledoc "Some library-common helpers and functions adding over Phoenix.LiveComponent"
 
   defmacro __using__(opts \\ []) do

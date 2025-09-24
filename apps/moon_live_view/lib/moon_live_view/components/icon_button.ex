@@ -1,5 +1,5 @@
-defmodule MoonLive.IconButton do
-  use MoonLive.Component
+defmodule MoonLiveView.IconButton do
+  use MoonLiveView.Component
 
   attr :rounded, :boolean, default: false, doc: "Whether the button should be rounded or not"
   attr :disabled, :boolean, default: false, doc: "Disables the button, default is false"

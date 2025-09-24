@@ -1,5 +1,5 @@
-defmodule MoonLive.Select do
-  use MoonLive.Component
+defmodule MoonLiveView.Select do
+  use MoonLiveView.Component
 
   attr :id, :string, default: nil, doc: "Unique identifier for the select component"
   attr :size, :string, values: ~w"sm md lg xl", default: "md", doc: "Size of the select"

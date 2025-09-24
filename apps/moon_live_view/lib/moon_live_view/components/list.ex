@@ -1,5 +1,5 @@
-defmodule MoonLive.List do
-  use MoonLive.Component
+defmodule MoonLiveView.List do
+  use MoonLiveView.Component
 
   attr :size, :string, values: ~w(sm md lg), default: "md", doc: "Size of the List"
 

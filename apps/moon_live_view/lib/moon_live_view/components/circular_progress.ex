@@ -1,5 +1,5 @@
-defmodule MoonLive.CircularProgress do
-  use MoonLive.Component
+defmodule MoonLiveView.CircularProgress do
+  use MoonLiveView.Component
 
   attr :class, :string, default: nil, doc: "Class for the circular progress bar"
   attr :value, :integer, default: 0, doc: "The value of the circular progress bar"

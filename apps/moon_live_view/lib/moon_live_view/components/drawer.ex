@@ -1,5 +1,5 @@
-defmodule MoonLive.Drawer do
-  use MoonLive.Component
+defmodule MoonLiveView.Drawer do
+  use MoonLiveView.Component
   alias Phoenix.LiveView.JS
 
   attr :id, :string, default: nil, doc: "Unique identifier for the Drawer component"

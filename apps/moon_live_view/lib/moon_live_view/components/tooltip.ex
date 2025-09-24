@@ -1,5 +1,5 @@
-defmodule MoonLive.Tooltip do
-  use MoonLive.Component
+defmodule MoonLiveView.Tooltip do
+  use MoonLiveView.Component
 
   attr :id, :string, required: true, doc: "Tooltip ID"
 

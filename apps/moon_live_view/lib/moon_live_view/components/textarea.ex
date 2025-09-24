@@ -1,6 +1,6 @@
-defmodule MoonLive.Textarea do
-  import MoonLive.Components
-  use MoonLive.Component
+defmodule MoonLiveView.Textarea do
+  import MoonLiveView.Components
+  use MoonLiveView.Component
 
   attr :id, :string, default: nil, doc: "Id for the Textarea"
   attr :error, :boolean, default: false, doc: "Error state flag"

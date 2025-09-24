@@ -1,5 +1,5 @@
-defmodule MoonLive.Button do
-  use MoonLive.Component
+defmodule MoonLiveView.Button do
+  use MoonLiveView.Component
 
   attr :variant, :string, default: "fill", values: ~w"fill soft outline ghost", doc: "Variant of button"
   attr :size, :string, default: "md", values: ~w(xs sm md lg xl), doc: "Size of button"

@@ -1,5 +1,5 @@
-defmodule MoonLive.LinearProgress do
-  use MoonLive.Component
+defmodule MoonLiveView.LinearProgress do
+  use MoonLiveView.Component
 
   attr :id, :string, default: nil, doc: "Unique identifier for the linear progress component"
   attr :size, :string, values: ~w"5xs 4xs 3xs 2xs", default: "2xs", doc: "Size of the linear progress"

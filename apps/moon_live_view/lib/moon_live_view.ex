@@ -1,4 +1,4 @@
-defmodule MoonLive do
+defmodule MoonLiveView do
   @moduledoc """
   Documentation for `MoonLive`.
   """

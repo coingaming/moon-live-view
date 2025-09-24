@@ -1,4 +1,4 @@
-defmodule MoonLive.ComponentIcon do
+defmodule MoonLiveView.ComponentIcon do
   use Phoenix.Component
 
   attr(:name, :string, required: true)

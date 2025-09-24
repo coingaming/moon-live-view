@@ -1,5 +1,5 @@
-defmodule MoonLive.BottomSheet do
-  use MoonLive.Component
+defmodule MoonLiveView.BottomSheet do
+  use MoonLiveView.Component
   alias Phoenix.LiveView.JS
 
   attr :id, :string, doc: "Unique identifier for the alert component. Required for the close button to work if present"

@@ -1,5 +1,5 @@
-defmodule MoonLive.Accordion do
-  use MoonLive.Component
+defmodule MoonLiveView.Accordion do
+  use MoonLiveView.Component
 
   attr(:size, :string, values: ~w"sm md lg xl", default: "md", doc: "Size of the Accordion")
 

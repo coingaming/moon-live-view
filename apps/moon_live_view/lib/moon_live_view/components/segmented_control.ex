@@ -1,5 +1,5 @@
-defmodule MoonLive.SegmentedControl do
-  use MoonLive.Component
+defmodule MoonLiveView.SegmentedControl do
+  use MoonLiveView.Component
   alias Phoenix.LiveView.JS
 
   attr :id, :string, required: true, doc: "Id of Segmented Control"

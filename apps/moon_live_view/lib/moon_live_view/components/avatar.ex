@@ -1,5 +1,5 @@
-defmodule MoonLive.Avatar do
-  use MoonLive.Component
+defmodule MoonLiveView.Avatar do
+  use MoonLiveView.Component
 
   attr :class, :string, default: nil, doc: "Additional classes to add to the component."
 

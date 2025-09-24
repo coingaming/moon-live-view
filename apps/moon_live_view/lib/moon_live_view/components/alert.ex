@@ -1,5 +1,5 @@
-defmodule MoonLive.Alert do
-  use MoonLive.Component
+defmodule MoonLiveView.Alert do
+  use MoonLiveView.Component
   alias Phoenix.LiveView.JS
 
   attr(:variant, :string, values: ~w"fill soft outline", default: "fill")

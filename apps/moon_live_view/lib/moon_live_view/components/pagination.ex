@@ -1,8 +1,8 @@
-defmodule MoonLive.Pagination do
-  use MoonLive.Component
+defmodule MoonLiveView.Pagination do
+  use MoonLiveView.Component
   alias Phoenix.LiveView.JS
 
-  import MoonLive.{IconButton, ComponentIcon}
+  import MoonLiveView.{IconButton, ComponentIcon}
 
   @default_base_param "page"
 

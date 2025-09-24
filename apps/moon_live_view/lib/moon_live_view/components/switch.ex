@@ -1,5 +1,5 @@
-defmodule MoonLive.Switch do
-  use MoonLive.Component
+defmodule MoonLiveView.Switch do
+  use MoonLiveView.Component
 
   attr :id, :string, default: nil, doc: "Unique identifier for the switch component"
   attr :class, :string, default: "", doc: "Additional CSS classes for the switch"

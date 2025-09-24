@@ -1,5 +1,5 @@
-defmodule MoonLive.Snackbar do
-  use MoonLive.Component
+defmodule MoonLiveView.Snackbar do
+  use MoonLiveView.Component
   alias Phoenix.LiveView.JS
 
   @show_event "moon:snackbar:show"

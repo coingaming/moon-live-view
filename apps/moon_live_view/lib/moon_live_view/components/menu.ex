@@ -1,5 +1,5 @@
-defmodule MoonLive.Menu do
-  use MoonLive.Component
+defmodule MoonLiveView.Menu do
+  use MoonLiveView.Component
 
   attr :size, :string, values: ~w"sm md lg", default: "md", doc: "Size of the Menu."
 

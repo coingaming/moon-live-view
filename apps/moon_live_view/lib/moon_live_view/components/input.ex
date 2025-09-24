@@ -1,5 +1,5 @@
-defmodule MoonLive.Input do
-  use MoonLive.Component
+defmodule MoonLiveView.Input do
+  use MoonLiveView.Component
 
   attr :id, :string, default: nil, doc: "Unique identifier for the input component"
   attr :size, :string, values: ~w"sm md lg xl", default: "md", doc: "Size of the input"

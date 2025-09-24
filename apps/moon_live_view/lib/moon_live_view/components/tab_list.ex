@@ -1,5 +1,5 @@
-defmodule MoonLive.TabList do
-  use MoonLive.Component
+defmodule MoonLiveView.TabList do
+  use MoonLiveView.Component
   alias Phoenix.LiveView.JS
 
   attr :id, :string, default: nil, doc: "Unique identifier for the Tab List component"

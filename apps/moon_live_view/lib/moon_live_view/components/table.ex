@@ -1,5 +1,5 @@
-defmodule MoonLive.Table do
-  use MoonLive.Component
+defmodule MoonLiveView.Table do
+  use MoonLiveView.Component
 
   attr :rows, :list, default: [], doc: "List of table rows"
   attr :size, :string, values: ~w"sm md lg xl", default: "md", doc: "Size of the table"

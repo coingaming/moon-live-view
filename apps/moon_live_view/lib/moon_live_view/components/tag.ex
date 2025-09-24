@@ -1,5 +1,5 @@
-defmodule MoonLive.Tag do
-  use MoonLive.Component
+defmodule MoonLiveView.Tag do
+  use MoonLiveView.Component
 
   attr :variant, :string, values: ~w"fill ghost outline soft", default: "fill", doc: "Variant of the tag"
   attr :size, :string, values: ~w"2xs xs", default: "xs", doc: "Size of the tag"

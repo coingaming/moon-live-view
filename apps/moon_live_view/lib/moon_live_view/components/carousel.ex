@@ -1,5 +1,5 @@
-defmodule MoonLive.Carousel do
-  use MoonLive.Component
+defmodule MoonLiveView.Carousel do
+  use MoonLiveView.Component
   alias Phoenix.LiveView.JS
 
   attr(:id, :string, doc: "ID for the Carousel. Required", required: true)
