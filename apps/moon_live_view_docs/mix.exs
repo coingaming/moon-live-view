@@ -76,14 +76,20 @@ defmodule MoonLiveViewDocs.MixProject do
   #     $ mix setup
   #
   # See the documentation for `Mix` for more info on aliases.
+
   defp aliases do
     [
       setup: ["deps.get", "assets.setup", "assets.build"],
       "assets.setup": ["tailwind.install --if-missing", "esbuild.install --if-missing"],
-      "assets.build": ["tailwind moon_live_view_docs", "esbuild moon_live_view_docs"],
+      "assets.build": [
+        "tailwind moon_live_view_docs",
+        "tailwind storybook",
+        "esbuild moon_live_view_docs"
+      ],
       "assets.deploy": [
         "tailwind moon_live_view_docs --minify",
         "esbuild moon_live_view_docs --minify",
+        "tailwind storybook --minify",
         "phx.digest"
       ]
     ]
