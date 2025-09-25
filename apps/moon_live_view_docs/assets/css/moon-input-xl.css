@@ -1,0 +1,34 @@
+.moon-input-wrapper {
+  position: relative;
+  display: block;
+  border-radius: var(--radius-8);
+  width: 100%;
+  max-width: 100%;
+}
+
+.moon-input-wrapper label:has(+ .moon-input-xl) {
+  position: absolute;
+  pointer-events: none;
+  transition: all 200ms ease-in-out;
+  line-height: var(--spacing-space-16);
+  top: var(--spacing-space-10);
+  left: var(--spacing-space-16);
+  z-index: 9;
+}
+
+.moon-input-wrapper .moon-input-xl {
+  position: relative;
+  display: block;
+  padding-top: var(--spacing-space-18);
+  margin: 0;
+  border-width: 1px;
+  box-sizing: border-box;
+  transition: box-shadow 200ms;
+  outline: none;
+  appearance: none;
+  width: 100%;
+  max-width: 100%;
+  height: var(--spacing-space-56);
+  font-size: var(--text-16);
+  line-height: var(--spacing-space-24);
+}
