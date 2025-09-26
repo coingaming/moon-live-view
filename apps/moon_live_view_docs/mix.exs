@@ -63,7 +63,7 @@ defmodule MoonLiveViewDocs.MixProject do
       {:phoenix_storybook, "~> 0.9.2"},
       {:phoenix_view, "~> 2.0"},
       {:swoosh, "~> 1.18"},
-      {:tailwind, "~> 0.3", runtime: Mix.env() == :dev},
+      {:tailwind, "~> 0.4", runtime: Mix.env() == :dev},
       {:telemetry_metrics, "~> 1.1"},
       {:telemetry_poller, "~> 1.1"},
       {:tw_merge, "~> 0.1"}

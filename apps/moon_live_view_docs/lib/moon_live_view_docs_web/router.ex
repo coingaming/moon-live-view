@@ -18,6 +18,7 @@ defmodule MoonLiveViewDocsWeb.Router do
   end
 
   scope "/" do
+    pipe_through :browser
     storybook_assets()
 
     live_storybook("/",

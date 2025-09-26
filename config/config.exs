@@ -44,27 +44,34 @@ config :esbuild,
   version: "0.17.11",
   moon_live_view_docs: [
     args:
-      ~w(js/app.js --bundle --target=es2017 --outdir=../priv/static/assets --external:/fonts/* --external:/images/*),
+      ~w(js/app.js  js/storybook.js --bundle --target=es2017 --outdir=../priv/static/assets --external:/fonts/* --external:/images/*),
     cd: Path.expand("../apps/moon_live_view_docs/assets", __DIR__),
     env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
   ]
 
 # Configure tailwind (the version is required)
-config :tailwind,
-  version: "3.4.3",
-  moon_live_view_docs: [
-    args: ~w(
-      --config=tailwind.config.js
-      --input=css/app.css
-      --output=../priv/static/assets/app.css
-    ),
-    cd: Path.expand("../apps/moon_live_view_docs/assets", __DIR__)
-  ]
 
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
+
+config :tailwind,
+  version: "4.1.12",
+  moon_live_view_docs: [
+    args: ~w(
+      --input=css/app.css
+      --output=../priv/static/assets/app.css
+    ),
+    cd: Path.expand("../apps/moon_live_view_docs/assets", __DIR__)
+  ],
+  storybook: [
+    args: ~w(
+    --input=css/storybook.css
+    --output=../priv/static/assets/storybook.css
+  ),
+    cd: Path.expand("../apps/moon_live_view_docs/assets", __DIR__)
+  ]
 
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
