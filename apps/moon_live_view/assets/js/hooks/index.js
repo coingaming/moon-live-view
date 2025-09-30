@@ -5,7 +5,6 @@ import CheckboxHook from "./checkbox";
 import DialogHook from "./dialog";
 import DrawerHook from "./drawer";
 import FileInput from "./file_input";
-import MoonDropdown from "./dropdown";
 import PaginationHook from "./pagination";
 import ResponsiveScreen from "./responsive_screen";
 import SnackbarHook from "./snackbar";
@@ -19,7 +18,6 @@ export default {
   DialogHook,
   DrawerHook,
   FileInput,
-  MoonDropdown,
   PaginationHook,
   ResponsiveScreen,
   SnackbarHook,
