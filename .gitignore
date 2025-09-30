@@ -23,7 +23,7 @@
 
 **/*.tar
 
-**/priv/static/*/
+**/priv/static/assets/
 
 **/priv/static/cache_manifest.json
 
