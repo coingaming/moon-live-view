@@ -7,7 +7,6 @@ import DrawerHook from "./drawer";
 import FileInput from "./file_input";
 import MoonDropdown from "./dropdown";
 import PaginationHook from "./pagination";
-import Popover from "./popover";
 import ResponsiveScreen from "./responsive_screen";
 import SnackbarHook from "./snackbar";
 import Tooltip from "./tooltip";
@@ -22,7 +21,6 @@ export default {
   FileInput,
   MoonDropdown,
   PaginationHook,
-  Popover,
   ResponsiveScreen,
   SnackbarHook,
   Tooltip,
