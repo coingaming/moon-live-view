@@ -52,7 +52,6 @@ defmodule MoonLiveViewDocs.MixProject do
       {:makeup_eex, "~> 2.0"},
       {:makeup_elixir, "~> 1.0"},
       {:makeup_html, "~> 0.2.0"},
-      {:moon_assets, "~> 0.9", organization: "coingaming"},
       {:moon_live_view, in_umbrella: true},
       {:phoenix, "~> 1.8"},
       {:phoenix_html, "~> 4.2"},

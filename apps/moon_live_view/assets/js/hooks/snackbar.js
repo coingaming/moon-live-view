@@ -71,7 +71,7 @@ const SnackbarHook = {
       snackbar.setAttribute("data-front", "true");
     });
 
-    const iconElement = generateSvgIcon(icon);
+    const iconElement = generateSvgIcon(icon, this.el.dataset.iconPath || "");
 
     const snackbarMessage = this.createSnackbarMessage(message);
     const metaSection = this.createMetaSection(action_label, action, snackbar);

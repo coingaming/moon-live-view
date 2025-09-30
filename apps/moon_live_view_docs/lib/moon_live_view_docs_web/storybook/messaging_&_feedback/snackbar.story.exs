@@ -32,7 +32,10 @@ defmodule Storybook.Components.CoreComponents.Snackbar do
     [
       %Variation{
         id: :default,
-        description: "Default"
+        description: "Default",
+        attributes: %{
+          icon_path: "/moon_live_view_docs/icons/"
+        }
       }
     ]
   end

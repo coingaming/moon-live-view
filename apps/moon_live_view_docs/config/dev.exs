@@ -57,7 +57,9 @@ config :moon_live_view_docs, MoonLiveViewDocsWeb.Endpoint,
   ]
 
 # Enable dev routes for dashboard and mailbox
-config :moon_live_view_docs, dev_routes: true, icons_path: "deps/moon_assets/priv/static/icons/*"
+config :moon_live_view_docs,
+  dev_routes: true,
+  icons_path: "deps/moon_live_view_docs/priv/static/icons/*"
 
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"

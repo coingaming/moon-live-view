@@ -1,4 +1,4 @@
-/* Moon UI v3.3.0 */
+/* Moon UI v3.4.1 */
 @layer components {
 .moon-form-hint {
   font: var(--font-weight-medium) var(--style-text-sm-font-size)/var(--style-text-sm-line-height) var(--font-default);
@@ -9,10 +9,10 @@
   color: var(--color-text-negative);
 }
 .moon-form-group-error :where(input, textarea, select) {
-  box-shadow: inset 0 0 0 var(--spacing-space-2) var(--color-border-negative);
+  box-shadow: inset 0 0 0 var(--spacing-stroke-1) var(--color-border-negative);
 }
 .moon-form-group-error :where(input, textarea, select):hover, .moon-form-group-error :where(input, textarea, select):focus {
-  box-shadow: inset 0 0 0 var(--spacing-space-2) var(--color-border-negative);
+  box-shadow: inset 0 0 0 var(--spacing-stroke-1) var(--color-border-negative);
 }
 
 .moon-form-group {
@@ -30,7 +30,7 @@
   color: var(--color-text-negative);
 }
 .moon-form-group:has(:disabled) label, .moon-form-group:has(:disabled) .moon-form-hint {
-  opacity: var(--style-opacity-disabled);
+  opacity: 0.6;
 }
 
 .moon-backdrop {
@@ -54,15 +54,15 @@
   cursor: pointer;
   overflow: hidden;
   transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
-  height: var(--spacing-height-40);
-  width: var(--spacing-width-40);
+  height: var(--spacing-space-40);
+  width: var(--spacing-space-40);
   background-color: var(--component-icon-button-fill-background);
   border-radius: var(--component-button-radius-md);
 }
 .moon-icon-button :where(svg, .moon-icon), .moon-pagination :where(.moon-pagination-item) :where(svg, .moon-icon), .moon-pagination :where(.moon-pagination-control) :where(svg, .moon-icon), .moon-drawer-box :where(.moon-drawer-close) :where(svg, .moon-icon), .moon-dialog-box :where(.moon-dialog-close) :where(svg, .moon-icon), .moon-carousel :where(.moon-carousel-control) :where(svg, .moon-icon), .moon-bottom-sheet-box :where(.moon-bottom-sheet-close) :where(svg, .moon-icon), .moon-alert :where(.moon-alert-close) :where(svg, .moon-icon), .moon-snackbar :where(.moon-alert-close) :where(svg, .moon-icon), .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header :where(.moon-accordion-item-toggle) :where(svg, .moon-icon) {
   color: var(--component-icon-button-fill-icon);
-  width: var(--spacing-height-20);
-  height: var(--spacing-height-20);
+  width: var(--spacing-space-20);
+  height: var(--spacing-space-20);
 }
 .moon-icon-button::after, .moon-pagination :where(.moon-pagination-item)::after, .moon-pagination :where(.moon-pagination-control)::after, .moon-drawer-box :where(.moon-drawer-close)::after, .moon-dialog-box :where(.moon-dialog-close)::after, .moon-carousel :where(.moon-carousel-control)::after, .moon-bottom-sheet-box :where(.moon-bottom-sheet-close)::after, .moon-alert :where(.moon-alert-close)::after, .moon-snackbar :where(.moon-alert-close)::after, .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header :where(.moon-accordion-item-toggle)::after {
   content: "";
@@ -75,7 +75,7 @@
 }
 .moon-icon-button:disabled, .moon-pagination :disabled:where(.moon-pagination-item), .moon-pagination :disabled:where(.moon-pagination-control), .moon-drawer-box :disabled:where(.moon-drawer-close), .moon-dialog-box :disabled:where(.moon-dialog-close), .moon-carousel :disabled:where(.moon-carousel-control), .moon-bottom-sheet-box :disabled:where(.moon-bottom-sheet-close), .moon-alert :disabled:where(.moon-alert-close), .moon-snackbar :disabled:where(.moon-alert-close), .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header :disabled:where(.moon-accordion-item-toggle), .moon-icon-button[aria-disabled=true], .moon-pagination [aria-disabled=true]:where(.moon-pagination-item), .moon-pagination [aria-disabled=true]:where(.moon-pagination-control), .moon-drawer-box [aria-disabled=true]:where(.moon-drawer-close), .moon-dialog-box [aria-disabled=true]:where(.moon-dialog-close), .moon-carousel [aria-disabled=true]:where(.moon-carousel-control), .moon-bottom-sheet-box [aria-disabled=true]:where(.moon-bottom-sheet-close), .moon-alert [aria-disabled=true]:where(.moon-alert-close), .moon-snackbar [aria-disabled=true]:where(.moon-alert-close), .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header [aria-disabled=true]:where(.moon-accordion-item-toggle) {
   cursor: not-allowed;
-  opacity: var(--style-opacity-disabled);
+  opacity: 0.6;
 }
 .moon-icon-button:active, .moon-pagination :active:where(.moon-pagination-item), .moon-pagination :active:where(.moon-pagination-control), .moon-drawer-box :active:where(.moon-drawer-close), .moon-dialog-box :active:where(.moon-dialog-close), .moon-carousel :active:where(.moon-carousel-control), .moon-bottom-sheet-box :active:where(.moon-bottom-sheet-close), .moon-alert :active:where(.moon-alert-close), .moon-snackbar :active:where(.moon-alert-close), .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header :active:where(.moon-accordion-item-toggle) {
   transform: scale(0.95);
@@ -84,40 +84,40 @@
   background-color: var(--color-background-hover);
 }
 .moon-icon-button.moon-icon-button-xs, .moon-pagination .moon-icon-button-xs:where(.moon-pagination-item), .moon-pagination .moon-icon-button-xs:where(.moon-pagination-control), .moon-drawer-box .moon-icon-button-xs:where(.moon-drawer-close), .moon-dialog-box .moon-icon-button-xs:where(.moon-dialog-close), .moon-carousel .moon-icon-button-xs:where(.moon-carousel-control), .moon-bottom-sheet-box .moon-icon-button-xs:where(.moon-bottom-sheet-close), .moon-alert .moon-icon-button-xs:where(.moon-alert-close), .moon-snackbar .moon-icon-button-xs:where(.moon-alert-close), .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header :where(.moon-accordion-item-toggle) {
-  height: var(--spacing-height-24);
-  width: var(--spacing-width-24);
+  height: var(--spacing-space-24);
+  width: var(--spacing-space-24);
   border-radius: var(--component-button-radius-xs);
 }
 .moon-icon-button.moon-icon-button-xs :where(svg, .moon-icon), .moon-pagination .moon-icon-button-xs:where(.moon-pagination-item) :where(svg, .moon-icon), .moon-pagination .moon-icon-button-xs:where(.moon-pagination-control) :where(svg, .moon-icon), .moon-drawer-box .moon-icon-button-xs:where(.moon-drawer-close) :where(svg, .moon-icon), .moon-dialog-box .moon-icon-button-xs:where(.moon-dialog-close) :where(svg, .moon-icon), .moon-carousel .moon-icon-button-xs:where(.moon-carousel-control) :where(svg, .moon-icon), .moon-bottom-sheet-box .moon-icon-button-xs:where(.moon-bottom-sheet-close) :where(svg, .moon-icon), .moon-alert .moon-icon-button-xs:where(.moon-alert-close) :where(svg, .moon-icon), .moon-snackbar .moon-icon-button-xs:where(.moon-alert-close) :where(svg, .moon-icon), .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header :where(.moon-accordion-item-toggle) :where(svg, .moon-icon) {
-  width: var(--spacing-height-12);
-  height: var(--spacing-height-12);
+  width: var(--spacing-space-12);
+  height: var(--spacing-space-12);
 }
 .moon-icon-button.moon-icon-button-sm, .moon-pagination .moon-icon-button-sm:where(.moon-pagination-item), .moon-pagination .moon-icon-button-sm:where(.moon-pagination-control), .moon-drawer-box .moon-icon-button-sm:where(.moon-drawer-close), .moon-dialog-box .moon-icon-button-sm:where(.moon-dialog-close), .moon-carousel .moon-icon-button-sm:where(.moon-carousel-control), .moon-bottom-sheet-box .moon-icon-button-sm:where(.moon-bottom-sheet-close), .moon-alert .moon-icon-button-sm:where(.moon-alert-close), .moon-snackbar .moon-icon-button-sm:where(.moon-alert-close), .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header .moon-icon-button-sm:where(.moon-accordion-item-toggle), .moon-pagination .moon-icon-button:where(.moon-pagination-item), .moon-pagination :where(.moon-pagination-item), .moon-pagination :where(.moon-pagination-control):where(.moon-pagination-item), .moon-drawer-box .moon-pagination :where(.moon-drawer-close):where(.moon-pagination-item), .moon-pagination .moon-drawer-box :where(.moon-drawer-close):where(.moon-pagination-item), .moon-dialog-box .moon-pagination :where(.moon-dialog-close):where(.moon-pagination-item), .moon-pagination .moon-dialog-box :where(.moon-dialog-close):where(.moon-pagination-item), .moon-carousel .moon-pagination :where(.moon-carousel-control):where(.moon-pagination-item), .moon-pagination .moon-carousel :where(.moon-carousel-control):where(.moon-pagination-item), .moon-bottom-sheet-box .moon-pagination :where(.moon-bottom-sheet-close):where(.moon-pagination-item), .moon-pagination .moon-bottom-sheet-box :where(.moon-bottom-sheet-close):where(.moon-pagination-item), .moon-alert .moon-pagination :where(.moon-alert-close):where(.moon-pagination-item), .moon-pagination .moon-alert :where(.moon-alert-close):where(.moon-pagination-item), .moon-snackbar .moon-pagination :where(.moon-alert-close):where(.moon-pagination-item), .moon-pagination .moon-snackbar :where(.moon-alert-close):where(.moon-pagination-item), .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header .moon-pagination :where(.moon-accordion-item-toggle):where(.moon-pagination-item), .moon-pagination .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header :where(.moon-accordion-item-toggle):where(.moon-pagination-item), .moon-pagination .moon-icon-button:where(.moon-pagination-control), .moon-pagination :where(.moon-pagination-item):where(.moon-pagination-control), .moon-pagination :where(.moon-pagination-control), .moon-drawer-box .moon-pagination :where(.moon-drawer-close):where(.moon-pagination-control), .moon-pagination .moon-drawer-box :where(.moon-drawer-close):where(.moon-pagination-control), .moon-dialog-box .moon-pagination :where(.moon-dialog-close):where(.moon-pagination-control), .moon-pagination .moon-dialog-box :where(.moon-dialog-close):where(.moon-pagination-control), .moon-carousel .moon-pagination :where(.moon-carousel-control):where(.moon-pagination-control), .moon-pagination .moon-carousel :where(.moon-carousel-control):where(.moon-pagination-control), .moon-bottom-sheet-box .moon-pagination :where(.moon-bottom-sheet-close):where(.moon-pagination-control), .moon-pagination .moon-bottom-sheet-box :where(.moon-bottom-sheet-close):where(.moon-pagination-control), .moon-alert .moon-pagination :where(.moon-alert-close):where(.moon-pagination-control), .moon-pagination .moon-alert :where(.moon-alert-close):where(.moon-pagination-control), .moon-snackbar .moon-pagination :where(.moon-alert-close):where(.moon-pagination-control), .moon-pagination .moon-snackbar :where(.moon-alert-close):where(.moon-pagination-control), .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header .moon-pagination :where(.moon-accordion-item-toggle):where(.moon-pagination-control), .moon-pagination .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header :where(.moon-accordion-item-toggle):where(.moon-pagination-control), .moon-drawer-box .moon-icon-button:where(.moon-drawer-close), .moon-pagination .moon-drawer-box :where(.moon-pagination-item):where(.moon-drawer-close), .moon-drawer-box .moon-pagination :where(.moon-pagination-item):where(.moon-drawer-close), .moon-pagination .moon-drawer-box :where(.moon-pagination-control):where(.moon-drawer-close), .moon-drawer-box .moon-pagination :where(.moon-pagination-control):where(.moon-drawer-close), .moon-drawer-box :where(.moon-drawer-close), .moon-dialog-box .moon-drawer-box :where(.moon-dialog-close):where(.moon-drawer-close), .moon-drawer-box .moon-dialog-box :where(.moon-dialog-close):where(.moon-drawer-close), .moon-carousel .moon-drawer-box :where(.moon-carousel-control):where(.moon-drawer-close), .moon-drawer-box .moon-carousel :where(.moon-carousel-control):where(.moon-drawer-close), .moon-bottom-sheet-box .moon-drawer-box :where(.moon-bottom-sheet-close):where(.moon-drawer-close), .moon-drawer-box .moon-bottom-sheet-box :where(.moon-bottom-sheet-close):where(.moon-drawer-close), .moon-alert .moon-drawer-box :where(.moon-alert-close):where(.moon-drawer-close), .moon-drawer-box .moon-alert :where(.moon-alert-close):where(.moon-drawer-close), .moon-snackbar .moon-drawer-box :where(.moon-alert-close):where(.moon-drawer-close), .moon-drawer-box .moon-snackbar :where(.moon-alert-close):where(.moon-drawer-close), .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header .moon-drawer-box :where(.moon-accordion-item-toggle):where(.moon-drawer-close), .moon-drawer-box .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header :where(.moon-accordion-item-toggle):where(.moon-drawer-close), .moon-dialog-box .moon-icon-button:where(.moon-dialog-close), .moon-pagination .moon-dialog-box :where(.moon-pagination-item):where(.moon-dialog-close), .moon-dialog-box .moon-pagination :where(.moon-pagination-item):where(.moon-dialog-close), .moon-pagination .moon-dialog-box :where(.moon-pagination-control):where(.moon-dialog-close), .moon-dialog-box .moon-pagination :where(.moon-pagination-control):where(.moon-dialog-close), .moon-drawer-box .moon-dialog-box :where(.moon-drawer-close):where(.moon-dialog-close), .moon-dialog-box .moon-drawer-box :where(.moon-drawer-close):where(.moon-dialog-close), .moon-dialog-box :where(.moon-dialog-close), .moon-carousel .moon-dialog-box :where(.moon-carousel-control):where(.moon-dialog-close), .moon-dialog-box .moon-carousel :where(.moon-carousel-control):where(.moon-dialog-close), .moon-bottom-sheet-box .moon-dialog-box :where(.moon-bottom-sheet-close):where(.moon-dialog-close), .moon-dialog-box .moon-bottom-sheet-box :where(.moon-bottom-sheet-close):where(.moon-dialog-close), .moon-alert .moon-dialog-box :where(.moon-alert-close):where(.moon-dialog-close), .moon-dialog-box .moon-alert :where(.moon-alert-close):where(.moon-dialog-close), .moon-snackbar .moon-dialog-box :where(.moon-alert-close):where(.moon-dialog-close), .moon-dialog-box .moon-snackbar :where(.moon-alert-close):where(.moon-dialog-close), .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header .moon-dialog-box :where(.moon-accordion-item-toggle):where(.moon-dialog-close), .moon-dialog-box .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header :where(.moon-accordion-item-toggle):where(.moon-dialog-close), .moon-carousel .moon-icon-button:where(.moon-carousel-control), .moon-pagination .moon-carousel :where(.moon-pagination-item):where(.moon-carousel-control), .moon-carousel .moon-pagination :where(.moon-pagination-item):where(.moon-carousel-control), .moon-pagination .moon-carousel :where(.moon-pagination-control):where(.moon-carousel-control), .moon-carousel .moon-pagination :where(.moon-pagination-control):where(.moon-carousel-control), .moon-drawer-box .moon-carousel :where(.moon-drawer-close):where(.moon-carousel-control), .moon-carousel .moon-drawer-box :where(.moon-drawer-close):where(.moon-carousel-control), .moon-dialog-box .moon-carousel :where(.moon-dialog-close):where(.moon-carousel-control), .moon-carousel .moon-dialog-box :where(.moon-dialog-close):where(.moon-carousel-control), .moon-carousel :where(.moon-carousel-control), .moon-bottom-sheet-box .moon-carousel :where(.moon-bottom-sheet-close):where(.moon-carousel-control), .moon-carousel .moon-bottom-sheet-box :where(.moon-bottom-sheet-close):where(.moon-carousel-control), .moon-alert .moon-carousel :where(.moon-alert-close):where(.moon-carousel-control), .moon-carousel .moon-alert :where(.moon-alert-close):where(.moon-carousel-control), .moon-snackbar .moon-carousel :where(.moon-alert-close):where(.moon-carousel-control), .moon-carousel .moon-snackbar :where(.moon-alert-close):where(.moon-carousel-control), .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header .moon-carousel :where(.moon-accordion-item-toggle):where(.moon-carousel-control), .moon-carousel .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header :where(.moon-accordion-item-toggle):where(.moon-carousel-control), .moon-bottom-sheet-box .moon-icon-button:where(.moon-bottom-sheet-close), .moon-pagination .moon-bottom-sheet-box :where(.moon-pagination-item):where(.moon-bottom-sheet-close), .moon-bottom-sheet-box .moon-pagination :where(.moon-pagination-item):where(.moon-bottom-sheet-close), .moon-pagination .moon-bottom-sheet-box :where(.moon-pagination-control):where(.moon-bottom-sheet-close), .moon-bottom-sheet-box .moon-pagination :where(.moon-pagination-control):where(.moon-bottom-sheet-close), .moon-drawer-box .moon-bottom-sheet-box :where(.moon-drawer-close):where(.moon-bottom-sheet-close), .moon-bottom-sheet-box .moon-drawer-box :where(.moon-drawer-close):where(.moon-bottom-sheet-close), .moon-dialog-box .moon-bottom-sheet-box :where(.moon-dialog-close):where(.moon-bottom-sheet-close), .moon-bottom-sheet-box .moon-dialog-box :where(.moon-dialog-close):where(.moon-bottom-sheet-close), .moon-carousel .moon-bottom-sheet-box :where(.moon-carousel-control):where(.moon-bottom-sheet-close), .moon-bottom-sheet-box .moon-carousel :where(.moon-carousel-control):where(.moon-bottom-sheet-close), .moon-bottom-sheet-box :where(.moon-bottom-sheet-close), .moon-alert .moon-bottom-sheet-box :where(.moon-alert-close):where(.moon-bottom-sheet-close), .moon-bottom-sheet-box .moon-alert :where(.moon-alert-close):where(.moon-bottom-sheet-close), .moon-snackbar .moon-bottom-sheet-box :where(.moon-alert-close):where(.moon-bottom-sheet-close), .moon-bottom-sheet-box .moon-snackbar :where(.moon-alert-close):where(.moon-bottom-sheet-close), .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header .moon-bottom-sheet-box :where(.moon-accordion-item-toggle):where(.moon-bottom-sheet-close), .moon-bottom-sheet-box .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header :where(.moon-accordion-item-toggle):where(.moon-bottom-sheet-close), .moon-alert .moon-icon-button:where(.moon-alert-close), .moon-pagination .moon-alert :where(.moon-pagination-item):where(.moon-alert-close), .moon-alert .moon-pagination :where(.moon-pagination-item):where(.moon-alert-close), .moon-pagination .moon-alert :where(.moon-pagination-control):where(.moon-alert-close), .moon-alert .moon-pagination :where(.moon-pagination-control):where(.moon-alert-close), .moon-drawer-box .moon-alert :where(.moon-drawer-close):where(.moon-alert-close), .moon-alert .moon-drawer-box :where(.moon-drawer-close):where(.moon-alert-close), .moon-dialog-box .moon-alert :where(.moon-dialog-close):where(.moon-alert-close), .moon-alert .moon-dialog-box :where(.moon-dialog-close):where(.moon-alert-close), .moon-carousel .moon-alert :where(.moon-carousel-control):where(.moon-alert-close), .moon-alert .moon-carousel :where(.moon-carousel-control):where(.moon-alert-close), .moon-bottom-sheet-box .moon-alert :where(.moon-bottom-sheet-close):where(.moon-alert-close), .moon-alert .moon-bottom-sheet-box :where(.moon-bottom-sheet-close):where(.moon-alert-close), .moon-alert :where(.moon-alert-close), .moon-snackbar .moon-alert :where(.moon-alert-close), .moon-alert .moon-snackbar :where(.moon-alert-close), .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header .moon-alert :where(.moon-accordion-item-toggle):where(.moon-alert-close), .moon-alert .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header :where(.moon-accordion-item-toggle):where(.moon-alert-close), .moon-snackbar .moon-icon-button:where(.moon-alert-close), .moon-pagination .moon-snackbar :where(.moon-pagination-item):where(.moon-alert-close), .moon-snackbar .moon-pagination :where(.moon-pagination-item):where(.moon-alert-close), .moon-pagination .moon-snackbar :where(.moon-pagination-control):where(.moon-alert-close), .moon-snackbar .moon-pagination :where(.moon-pagination-control):where(.moon-alert-close), .moon-drawer-box .moon-snackbar :where(.moon-drawer-close):where(.moon-alert-close), .moon-snackbar .moon-drawer-box :where(.moon-drawer-close):where(.moon-alert-close), .moon-dialog-box .moon-snackbar :where(.moon-dialog-close):where(.moon-alert-close), .moon-snackbar .moon-dialog-box :where(.moon-dialog-close):where(.moon-alert-close), .moon-carousel .moon-snackbar :where(.moon-carousel-control):where(.moon-alert-close), .moon-snackbar .moon-carousel :where(.moon-carousel-control):where(.moon-alert-close), .moon-bottom-sheet-box .moon-snackbar :where(.moon-bottom-sheet-close):where(.moon-alert-close), .moon-snackbar .moon-bottom-sheet-box :where(.moon-bottom-sheet-close):where(.moon-alert-close), .moon-alert .moon-snackbar :where(.moon-alert-close), .moon-snackbar .moon-alert :where(.moon-alert-close), .moon-snackbar :where(.moon-alert-close), .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header .moon-snackbar :where(.moon-accordion-item-toggle):where(.moon-alert-close), .moon-snackbar .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header :where(.moon-accordion-item-toggle):where(.moon-alert-close) {
-  height: var(--spacing-height-32);
-  width: var(--spacing-width-32);
+  height: var(--spacing-space-32);
+  width: var(--spacing-space-32);
   border-radius: var(--component-button-radius-sm);
 }
 .moon-icon-button.moon-icon-button-sm :where(svg, .moon-icon), .moon-pagination .moon-icon-button-sm:where(.moon-pagination-item) :where(svg, .moon-icon), .moon-pagination .moon-icon-button-sm:where(.moon-pagination-control) :where(svg, .moon-icon), .moon-drawer-box .moon-icon-button-sm:where(.moon-drawer-close) :where(svg, .moon-icon), .moon-dialog-box .moon-icon-button-sm:where(.moon-dialog-close) :where(svg, .moon-icon), .moon-carousel .moon-icon-button-sm:where(.moon-carousel-control) :where(svg, .moon-icon), .moon-bottom-sheet-box .moon-icon-button-sm:where(.moon-bottom-sheet-close) :where(svg, .moon-icon), .moon-alert .moon-icon-button-sm:where(.moon-alert-close) :where(svg, .moon-icon), .moon-snackbar .moon-icon-button-sm:where(.moon-alert-close) :where(svg, .moon-icon), .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header .moon-icon-button-sm:where(.moon-accordion-item-toggle) :where(svg, .moon-icon), .moon-pagination .moon-icon-button:where(.moon-pagination-item) :where(svg, .moon-icon), .moon-pagination :where(.moon-pagination-item) :where(svg, .moon-icon), .moon-pagination :where(.moon-pagination-control):where(.moon-pagination-item) :where(svg, .moon-icon), .moon-drawer-box .moon-pagination :where(.moon-drawer-close):where(.moon-pagination-item) :where(svg, .moon-icon), .moon-pagination .moon-drawer-box :where(.moon-drawer-close):where(.moon-pagination-item) :where(svg, .moon-icon), .moon-dialog-box .moon-pagination :where(.moon-dialog-close):where(.moon-pagination-item) :where(svg, .moon-icon), .moon-pagination .moon-dialog-box :where(.moon-dialog-close):where(.moon-pagination-item) :where(svg, .moon-icon), .moon-carousel .moon-pagination :where(.moon-carousel-control):where(.moon-pagination-item) :where(svg, .moon-icon), .moon-pagination .moon-carousel :where(.moon-carousel-control):where(.moon-pagination-item) :where(svg, .moon-icon), .moon-bottom-sheet-box .moon-pagination :where(.moon-bottom-sheet-close):where(.moon-pagination-item) :where(svg, .moon-icon), .moon-pagination .moon-bottom-sheet-box :where(.moon-bottom-sheet-close):where(.moon-pagination-item) :where(svg, .moon-icon), .moon-alert .moon-pagination :where(.moon-alert-close):where(.moon-pagination-item) :where(svg, .moon-icon), .moon-pagination .moon-alert :where(.moon-alert-close):where(.moon-pagination-item) :where(svg, .moon-icon), .moon-snackbar .moon-pagination :where(.moon-alert-close):where(.moon-pagination-item) :where(svg, .moon-icon), .moon-pagination .moon-snackbar :where(.moon-alert-close):where(.moon-pagination-item) :where(svg, .moon-icon), .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header .moon-pagination :where(.moon-accordion-item-toggle):where(.moon-pagination-item) :where(svg, .moon-icon), .moon-pagination .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header :where(.moon-accordion-item-toggle):where(.moon-pagination-item) :where(svg, .moon-icon), .moon-pagination .moon-icon-button:where(.moon-pagination-control) :where(svg, .moon-icon), .moon-pagination :where(.moon-pagination-item):where(.moon-pagination-control) :where(svg, .moon-icon), .moon-pagination :where(.moon-pagination-control) :where(svg, .moon-icon), .moon-drawer-box .moon-pagination :where(.moon-drawer-close):where(.moon-pagination-control) :where(svg, .moon-icon), .moon-pagination .moon-drawer-box :where(.moon-drawer-close):where(.moon-pagination-control) :where(svg, .moon-icon), .moon-dialog-box .moon-pagination :where(.moon-dialog-close):where(.moon-pagination-control) :where(svg, .moon-icon), .moon-pagination .moon-dialog-box :where(.moon-dialog-close):where(.moon-pagination-control) :where(svg, .moon-icon), .moon-carousel .moon-pagination :where(.moon-carousel-control):where(.moon-pagination-control) :where(svg, .moon-icon), .moon-pagination .moon-carousel :where(.moon-carousel-control):where(.moon-pagination-control) :where(svg, .moon-icon), .moon-bottom-sheet-box .moon-pagination :where(.moon-bottom-sheet-close):where(.moon-pagination-control) :where(svg, .moon-icon), .moon-pagination .moon-bottom-sheet-box :where(.moon-bottom-sheet-close):where(.moon-pagination-control) :where(svg, .moon-icon), .moon-alert .moon-pagination :where(.moon-alert-close):where(.moon-pagination-control) :where(svg, .moon-icon), .moon-pagination .moon-alert :where(.moon-alert-close):where(.moon-pagination-control) :where(svg, .moon-icon), .moon-snackbar .moon-pagination :where(.moon-alert-close):where(.moon-pagination-control) :where(svg, .moon-icon), .moon-pagination .moon-snackbar :where(.moon-alert-close):where(.moon-pagination-control) :where(svg, .moon-icon), .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header .moon-pagination :where(.moon-accordion-item-toggle):where(.moon-pagination-control) :where(svg, .moon-icon), .moon-pagination .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header :where(.moon-accordion-item-toggle):where(.moon-pagination-control) :where(svg, .moon-icon), .moon-drawer-box .moon-icon-button:where(.moon-drawer-close) :where(svg, .moon-icon), .moon-pagination .moon-drawer-box :where(.moon-pagination-item):where(.moon-drawer-close) :where(svg, .moon-icon), .moon-drawer-box .moon-pagination :where(.moon-pagination-item):where(.moon-drawer-close) :where(svg, .moon-icon), .moon-pagination .moon-drawer-box :where(.moon-pagination-control):where(.moon-drawer-close) :where(svg, .moon-icon), .moon-drawer-box .moon-pagination :where(.moon-pagination-control):where(.moon-drawer-close) :where(svg, .moon-icon), .moon-drawer-box :where(.moon-drawer-close) :where(svg, .moon-icon), .moon-dialog-box .moon-drawer-box :where(.moon-dialog-close):where(.moon-drawer-close) :where(svg, .moon-icon), .moon-drawer-box .moon-dialog-box :where(.moon-dialog-close):where(.moon-drawer-close) :where(svg, .moon-icon), .moon-carousel .moon-drawer-box :where(.moon-carousel-control):where(.moon-drawer-close) :where(svg, .moon-icon), .moon-drawer-box .moon-carousel :where(.moon-carousel-control):where(.moon-drawer-close) :where(svg, .moon-icon), .moon-bottom-sheet-box .moon-drawer-box :where(.moon-bottom-sheet-close):where(.moon-drawer-close) :where(svg, .moon-icon), .moon-drawer-box .moon-bottom-sheet-box :where(.moon-bottom-sheet-close):where(.moon-drawer-close) :where(svg, .moon-icon), .moon-alert .moon-drawer-box :where(.moon-alert-close):where(.moon-drawer-close) :where(svg, .moon-icon), .moon-drawer-box .moon-alert :where(.moon-alert-close):where(.moon-drawer-close) :where(svg, .moon-icon), .moon-snackbar .moon-drawer-box :where(.moon-alert-close):where(.moon-drawer-close) :where(svg, .moon-icon), .moon-drawer-box .moon-snackbar :where(.moon-alert-close):where(.moon-drawer-close) :where(svg, .moon-icon), .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header .moon-drawer-box :where(.moon-accordion-item-toggle):where(.moon-drawer-close) :where(svg, .moon-icon), .moon-drawer-box .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header :where(.moon-accordion-item-toggle):where(.moon-drawer-close) :where(svg, .moon-icon), .moon-dialog-box .moon-icon-button:where(.moon-dialog-close) :where(svg, .moon-icon), .moon-pagination .moon-dialog-box :where(.moon-pagination-item):where(.moon-dialog-close) :where(svg, .moon-icon), .moon-dialog-box .moon-pagination :where(.moon-pagination-item):where(.moon-dialog-close) :where(svg, .moon-icon), .moon-pagination .moon-dialog-box :where(.moon-pagination-control):where(.moon-dialog-close) :where(svg, .moon-icon), .moon-dialog-box .moon-pagination :where(.moon-pagination-control):where(.moon-dialog-close) :where(svg, .moon-icon), .moon-drawer-box .moon-dialog-box :where(.moon-drawer-close):where(.moon-dialog-close) :where(svg, .moon-icon), .moon-dialog-box .moon-drawer-box :where(.moon-drawer-close):where(.moon-dialog-close) :where(svg, .moon-icon), .moon-dialog-box :where(.moon-dialog-close) :where(svg, .moon-icon), .moon-carousel .moon-dialog-box :where(.moon-carousel-control):where(.moon-dialog-close) :where(svg, .moon-icon), .moon-dialog-box .moon-carousel :where(.moon-carousel-control):where(.moon-dialog-close) :where(svg, .moon-icon), .moon-bottom-sheet-box .moon-dialog-box :where(.moon-bottom-sheet-close):where(.moon-dialog-close) :where(svg, .moon-icon), .moon-dialog-box .moon-bottom-sheet-box :where(.moon-bottom-sheet-close):where(.moon-dialog-close) :where(svg, .moon-icon), .moon-alert .moon-dialog-box :where(.moon-alert-close):where(.moon-dialog-close) :where(svg, .moon-icon), .moon-dialog-box .moon-alert :where(.moon-alert-close):where(.moon-dialog-close) :where(svg, .moon-icon), .moon-snackbar .moon-dialog-box :where(.moon-alert-close):where(.moon-dialog-close) :where(svg, .moon-icon), .moon-dialog-box .moon-snackbar :where(.moon-alert-close):where(.moon-dialog-close) :where(svg, .moon-icon), .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header .moon-dialog-box :where(.moon-accordion-item-toggle):where(.moon-dialog-close) :where(svg, .moon-icon), .moon-dialog-box .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header :where(.moon-accordion-item-toggle):where(.moon-dialog-close) :where(svg, .moon-icon), .moon-carousel .moon-icon-button:where(.moon-carousel-control) :where(svg, .moon-icon), .moon-pagination .moon-carousel :where(.moon-pagination-item):where(.moon-carousel-control) :where(svg, .moon-icon), .moon-carousel .moon-pagination :where(.moon-pagination-item):where(.moon-carousel-control) :where(svg, .moon-icon), .moon-pagination .moon-carousel :where(.moon-pagination-control):where(.moon-carousel-control) :where(svg, .moon-icon), .moon-carousel .moon-pagination :where(.moon-pagination-control):where(.moon-carousel-control) :where(svg, .moon-icon), .moon-drawer-box .moon-carousel :where(.moon-drawer-close):where(.moon-carousel-control) :where(svg, .moon-icon), .moon-carousel .moon-drawer-box :where(.moon-drawer-close):where(.moon-carousel-control) :where(svg, .moon-icon), .moon-dialog-box .moon-carousel :where(.moon-dialog-close):where(.moon-carousel-control) :where(svg, .moon-icon), .moon-carousel .moon-dialog-box :where(.moon-dialog-close):where(.moon-carousel-control) :where(svg, .moon-icon), .moon-carousel :where(.moon-carousel-control) :where(svg, .moon-icon), .moon-bottom-sheet-box .moon-carousel :where(.moon-bottom-sheet-close):where(.moon-carousel-control) :where(svg, .moon-icon), .moon-carousel .moon-bottom-sheet-box :where(.moon-bottom-sheet-close):where(.moon-carousel-control) :where(svg, .moon-icon), .moon-alert .moon-carousel :where(.moon-alert-close):where(.moon-carousel-control) :where(svg, .moon-icon), .moon-carousel .moon-alert :where(.moon-alert-close):where(.moon-carousel-control) :where(svg, .moon-icon), .moon-snackbar .moon-carousel :where(.moon-alert-close):where(.moon-carousel-control) :where(svg, .moon-icon), .moon-carousel .moon-snackbar :where(.moon-alert-close):where(.moon-carousel-control) :where(svg, .moon-icon), .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header .moon-carousel :where(.moon-accordion-item-toggle):where(.moon-carousel-control) :where(svg, .moon-icon), .moon-carousel .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header :where(.moon-accordion-item-toggle):where(.moon-carousel-control) :where(svg, .moon-icon), .moon-bottom-sheet-box .moon-icon-button:where(.moon-bottom-sheet-close) :where(svg, .moon-icon), .moon-pagination .moon-bottom-sheet-box :where(.moon-pagination-item):where(.moon-bottom-sheet-close) :where(svg, .moon-icon), .moon-bottom-sheet-box .moon-pagination :where(.moon-pagination-item):where(.moon-bottom-sheet-close) :where(svg, .moon-icon), .moon-pagination .moon-bottom-sheet-box :where(.moon-pagination-control):where(.moon-bottom-sheet-close) :where(svg, .moon-icon), .moon-bottom-sheet-box .moon-pagination :where(.moon-pagination-control):where(.moon-bottom-sheet-close) :where(svg, .moon-icon), .moon-drawer-box .moon-bottom-sheet-box :where(.moon-drawer-close):where(.moon-bottom-sheet-close) :where(svg, .moon-icon), .moon-bottom-sheet-box .moon-drawer-box :where(.moon-drawer-close):where(.moon-bottom-sheet-close) :where(svg, .moon-icon), .moon-dialog-box .moon-bottom-sheet-box :where(.moon-dialog-close):where(.moon-bottom-sheet-close) :where(svg, .moon-icon), .moon-bottom-sheet-box .moon-dialog-box :where(.moon-dialog-close):where(.moon-bottom-sheet-close) :where(svg, .moon-icon), .moon-carousel .moon-bottom-sheet-box :where(.moon-carousel-control):where(.moon-bottom-sheet-close) :where(svg, .moon-icon), .moon-bottom-sheet-box .moon-carousel :where(.moon-carousel-control):where(.moon-bottom-sheet-close) :where(svg, .moon-icon), .moon-bottom-sheet-box :where(.moon-bottom-sheet-close) :where(svg, .moon-icon), .moon-alert .moon-bottom-sheet-box :where(.moon-alert-close):where(.moon-bottom-sheet-close) :where(svg, .moon-icon), .moon-bottom-sheet-box .moon-alert :where(.moon-alert-close):where(.moon-bottom-sheet-close) :where(svg, .moon-icon), .moon-snackbar .moon-bottom-sheet-box :where(.moon-alert-close):where(.moon-bottom-sheet-close) :where(svg, .moon-icon), .moon-bottom-sheet-box .moon-snackbar :where(.moon-alert-close):where(.moon-bottom-sheet-close) :where(svg, .moon-icon), .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header .moon-bottom-sheet-box :where(.moon-accordion-item-toggle):where(.moon-bottom-sheet-close) :where(svg, .moon-icon), .moon-bottom-sheet-box .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header :where(.moon-accordion-item-toggle):where(.moon-bottom-sheet-close) :where(svg, .moon-icon), .moon-alert .moon-icon-button:where(.moon-alert-close) :where(svg, .moon-icon), .moon-pagination .moon-alert :where(.moon-pagination-item):where(.moon-alert-close) :where(svg, .moon-icon), .moon-alert .moon-pagination :where(.moon-pagination-item):where(.moon-alert-close) :where(svg, .moon-icon), .moon-pagination .moon-alert :where(.moon-pagination-control):where(.moon-alert-close) :where(svg, .moon-icon), .moon-alert .moon-pagination :where(.moon-pagination-control):where(.moon-alert-close) :where(svg, .moon-icon), .moon-drawer-box .moon-alert :where(.moon-drawer-close):where(.moon-alert-close) :where(svg, .moon-icon), .moon-alert .moon-drawer-box :where(.moon-drawer-close):where(.moon-alert-close) :where(svg, .moon-icon), .moon-dialog-box .moon-alert :where(.moon-dialog-close):where(.moon-alert-close) :where(svg, .moon-icon), .moon-alert .moon-dialog-box :where(.moon-dialog-close):where(.moon-alert-close) :where(svg, .moon-icon), .moon-carousel .moon-alert :where(.moon-carousel-control):where(.moon-alert-close) :where(svg, .moon-icon), .moon-alert .moon-carousel :where(.moon-carousel-control):where(.moon-alert-close) :where(svg, .moon-icon), .moon-bottom-sheet-box .moon-alert :where(.moon-bottom-sheet-close):where(.moon-alert-close) :where(svg, .moon-icon), .moon-alert .moon-bottom-sheet-box :where(.moon-bottom-sheet-close):where(.moon-alert-close) :where(svg, .moon-icon), .moon-alert :where(.moon-alert-close) :where(svg, .moon-icon), .moon-snackbar .moon-alert :where(.moon-alert-close) :where(svg, .moon-icon), .moon-alert .moon-snackbar :where(.moon-alert-close) :where(svg, .moon-icon), .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header .moon-alert :where(.moon-accordion-item-toggle):where(.moon-alert-close) :where(svg, .moon-icon), .moon-alert .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header :where(.moon-accordion-item-toggle):where(.moon-alert-close) :where(svg, .moon-icon), .moon-snackbar .moon-icon-button:where(.moon-alert-close) :where(svg, .moon-icon), .moon-pagination .moon-snackbar :where(.moon-pagination-item):where(.moon-alert-close) :where(svg, .moon-icon), .moon-snackbar .moon-pagination :where(.moon-pagination-item):where(.moon-alert-close) :where(svg, .moon-icon), .moon-pagination .moon-snackbar :where(.moon-pagination-control):where(.moon-alert-close) :where(svg, .moon-icon), .moon-snackbar .moon-pagination :where(.moon-pagination-control):where(.moon-alert-close) :where(svg, .moon-icon), .moon-drawer-box .moon-snackbar :where(.moon-drawer-close):where(.moon-alert-close) :where(svg, .moon-icon), .moon-snackbar .moon-drawer-box :where(.moon-drawer-close):where(.moon-alert-close) :where(svg, .moon-icon), .moon-dialog-box .moon-snackbar :where(.moon-dialog-close):where(.moon-alert-close) :where(svg, .moon-icon), .moon-snackbar .moon-dialog-box :where(.moon-dialog-close):where(.moon-alert-close) :where(svg, .moon-icon), .moon-carousel .moon-snackbar :where(.moon-carousel-control):where(.moon-alert-close) :where(svg, .moon-icon), .moon-snackbar .moon-carousel :where(.moon-carousel-control):where(.moon-alert-close) :where(svg, .moon-icon), .moon-bottom-sheet-box .moon-snackbar :where(.moon-bottom-sheet-close):where(.moon-alert-close) :where(svg, .moon-icon), .moon-snackbar .moon-bottom-sheet-box :where(.moon-bottom-sheet-close):where(.moon-alert-close) :where(svg, .moon-icon), .moon-alert .moon-snackbar :where(.moon-alert-close) :where(svg, .moon-icon), .moon-snackbar .moon-alert :where(.moon-alert-close) :where(svg, .moon-icon), .moon-snackbar :where(.moon-alert-close) :where(svg, .moon-icon), .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header .moon-snackbar :where(.moon-accordion-item-toggle):where(.moon-alert-close) :where(svg, .moon-icon), .moon-snackbar .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header :where(.moon-accordion-item-toggle):where(.moon-alert-close) :where(svg, .moon-icon) {
-  width: var(--spacing-height-16);
-  height: var(--spacing-height-16);
+  width: var(--spacing-space-16);
+  height: var(--spacing-space-16);
 }
 .moon-icon-button.moon-icon-button-lg, .moon-pagination .moon-icon-button-lg:where(.moon-pagination-item), .moon-pagination .moon-icon-button-lg:where(.moon-pagination-control), .moon-drawer-box .moon-icon-button-lg:where(.moon-drawer-close), .moon-dialog-box .moon-icon-button-lg:where(.moon-dialog-close), .moon-carousel .moon-icon-button-lg:where(.moon-carousel-control), .moon-bottom-sheet-box .moon-icon-button-lg:where(.moon-bottom-sheet-close), .moon-alert .moon-icon-button-lg:where(.moon-alert-close), .moon-snackbar .moon-icon-button-lg:where(.moon-alert-close), .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header .moon-icon-button-lg:where(.moon-accordion-item-toggle) {
-  height: var(--spacing-height-48);
-  width: var(--spacing-width-48);
+  height: var(--spacing-space-48);
+  width: var(--spacing-space-48);
   border-radius: var(--component-button-radius-lg);
 }
 .moon-icon-button.moon-icon-button-lg :where(svg, .moon-icon), .moon-pagination .moon-icon-button-lg:where(.moon-pagination-item) :where(svg, .moon-icon), .moon-pagination .moon-icon-button-lg:where(.moon-pagination-control) :where(svg, .moon-icon), .moon-drawer-box .moon-icon-button-lg:where(.moon-drawer-close) :where(svg, .moon-icon), .moon-dialog-box .moon-icon-button-lg:where(.moon-dialog-close) :where(svg, .moon-icon), .moon-carousel .moon-icon-button-lg:where(.moon-carousel-control) :where(svg, .moon-icon), .moon-bottom-sheet-box .moon-icon-button-lg:where(.moon-bottom-sheet-close) :where(svg, .moon-icon), .moon-alert .moon-icon-button-lg:where(.moon-alert-close) :where(svg, .moon-icon), .moon-snackbar .moon-icon-button-lg:where(.moon-alert-close) :where(svg, .moon-icon), .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header .moon-icon-button-lg:where(.moon-accordion-item-toggle) :where(svg, .moon-icon) {
-  width: var(--spacing-height-20);
-  height: var(--spacing-height-20);
+  width: var(--spacing-space-20);
+  height: var(--spacing-space-20);
 }
 .moon-icon-button.moon-icon-button-xl, .moon-pagination .moon-icon-button-xl:where(.moon-pagination-item), .moon-pagination .moon-icon-button-xl:where(.moon-pagination-control), .moon-drawer-box .moon-icon-button-xl:where(.moon-drawer-close), .moon-dialog-box .moon-icon-button-xl:where(.moon-dialog-close), .moon-carousel .moon-icon-button-xl:where(.moon-carousel-control), .moon-bottom-sheet-box .moon-icon-button-xl:where(.moon-bottom-sheet-close), .moon-alert .moon-icon-button-xl:where(.moon-alert-close), .moon-snackbar .moon-icon-button-xl:where(.moon-alert-close), .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header .moon-icon-button-xl:where(.moon-accordion-item-toggle) {
-  height: var(--spacing-height-56);
-  width: var(--spacing-width-56);
+  height: var(--spacing-space-56);
+  width: var(--spacing-space-56);
   border-radius: var(--component-button-radius-xl);
 }
 .moon-icon-button.moon-icon-button-xl :where(svg, .moon-icon), .moon-pagination .moon-icon-button-xl:where(.moon-pagination-item) :where(svg, .moon-icon), .moon-pagination .moon-icon-button-xl:where(.moon-pagination-control) :where(svg, .moon-icon), .moon-drawer-box .moon-icon-button-xl:where(.moon-drawer-close) :where(svg, .moon-icon), .moon-dialog-box .moon-icon-button-xl:where(.moon-dialog-close) :where(svg, .moon-icon), .moon-carousel .moon-icon-button-xl:where(.moon-carousel-control) :where(svg, .moon-icon), .moon-bottom-sheet-box .moon-icon-button-xl:where(.moon-bottom-sheet-close) :where(svg, .moon-icon), .moon-alert .moon-icon-button-xl:where(.moon-alert-close) :where(svg, .moon-icon), .moon-snackbar .moon-icon-button-xl:where(.moon-alert-close) :where(svg, .moon-icon), .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header .moon-icon-button-xl:where(.moon-accordion-item-toggle) :where(svg, .moon-icon) {
-  width: var(--spacing-height-20);
-  height: var(--spacing-height-20);
+  width: var(--spacing-space-20);
+  height: var(--spacing-space-20);
 }
 .moon-icon-button.moon-icon-button-ghost, .moon-pagination .moon-icon-button-ghost:where(.moon-pagination-item), .moon-pagination .moon-icon-button-ghost:where(.moon-pagination-control), .moon-carousel .moon-icon-button-ghost:where(.moon-carousel-control), .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header .moon-icon-button-ghost:where(.moon-accordion-item-toggle), .moon-drawer-box :where(.moon-drawer-close), .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header .moon-drawer-box :where(.moon-accordion-item-toggle):where(.moon-drawer-close), .moon-drawer-box .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header :where(.moon-accordion-item-toggle):where(.moon-drawer-close), .moon-dialog-box :where(.moon-dialog-close), .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header .moon-dialog-box :where(.moon-accordion-item-toggle):where(.moon-dialog-close), .moon-dialog-box .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header :where(.moon-accordion-item-toggle):where(.moon-dialog-close), .moon-bottom-sheet-box :where(.moon-bottom-sheet-close), .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header .moon-bottom-sheet-box :where(.moon-accordion-item-toggle):where(.moon-bottom-sheet-close), .moon-bottom-sheet-box .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header :where(.moon-accordion-item-toggle):where(.moon-bottom-sheet-close), .moon-alert :where(.moon-alert-close), .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header .moon-alert :where(.moon-accordion-item-toggle):where(.moon-alert-close), .moon-alert .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header :where(.moon-accordion-item-toggle):where(.moon-alert-close), .moon-snackbar :where(.moon-alert-close), .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header .moon-snackbar :where(.moon-accordion-item-toggle):where(.moon-alert-close), .moon-snackbar .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header :where(.moon-accordion-item-toggle):where(.moon-alert-close) {
   background-color: var(--component-icon-button-ghost-background);
@@ -240,7 +240,7 @@
   display: inline-flex;
   flex-direction: column;
   overflow: hidden;
-  gap: var(--spacing-gap-8);
+  gap: var(--spacing-space-8);
 }
 .moon-accordion :where(.moon-accordion-item):not(td, tr, colgroup) {
   visibility: visible;
@@ -267,8 +267,8 @@
   opacity: 0;
   z-index: 1;
   width: 100%;
-  padding: 0 var(--spacing-padding-10);
-  min-height: var(--spacing-height-40);
+  padding: 0 var(--spacing-space-10);
+  min-height: var(--spacing-space-40);
   transition: background-color 0.2s ease-out;
 }
 .moon-accordion :where(.moon-accordion-item):is([open], :focus:not(.moon-accordion-close)), .moon-accordion :where(.moon-accordion-item):not(.moon-accordion-close):has(> input:is([type=checkbox], [type=radio]):checked) {
@@ -290,7 +290,7 @@
 }
 .moon-accordion :where(.moon-accordion-item):is([open], :focus:not(.moon-accordion-close)) > :where(.moon-accordion-item-content), .moon-accordion :where(.moon-accordion-item):not(.moon-accordion-close) > :where(input:is([type=checkbox], [type=radio]):checked ~ .moon-accordion-item-content) {
   position: relative;
-  padding: var(--spacing-padding-10);
+  padding: var(--spacing-space-10);
   transition: padding 0.2s ease-out, background-color 0.2s ease-out;
 }
 .moon-accordion :where(.moon-accordion-item):is([open], :focus:not(.moon-accordion-close)) > :where(.moon-accordion-item-content)::after, .moon-accordion :where(.moon-accordion-item):not(.moon-accordion-close) > :where(input:is([type=checkbox], [type=radio]):checked ~ .moon-accordion-item-content)::after {
@@ -299,7 +299,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: var(--spacing-space-1);
+  height: var(--spacing-stroke-1);
   background-color: var(--component-accordion-fill-border);
 }
 .moon-accordion :where(.moon-accordion-item):is([open]).moon-accordion-arrow > .moon-accordion-item-header::after {
@@ -362,11 +362,11 @@
 .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header {
   display: flex;
   align-items: center;
-  gap: var(--spacing-gap-8);
+  gap: var(--spacing-space-8);
   position: relative;
   width: 100%;
-  padding: 0 var(--spacing-padding-10);
-  min-height: var(--spacing-height-40);
+  padding: 0 var(--spacing-space-10);
+  min-height: var(--spacing-space-40);
   transition: background-color 0.2s ease-out;
   font: var(--font-weight-medium) var(--style-text-md-font-size)/var(--style-text-md-line-height) var(--font-default);
 }
@@ -374,7 +374,7 @@
   margin-inline-start: auto;
   display: flex;
   align-items: center;
-  gap: var(--spacing-gap-8);
+  gap: var(--spacing-space-8);
   color: var(--color-text-secondary);
 }
 .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header :where(.moon-accordion-item-toggle) {
@@ -385,8 +385,8 @@
 }
 .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header :where(svg, .moon-icon) {
   color: var(--color-icon-primary);
-  width: var(--spacing-height-20);
-  height: var(--spacing-height-20);
+  width: var(--spacing-space-20);
+  height: var(--spacing-space-20);
 }
 .moon-accordion :where(.moon-accordion-item) .moon-accordion-open {
   grid-template-rows: max-content 1fr;
@@ -396,7 +396,7 @@
   visibility: visible;
   min-height: -moz-fit-content;
   min-height: fit-content;
-  padding: 0 var(--spacing-padding-10);
+  padding: 0 var(--spacing-space-10);
   transition: padding 0.2s ease-out, background-color 0.2s ease-out;
 }
 .moon-accordion :where(.moon-accordion-item) .moon-accordion-open > .moon-accordion-item-content::after {
@@ -405,95 +405,95 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: var(--spacing-space-1);
+  height: var(--spacing-stroke-1);
   background-color: var(--color-border-secondary);
 }
 .moon-accordion.moon-accordion-sm {
-  gap: var(--spacing-gap-6);
+  gap: var(--spacing-space-6);
 }
 .moon-accordion.moon-accordion-sm :where(.moon-accordion-item) {
   border-radius: var(--component-accordion-radius-sm);
 }
 .moon-accordion.moon-accordion-sm :where(.moon-accordion-item) > input:is([type=checkbox], [type=radio]) {
-  padding: 0 var(--spacing-padding-8);
-  min-height: var(--spacing-height-32);
+  padding: 0 var(--spacing-space-8);
+  min-height: var(--spacing-space-32);
 }
 .moon-accordion.moon-accordion-sm :where(.moon-accordion-item):is([open], :focus:not(.moon-accordion-close)) > :where(.moon-accordion-item-content), .moon-accordion.moon-accordion-sm :where(.moon-accordion-item):not(.moon-accordion-close) > :where(input:is([type=checkbox], [type=radio]):checked ~ .moon-accordion-item-content) {
-  padding: var(--spacing-padding-8);
+  padding: var(--spacing-space-8);
 }
 .moon-accordion.moon-accordion-sm :where(.moon-accordion-item) .moon-accordion-item-header {
-  gap: 0 var(--spacing-gap-6);
-  padding: 0 var(--spacing-padding-8);
-  min-height: var(--spacing-height-32);
+  gap: 0 var(--spacing-space-6);
+  padding: 0 var(--spacing-space-8);
+  min-height: var(--spacing-space-32);
   font: var(--font-weight-medium) var(--style-text-md-font-size)/var(--style-text-md-line-height) var(--font-default);
 }
 .moon-accordion.moon-accordion-sm :where(.moon-accordion-item) .moon-accordion-item-meta {
-  gap: 0 var(--spacing-gap-6);
+  gap: 0 var(--spacing-space-6);
 }
 .moon-accordion.moon-accordion-sm :where(.moon-accordion-item) .moon-accordion-item-content {
   font: var(--font-weight-medium) var(--style-text-md-font-size)/var(--style-text-md-line-height) var(--font-default);
   font-weight: var(--font-weight-default);
 }
 .moon-accordion.moon-accordion-sm :where(.moon-accordion-item) .moon-accordion-open > .moon-accordion-item-content {
-  padding: var(--spacing-padding-8);
+  padding: var(--spacing-space-8);
 }
 .moon-accordion.moon-accordion-lg {
-  gap: var(--spacing-gap-8);
+  gap: var(--spacing-space-8);
 }
 .moon-accordion.moon-accordion-lg :where(.moon-accordion-item) {
   border-radius: var(--component-accordion-radius-lg);
 }
 .moon-accordion.moon-accordion-lg :where(.moon-accordion-item) > input:is([type=checkbox], [type=radio]) {
-  padding: 0 var(--spacing-padding-12);
-  min-height: var(--spacing-height-48);
+  padding: 0 var(--spacing-space-12);
+  min-height: var(--spacing-space-48);
 }
 .moon-accordion.moon-accordion-lg :where(.moon-accordion-item):is([open], :focus:not(.moon-accordion-close)) > :where(.moon-accordion-item-content), .moon-accordion.moon-accordion-lg :where(.moon-accordion-item):not(.moon-accordion-close) > :where(input:is([type=checkbox], [type=radio]):checked ~ .moon-accordion-item-content) {
-  padding: var(--spacing-padding-12);
+  padding: var(--spacing-space-12);
 }
 .moon-accordion.moon-accordion-lg :where(.moon-accordion-item) .moon-accordion-item-header {
-  gap: 0 var(--spacing-gap-8);
-  padding: 0 var(--spacing-padding-12);
-  min-height: var(--spacing-height-48);
+  gap: 0 var(--spacing-space-8);
+  padding: 0 var(--spacing-space-12);
+  min-height: var(--spacing-space-48);
   font: var(--font-weight-medium) var(--style-text-md-font-size)/var(--style-text-md-line-height) var(--font-default);
 }
 .moon-accordion.moon-accordion-lg :where(.moon-accordion-item) .moon-accordion-item-meta {
-  gap: 0 var(--spacing-gap-8);
+  gap: 0 var(--spacing-space-8);
 }
 .moon-accordion.moon-accordion-lg :where(.moon-accordion-item) .moon-accordion-item-content {
   font: var(--font-weight-medium) var(--style-text-md-font-size)/var(--style-text-md-line-height) var(--font-default);
   font-weight: var(--font-weight-default);
 }
 .moon-accordion.moon-accordion-lg :where(.moon-accordion-item) .moon-accordion-open > .moon-accordion-item-content {
-  padding: var(--spacing-padding-12);
+  padding: var(--spacing-space-12);
 }
 .moon-accordion.moon-accordion-xl {
-  gap: var(--spacing-gap-12);
+  gap: var(--spacing-space-12);
 }
 .moon-accordion.moon-accordion-xl :where(.moon-accordion-item) {
   border-radius: var(--component-accordion-radius-xl);
 }
 .moon-accordion.moon-accordion-xl :where(.moon-accordion-item) > input:is([type=checkbox], [type=radio]) {
-  padding: 0 var(--spacing-padding-16);
-  min-height: var(--spacing-height-56);
+  padding: 0 var(--spacing-space-16);
+  min-height: var(--spacing-space-56);
 }
 .moon-accordion.moon-accordion-xl :where(.moon-accordion-item):is([open], :focus:not(.moon-accordion-close)) > :where(.moon-accordion-item-content), .moon-accordion.moon-accordion-xl :where(.moon-accordion-item):not(.moon-accordion-close) > :where(input:is([type=checkbox], [type=radio]):checked ~ .moon-accordion-item-content) {
-  padding: var(--spacing-padding-16);
+  padding: var(--spacing-space-16);
 }
 .moon-accordion.moon-accordion-xl :where(.moon-accordion-item) .moon-accordion-item-header {
-  gap: 0 var(--spacing-gap-12);
-  padding: 0 var(--spacing-padding-16);
-  min-height: var(--spacing-height-56);
+  gap: 0 var(--spacing-space-12);
+  padding: 0 var(--spacing-space-16);
+  min-height: var(--spacing-space-56);
   font: var(--font-weight-medium) var(--style-text-lg-font-size)/var(--style-text-lg-line-height) var(--font-default);
 }
 .moon-accordion.moon-accordion-xl :where(.moon-accordion-item) .moon-accordion-item-meta {
-  gap: 0 var(--spacing-gap-12);
+  gap: 0 var(--spacing-space-12);
 }
 .moon-accordion.moon-accordion-xl :where(.moon-accordion-item) .moon-accordion-item-content {
   font: var(--font-weight-medium) var(--style-text-lg-font-size)/var(--style-text-lg-line-height) var(--font-default);
   font-weight: var(--font-weight-default);
 }
 .moon-accordion.moon-accordion-xl :where(.moon-accordion-item) .moon-accordion-open > .moon-accordion-item-content {
-  padding: var(--spacing-padding-16);
+  padding: var(--spacing-space-16);
 }
 .moon-accordion.moon-accordion-fill :where(.moon-accordion-item) {
   background: var(--component-accordion-fill-background);
@@ -538,10 +538,10 @@
   overflow: hidden;
   white-space: nowrap;
   transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
-  height: var(--spacing-height-40);
-  min-width: var(--spacing-height-40);
-  padding: 0 var(--spacing-padding-10);
-  gap: var(--spacing-gap-8);
+  height: var(--spacing-space-40);
+  min-width: var(--spacing-space-40);
+  padding: 0 var(--spacing-space-10);
+  gap: var(--spacing-space-8);
   background-color: var(--component-button-fill-background);
   border-radius: var(--component-button-radius-md);
   color: var(--component-button-fill-text);
@@ -549,8 +549,8 @@
 }
 .moon-button :where(svg, .moon-icon), .moon-snackbar :where(.moon-snackbar-action) :where(svg, .moon-icon), .moon-alert :where(.moon-alert-action) :where(svg, .moon-icon), .moon-snackbar :where(.moon-alert-action) :where(svg, .moon-icon) {
   color: var(--component-button-fill-icon);
-  width: var(--spacing-height-20);
-  height: var(--spacing-height-20);
+  width: var(--spacing-space-20);
+  height: var(--spacing-space-20);
 }
 .moon-button::after, .moon-snackbar :where(.moon-snackbar-action)::after, .moon-alert :where(.moon-alert-action)::after, .moon-snackbar :where(.moon-alert-action)::after {
   content: "";
@@ -563,7 +563,7 @@
 }
 .moon-button:disabled, .moon-snackbar :disabled:where(.moon-snackbar-action), .moon-alert :disabled:where(.moon-alert-action), .moon-snackbar :disabled:where(.moon-alert-action), .moon-button[aria-disabled=true], .moon-snackbar [aria-disabled=true]:where(.moon-snackbar-action), .moon-alert [aria-disabled=true]:where(.moon-alert-action), .moon-snackbar [aria-disabled=true]:where(.moon-alert-action) {
   cursor: not-allowed;
-  opacity: var(--style-opacity-disabled);
+  opacity: 0.6;
 }
 .moon-button:active, .moon-snackbar :active:where(.moon-snackbar-action), .moon-alert :active:where(.moon-alert-action), .moon-snackbar :active:where(.moon-alert-action) {
   transform: scale(0.95);
@@ -572,48 +572,48 @@
   background-color: var(--color-background-hover);
 }
 .moon-button.moon-button-xs, .moon-snackbar .moon-button-xs:where(.moon-snackbar-action), .moon-alert .moon-button-xs:where(.moon-alert-action), .moon-snackbar .moon-button-xs:where(.moon-alert-action) {
-  height: var(--spacing-height-24);
-  padding: 0 var(--spacing-padding-6);
-  gap: var(--spacing-gap-4);
+  height: var(--spacing-space-24);
+  padding: 0 var(--spacing-space-6);
+  gap: var(--spacing-space-4);
   border-radius: var(--component-button-radius-xs);
   font: var(--font-weight-medium) var(--style-text-sm-font-size)/var(--style-text-sm-line-height) var(--font-default);
 }
 .moon-button.moon-button-xs :where(svg, .moon-icon), .moon-snackbar .moon-button-xs:where(.moon-snackbar-action) :where(svg, .moon-icon), .moon-alert .moon-button-xs:where(.moon-alert-action) :where(svg, .moon-icon), .moon-snackbar .moon-button-xs:where(.moon-alert-action) :where(svg, .moon-icon) {
-  width: var(--spacing-height-12);
-  height: var(--spacing-height-12);
+  width: var(--spacing-space-12);
+  height: var(--spacing-space-12);
 }
 .moon-button.moon-button-sm, .moon-snackbar :where(.moon-snackbar-action), .moon-alert :where(.moon-alert-action), .moon-snackbar :where(.moon-alert-action) {
-  height: var(--spacing-height-32);
-  padding: 0 var(--spacing-padding-8);
-  gap: var(--spacing-gap-6);
+  height: var(--spacing-space-32);
+  padding: 0 var(--spacing-space-8);
+  gap: var(--spacing-space-6);
   border-radius: var(--component-button-radius-sm);
   font: var(--font-weight-medium) var(--style-text-md-font-size)/var(--style-text-md-line-height) var(--font-default);
 }
 .moon-button.moon-button-sm :where(svg, .moon-icon), .moon-snackbar :where(.moon-snackbar-action) :where(svg, .moon-icon), .moon-alert :where(.moon-alert-action) :where(svg, .moon-icon), .moon-snackbar :where(.moon-alert-action) :where(svg, .moon-icon) {
-  width: var(--spacing-height-16);
-  height: var(--spacing-height-16);
+  width: var(--spacing-space-16);
+  height: var(--spacing-space-16);
 }
 .moon-button.moon-button-lg, .moon-snackbar .moon-button-lg:where(.moon-snackbar-action), .moon-alert .moon-button-lg:where(.moon-alert-action), .moon-snackbar .moon-button-lg:where(.moon-alert-action) {
-  height: var(--spacing-height-48);
-  padding: 0 var(--spacing-padding-12);
-  gap: var(--spacing-gap-8);
+  height: var(--spacing-space-48);
+  padding: 0 var(--spacing-space-12);
+  gap: var(--spacing-space-8);
   border-radius: var(--component-button-radius-lg);
   font: var(--font-weight-medium) var(--style-text-md-font-size)/var(--style-text-md-line-height) var(--font-default);
 }
 .moon-button.moon-button-lg :where(svg, .moon-icon), .moon-snackbar .moon-button-lg:where(.moon-snackbar-action) :where(svg, .moon-icon), .moon-alert .moon-button-lg:where(.moon-alert-action) :where(svg, .moon-icon), .moon-snackbar .moon-button-lg:where(.moon-alert-action) :where(svg, .moon-icon) {
-  width: var(--spacing-height-20);
-  height: var(--spacing-height-20);
+  width: var(--spacing-space-20);
+  height: var(--spacing-space-20);
 }
 .moon-button.moon-button-xl, .moon-snackbar .moon-button-xl:where(.moon-snackbar-action), .moon-alert .moon-button-xl:where(.moon-alert-action), .moon-snackbar .moon-button-xl:where(.moon-alert-action) {
-  height: var(--spacing-height-56);
-  padding: 0 var(--spacing-padding-16);
-  gap: var(--spacing-gap-12);
+  height: var(--spacing-space-56);
+  padding: 0 var(--spacing-space-16);
+  gap: var(--spacing-space-12);
   border-radius: var(--component-button-radius-xl);
   font: var(--font-weight-medium) var(--style-text-lg-font-size)/var(--style-text-lg-line-height) var(--font-default);
 }
 .moon-button.moon-button-xl :where(svg, .moon-icon), .moon-snackbar .moon-button-xl:where(.moon-snackbar-action) :where(svg, .moon-icon), .moon-alert .moon-button-xl:where(.moon-alert-action) :where(svg, .moon-icon), .moon-snackbar .moon-button-xl:where(.moon-alert-action) :where(svg, .moon-icon) {
-  width: var(--spacing-height-20);
-  height: var(--spacing-height-20);
+  width: var(--spacing-space-20);
+  height: var(--spacing-space-20);
 }
 .moon-button.moon-button-ghost, .moon-snackbar :where(.moon-snackbar-action), .moon-alert :where(.moon-alert-action), .moon-snackbar :where(.moon-alert-action) {
   color: var(--component-button-ghost-text);
@@ -762,10 +762,10 @@
   flex-wrap: wrap;
   align-items: center;
   width: 100%;
-  gap: var(--spacing-gap-8);
+  gap: var(--spacing-space-8);
   text-align: start;
-  min-height: var(--spacing-height-56);
-  padding: var(--spacing-padding-12);
+  min-height: var(--spacing-space-56);
+  padding: var(--spacing-space-12);
   border-radius: var(--component-alert-radius-radius);
   font: var(--font-weight-medium) var(--style-text-md-font-size)/var(--style-text-md-line-height) var(--font-default);
   color: var(--component-alert-fill-text);
@@ -781,7 +781,7 @@
   margin-inline-start: auto;
   display: flex;
   align-items: center;
-  gap: var(--spacing-gap-8);
+  gap: var(--spacing-space-8);
   color: var(--color-text-secondary);
 }
 .moon-alert :where(.moon-alert-content), .moon-snackbar :where(.moon-alert-content) {
@@ -927,13 +927,13 @@
 
 .moon-authenticator {
   display: inline-flex;
-  gap: var(--spacing-gap-8);
+  gap: var(--spacing-space-8);
 }
 .moon-authenticator :where(input) {
   display: flex;
   width: 100%;
-  max-width: var(--spacing-width-40);
-  height: var(--spacing-height-40);
+  max-width: var(--spacing-space-40);
+  height: var(--spacing-space-40);
   outline: none;
   border-color: transparent;
   align-items: center;
@@ -958,7 +958,7 @@
   cursor: not-allowed;
 }
 .moon-authenticator :where(input):disabled {
-  opacity: var(--style-opacity-disabled);
+  opacity: 0.6;
 }
 .moon-authenticator :where(input):not(:-moz-read-only, :disabled):hover {
   box-shadow: inset 0 0 0 var(--component-authenticator-outline-stroke) var(--component-authenticator-outline-border);
@@ -969,41 +969,41 @@
   background-color: var(--color-background-hover);
 }
 .moon-authenticator :where(input):not(:-moz-read-only, :disabled):focus {
-  box-shadow: inset 0 0 0 var(--spacing-space-2) var(--color-border-info);
+  box-shadow: inset 0 0 0 var(--spacing-stroke-1) var(--color-border-info);
 }
 .moon-authenticator :where(input):not(:read-only, :disabled):focus {
-  box-shadow: inset 0 0 0 var(--spacing-space-2) var(--color-border-info);
+  box-shadow: inset 0 0 0 var(--spacing-stroke-1) var(--color-border-info);
 }
 .moon-authenticator.moon-authenticator-error :where(input) {
-  box-shadow: inset 0 0 0 var(--spacing-space-2) var(--color-border-negative);
+  box-shadow: inset 0 0 0 var(--spacing-stroke-1) var(--color-border-negative);
 }
 .moon-authenticator.moon-authenticator-error :where(input):hover, .moon-authenticator.moon-authenticator-error :where(input):focus {
-  box-shadow: inset 0 0 0 var(--spacing-space-2) var(--color-border-negative);
+  box-shadow: inset 0 0 0 var(--spacing-stroke-1) var(--color-border-negative);
 }
 .moon-authenticator.moon-authenticator-sm {
-  gap: var(--spacing-gap-6);
+  gap: var(--spacing-space-6);
 }
 .moon-authenticator.moon-authenticator-sm :where(input) {
-  max-width: var(--spacing-width-32);
-  height: var(--spacing-height-32);
+  max-width: var(--spacing-space-32);
+  height: var(--spacing-space-32);
   border-radius: var(--component-forms-radius-sm);
   font: var(--font-weight-medium) var(--style-text-md-font-size)/var(--style-text-md-line-height) var(--font-default);
 }
 .moon-authenticator.moon-authenticator-lg {
-  gap: var(--spacing-gap-8);
+  gap: var(--spacing-space-8);
 }
 .moon-authenticator.moon-authenticator-lg :where(input) {
-  max-width: var(--spacing-width-48);
-  height: var(--spacing-height-48);
+  max-width: var(--spacing-space-48);
+  height: var(--spacing-space-48);
   border-radius: var(--component-forms-radius-lg);
   font: var(--font-weight-medium) var(--style-text-md-font-size)/var(--style-text-md-line-height) var(--font-default);
 }
 .moon-authenticator.moon-authenticator-xl {
-  gap: var(--spacing-gap-12);
+  gap: var(--spacing-space-12);
 }
 .moon-authenticator.moon-authenticator-xl :where(input) {
-  max-width: var(--spacing-width-56);
-  height: var(--spacing-height-56);
+  max-width: var(--spacing-space-56);
+  height: var(--spacing-space-56);
   border-radius: var(--component-forms-radius-xl);
   font: var(--font-weight-medium) var(--style-text-lg-font-size)/var(--style-text-lg-line-height) var(--font-default);
 }
@@ -1032,8 +1032,8 @@
   border-color: var(--component-avatar-fill-border);
   color: var(--component-avatar-fill-text);
   font: var(--font-weight-medium) var(--style-text-md-font-size)/var(--style-text-md-line-height) var(--font-default);
-  width: var(--spacing-width-40);
-  height: var(--spacing-height-40);
+  width: var(--spacing-space-40);
+  height: var(--spacing-space-40);
   border-radius: var(--component-avatar-radius-md);
 }
 .moon-avatar :where(p, span) {
@@ -1043,58 +1043,58 @@
 }
 .moon-avatar :where(svg, .moon-icon) {
   color: var(--component-avatar-fill-icon);
-  width: var(--spacing-height-20);
-  height: var(--spacing-height-20);
+  width: var(--spacing-space-20);
+  height: var(--spacing-space-20);
 }
 .moon-avatar.moon-avatar-xs {
   font: var(--font-weight-medium) var(--style-text-sm-font-size)/var(--style-text-sm-line-height) var(--font-default);
-  width: var(--spacing-width-24);
-  height: var(--spacing-height-24);
+  width: var(--spacing-space-24);
+  height: var(--spacing-space-24);
   border-radius: var(--component-avatar-radius-xs);
 }
 .moon-avatar.moon-avatar-xs :where(svg, .moon-icon) {
-  width: var(--spacing-height-12);
-  height: var(--spacing-height-12);
+  width: var(--spacing-space-12);
+  height: var(--spacing-space-12);
 }
 .moon-avatar.moon-avatar-sm {
   font: var(--font-weight-medium) var(--style-text-md-font-size)/var(--style-text-md-line-height) var(--font-default);
-  width: var(--spacing-width-32);
-  height: var(--spacing-height-32);
+  width: var(--spacing-space-32);
+  height: var(--spacing-space-32);
   border-radius: var(--component-avatar-radius-sm);
 }
 .moon-avatar.moon-avatar-sm :where(svg, .moon-icon) {
-  width: var(--spacing-height-16);
-  height: var(--spacing-height-16);
+  width: var(--spacing-space-16);
+  height: var(--spacing-space-16);
 }
 .moon-avatar.moon-avatar-lg {
   font: var(--font-weight-medium) var(--style-text-md-font-size)/var(--style-text-md-line-height) var(--font-default);
-  width: var(--spacing-width-48);
-  height: var(--spacing-height-48);
+  width: var(--spacing-space-48);
+  height: var(--spacing-space-48);
   border-radius: var(--component-avatar-radius-lg);
 }
 .moon-avatar.moon-avatar-lg :where(svg, .moon-icon) {
-  width: var(--spacing-height-20);
-  height: var(--spacing-height-20);
+  width: var(--spacing-space-20);
+  height: var(--spacing-space-20);
 }
 .moon-avatar.moon-avatar-xl {
   font: var(--font-weight-medium) var(--style-text-lg-font-size)/var(--style-text-lg-line-height) var(--font-default);
-  width: var(--spacing-width-56);
-  height: var(--spacing-height-56);
+  width: var(--spacing-space-56);
+  height: var(--spacing-space-56);
   border-radius: var(--component-avatar-radius-xl);
 }
 .moon-avatar.moon-avatar-xl :where(svg, .moon-icon) {
-  width: var(--spacing-height-20);
-  height: var(--spacing-height-20);
+  width: var(--spacing-space-20);
+  height: var(--spacing-space-20);
 }
 .moon-avatar.moon-avatar-2xl {
   font: var(--font-weight-medium) var(--style-text-lg-font-size)/var(--style-text-lg-line-height) var(--font-default);
-  width: var(--spacing-width-64);
-  height: var(--spacing-height-64);
+  width: var(--spacing-space-64);
+  height: var(--spacing-space-64);
   border-radius: var(--component-avatar-radius-2xl);
 }
 .moon-avatar.moon-avatar-2xl :where(svg, .moon-icon) {
-  width: var(--spacing-height-20);
-  height: var(--spacing-height-20);
+  width: var(--spacing-space-20);
+  height: var(--spacing-space-20);
 }
 .moon-avatar.moon-avatar-soft {
   background-color: var(--component-avatar-soft-background);
@@ -1109,14 +1109,18 @@
   width: -moz-fit-content;
   width: fit-content;
   display: inline-block;
-  min-width: var(--spacing-width-8);
-  min-height: var(--spacing-width-8);
+  min-width: var(--spacing-space-8);
+  min-height: var(--spacing-space-8);
   padding: 0 var(--spacing-space-4);
   border-radius: var(--radius-9999);
   background-color: var(--component-badge-fill-background);
   color: var(--component-badge-fill-text);
   box-shadow: inset 0 0 0 var(--component-badge-fill-stroke) var(--component-badge-fill-border);
   font: var(--font-weight-medium) var(--style-text-sm-font-size)/var(--style-text-sm-line-height) var(--font-default);
+  text-align: center;
+}
+.moon-badge:not(:empty) {
+  min-width: var(--spacing-space-16);
 }
 .moon-badge.moon-badge-outline {
   background-color: var(--component-badge-outline-background);
@@ -1277,7 +1281,7 @@
   display: grid;
   grid-auto-flow: column;
   align-items: center;
-  padding: var(--spacing-padding-16) var(--spacing-padding-24);
+  padding: var(--spacing-space-16) var(--spacing-space-24);
   font: var(--font-weight-medium) var(--style-text-3xl-font-size)/var(--style-text-3xl-line-height) var(--font-default);
 }
 .moon-bottom-sheet-box :where(.moon-bottom-sheet-close) {
@@ -1289,8 +1293,8 @@
   top: var(--spacing-space-8);
   left: 50%;
   transform: translateX(-50%);
-  width: var(--spacing-width-40);
-  height: var(--spacing-height-4);
+  width: var(--spacing-space-40);
+  height: var(--spacing-space-4);
   border-radius: var(--radius-9999);
   background-color: var(--color-border-primary);
 }
@@ -1329,7 +1333,7 @@
   display: flex;
   width: 100%;
   flex-direction: column;
-  gap: var(--spacing-gap-12);
+  gap: var(--spacing-space-12);
   align-items: center;
 }
 .moon-carousel :where(.moon-carousel-reel) {
@@ -1337,7 +1341,7 @@
   overflow-x: scroll;
   display: inline-flex;
   flex-direction: row;
-  gap: var(--spacing-gap-12);
+  gap: var(--spacing-space-12);
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   scrollbar-width: none;
@@ -1377,8 +1381,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: var(--spacing-width-16);
-  height: var(--spacing-height-16);
+  width: var(--spacing-space-16);
+  height: var(--spacing-space-16);
   box-shadow: inset 0 0 0 var(--component-checkbox-stroke-default) var(--component-checkbox-border-default);
   background-color: var(--component-checkbox-background-default);
   border-radius: var(--component-checkbox-radius);
@@ -1406,7 +1410,7 @@
 }
 .moon-checkbox:disabled {
   cursor: not-allowed;
-  opacity: var(--style-opacity-disabled);
+  opacity: 0.6;
 }
 .moon-checkbox:checked, .moon-checkbox:indeterminate {
   background-color: var(--component-checkbox-background-checked);
@@ -1440,7 +1444,7 @@
 }
 .moon-checkbox-wrapper:has(:disabled) label {
   cursor: not-allowed;
-  opacity: var(--style-opacity-disabled);
+  opacity: 0.6;
 }
 
 .moon-chip {
@@ -1450,10 +1454,10 @@
   cursor: pointer;
   overflow: hidden;
   transition: box-shadow 150ms ease-in-out;
-  height: var(--spacing-height-40);
-  padding: var(--spacing-padding-10);
-  -moz-column-gap: var(--spacing-gap-8);
-       column-gap: var(--spacing-gap-8);
+  height: var(--spacing-space-40);
+  padding: var(--spacing-space-10);
+  -moz-column-gap: var(--spacing-space-8);
+       column-gap: var(--spacing-space-8);
   color: var(--component-chip-fill-text-default);
   font: var(--font-weight-medium) var(--style-text-md-font-size)/var(--style-text-md-line-height) var(--font-default);
   border-radius: var(--component-chip-radius-md);
@@ -1477,8 +1481,8 @@
 }
 .moon-chip :where(svg, .moon-icon) {
   color: var(--component-chip-fill-icon-default);
-  width: var(--spacing-height-20);
-  height: var(--spacing-height-20);
+  width: var(--spacing-space-20);
+  height: var(--spacing-space-20);
 }
 .moon-chip:where(.moon-chip-active) {
   color: var(--component-chip-fill-text-active);
@@ -1489,16 +1493,16 @@
   color: var(--component-chip-fill-icon-active);
 }
 .moon-chip.moon-chip-sm {
-  height: var(--spacing-height-32);
-  padding: var(--spacing-padding-8);
-  -moz-column-gap: var(--spacing-gap-6);
-       column-gap: var(--spacing-gap-6);
+  height: var(--spacing-space-32);
+  padding: var(--spacing-space-8);
+  -moz-column-gap: var(--spacing-space-6);
+       column-gap: var(--spacing-space-6);
   border-radius: var(--component-chip-radius-sm);
   font: var(--font-weight-medium) var(--style-text-md-font-size)/var(--style-text-md-line-height) var(--font-default);
 }
 .moon-chip.moon-chip-sm :where(svg, .moon-icon) {
-  width: var(--spacing-height-16);
-  height: var(--spacing-height-16);
+  width: var(--spacing-space-16);
+  height: var(--spacing-space-16);
 }
 .moon-chip.moon-chip-outline {
   color: var(--component-chip-outline-text-default);
@@ -1535,7 +1539,7 @@
 
 .moon-circular-progress {
   --value: attr(data-value type(<number>), 0);
-  --size: var(--spacing-height-40);
+  --size: var(--spacing-space-40);
   --thickness: var(--spacing-space-2);
   --circularprogress: calc(var(--value) * 1%);
   position: relative;
@@ -1570,19 +1574,19 @@
   transform: rotate(calc(var(--value) * 3.6deg - 90deg)) translate(calc(var(--size) / 2 - 50%));
 }
 .moon-circular-progress.moon-circular-progress-xs {
-  --size: var(--spacing-height-24);
+  --size: var(--spacing-space-24);
 }
 .moon-circular-progress.moon-circular-progress-sm {
-  --size: var(--spacing-height-32);
+  --size: var(--spacing-space-32);
 }
 .moon-circular-progress.moon-circular-progress-lg {
-  --size: var(--spacing-height-48);
+  --size: var(--spacing-space-48);
 }
 .moon-circular-progress.moon-circular-progress-xl {
-  --size: var(--spacing-height-56);
+  --size: var(--spacing-space-56);
 }
 .moon-circular-progress.moon-circular-progress-2xl {
-  --size: var(--spacing-height-64);
+  --size: var(--spacing-space-64);
 }
 
 .moon-dialog {
@@ -1650,7 +1654,7 @@
   display: grid;
   grid-auto-flow: column;
   align-items: center;
-  padding: var(--spacing-padding-16) var(--spacing-padding-24);
+  padding: var(--spacing-space-16) var(--spacing-space-24);
   font: var(--font-weight-medium) var(--style-text-3xl-font-size)/var(--style-text-3xl-line-height) var(--font-default);
 }
 .moon-dialog-box :where(.moon-dialog-close) {
@@ -1728,7 +1732,7 @@
   display: grid;
   grid-auto-flow: column;
   align-items: center;
-  padding: var(--spacing-padding-16) var(--spacing-padding-24);
+  padding: var(--spacing-space-16) var(--spacing-space-24);
   font: var(--font-weight-medium) var(--style-text-3xl-font-size)/var(--style-text-3xl-line-height) var(--font-default);
 }
 .moon-drawer-box :where(.moon-drawer-close) {
@@ -1756,7 +1760,7 @@
   flex-direction: column;
   display: flex;
   overflow: auto;
-  top: calc(100% + var(--spacing-gap-8));
+  top: calc(100% + var(--spacing-space-8));
 }
 .moon-dropdown:not(details, .moon-dropdown-open, .moon-dropdown-hover:hover, :focus-within) .moon-dropdown-content {
   display: none;
@@ -1835,8 +1839,8 @@
   border-color: transparent;
   align-items: center;
   transition: box-shadow 150ms ease-in-out, opacity 150ms ease-in-out, background-color 150ms ease-in-out;
-  height: var(--spacing-height-40);
-  padding: 0 var(--spacing-padding-10);
+  height: var(--spacing-space-40);
+  padding: 0 var(--spacing-space-10);
   border-radius: var(--component-forms-radius-md);
   font: var(--font-weight-medium) var(--style-text-md-font-size)/var(--style-text-md-line-height) var(--font-default);
   box-shadow: inset 0 0 0 var(--component-input-fill-stroke) var(--component-input-fill-border);
@@ -1856,56 +1860,56 @@
   cursor: not-allowed;
 }
 .moon-input:disabled {
-  opacity: var(--style-opacity-disabled);
+  opacity: 0.6;
 }
 .moon-input:not(:-moz-read-only, :disabled):hover {
-  box-shadow: inset 0 0 0 var(--spacing-space-2) var(--color-border-primary);
+  box-shadow: inset 0 0 0 var(--spacing-stroke-1) var(--color-border-primary);
   background-color: var(--color-background-hover);
 }
 .moon-input:not(:read-only, :disabled):hover {
-  box-shadow: inset 0 0 0 var(--spacing-space-2) var(--color-border-primary);
+  box-shadow: inset 0 0 0 var(--spacing-stroke-1) var(--color-border-primary);
   background-color: var(--color-background-hover);
 }
 .moon-input:not(:-moz-read-only, :disabled):focus {
-  box-shadow: inset 0 0 0 var(--spacing-space-2) var(--color-border-info);
+  box-shadow: inset 0 0 0 var(--spacing-stroke-1) var(--color-border-info);
 }
 .moon-input:not(:read-only, :disabled):focus {
-  box-shadow: inset 0 0 0 var(--spacing-space-2) var(--color-border-info);
+  box-shadow: inset 0 0 0 var(--spacing-stroke-1) var(--color-border-info);
 }
 .moon-input :where(svg, .moon-icon) {
   color: var(--color-icon-primary);
-  width: var(--spacing-height-20);
-  height: var(--spacing-height-20);
+  width: var(--spacing-space-20);
+  height: var(--spacing-space-20);
 }
 .moon-input.moon-input-sm {
-  height: var(--spacing-height-32);
-  padding: 0 var(--spacing-padding-8);
+  height: var(--spacing-space-32);
+  padding: 0 var(--spacing-space-8);
   border-radius: var(--component-forms-radius-sm);
   font: var(--font-weight-medium) var(--style-text-md-font-size)/var(--style-text-md-line-height) var(--font-default);
 }
 .moon-input.moon-input-sm :where(svg, .moon-icon) {
-  width: var(--spacing-height-16);
-  height: var(--spacing-height-16);
+  width: var(--spacing-space-16);
+  height: var(--spacing-space-16);
 }
 .moon-input.moon-input-lg {
-  height: var(--spacing-height-48);
-  padding: 0 var(--spacing-padding-12);
+  height: var(--spacing-space-48);
+  padding: 0 var(--spacing-space-12);
   border-radius: var(--component-forms-radius-lg);
   font: var(--font-weight-medium) var(--style-text-md-font-size)/var(--style-text-md-line-height) var(--font-default);
 }
 .moon-input.moon-input-lg :where(svg, .moon-icon) {
-  width: var(--spacing-height-20);
-  height: var(--spacing-height-20);
+  width: var(--spacing-space-20);
+  height: var(--spacing-space-20);
 }
 .moon-input.moon-input-xl {
-  height: var(--spacing-height-56);
-  padding: 0 var(--spacing-padding-16);
+  height: var(--spacing-space-56);
+  padding: 0 var(--spacing-space-16);
   border-radius: var(--component-forms-radius-xl);
   font: var(--font-weight-medium) var(--style-text-lg-font-size)/var(--style-text-lg-line-height) var(--font-default);
 }
 .moon-input.moon-input-xl :where(svg, .moon-icon) {
-  width: var(--spacing-height-20);
-  height: var(--spacing-height-20);
+  width: var(--spacing-space-20);
+  height: var(--spacing-space-20);
 }
 .moon-input.moon-input-outline {
   box-shadow: inset 0 0 0 var(--component-input-outline-stroke) var(--component-input-outline-border);
@@ -1919,10 +1923,10 @@
   color: var(--component-input-outline-text-placeholder);
 }
 .moon-input.moon-input-error {
-  box-shadow: inset 0 0 0 var(--spacing-space-2) var(--color-border-negative);
+  box-shadow: inset 0 0 0 var(--spacing-stroke-1) var(--color-border-negative);
 }
 .moon-input.moon-input-error:hover, .moon-input.moon-input-error:focus {
-  box-shadow: inset 0 0 0 var(--spacing-space-2) var(--color-border-negative);
+  box-shadow: inset 0 0 0 var(--spacing-stroke-1) var(--color-border-negative);
 }
 
 .moon-linear-progress {
@@ -1933,7 +1937,7 @@
   border-radius: var(--radius-9999);
   background-color: var(--component-linear-progress-track);
   width: 100%;
-  height: var(--spacing-height-16);
+  height: var(--spacing-space-16);
   position: relative;
   overflow: hidden;
 }
@@ -1947,10 +1951,10 @@
   background-color: var(--component-linear-progress-progress);
 }
 .moon-linear-progress.moon-linear-progress-3xs {
-  height: var(--spacing-height-10);
+  height: var(--spacing-space-10);
 }
 .moon-linear-progress.moon-linear-progress-2xs {
-  height: var(--spacing-height-16);
+  height: var(--spacing-space-16);
 }
 
 .moon-linear-progress-wrapper {
@@ -1974,9 +1978,9 @@
   position: relative;
   display: flex;
   align-items: center;
-  gap: var(--spacing-gap-8);
-  padding: var(--spacing-padding-10);
-  height: var(--spacing-height-40);
+  gap: var(--spacing-space-8);
+  padding: var(--spacing-space-10);
+  height: var(--spacing-space-40);
   font: var(--font-weight-medium) var(--style-text-md-font-size)/var(--style-text-md-line-height) var(--font-default);
   color: var(--component-list-text-default);
 }
@@ -1985,55 +1989,55 @@
   position: absolute;
   bottom: 0;
   inset-inline: 0;
-  height: var(--spacing-space-1);
+  height: var(--spacing-stroke-1);
   background-color: var(--color-border-secondary);
 }
 .moon-list > .moon-list-item :where(svg, .moon-icon) {
-  width: var(--spacing-height-20);
-  height: var(--spacing-height-20);
+  width: var(--spacing-space-20);
+  height: var(--spacing-space-20);
   color: var(--color-icon-primary);
 }
 .moon-list > .moon-list-item :where(.moon-list-item-meta) {
   margin-inline-start: auto;
   display: flex;
   align-items: center;
-  gap: var(--spacing-gap-8);
+  gap: var(--spacing-space-8);
   color: var(--color-text-secondary);
 }
 .moon-list > .moon-list-item :where(:last-child) {
   justify-self: end;
 }
 .moon-list.moon-list-sm > .moon-list-item {
-  height: var(--spacing-height-32);
+  height: var(--spacing-space-32);
   font: var(--font-weight-medium) var(--style-text-md-font-size)/var(--style-text-md-line-height) var(--font-default);
-  gap: var(--spacing-gap-6);
-  padding: var(--spacing-padding-8);
+  gap: var(--spacing-space-6);
+  padding: var(--spacing-space-8);
 }
 .moon-list.moon-list-sm > .moon-list-item :where(svg, .moon-icon) {
-  width: var(--spacing-height-16);
-  height: var(--spacing-height-16);
+  width: var(--spacing-space-16);
+  height: var(--spacing-space-16);
 }
 .moon-list.moon-list-sm > .moon-list-item :where(.moon-list-meta) {
-  gap: var(--spacing-gap-8);
+  gap: var(--spacing-space-8);
 }
 .moon-list.moon-list-lg > .moon-list-item {
-  height: var(--spacing-height-48);
+  height: var(--spacing-space-48);
   font: var(--font-weight-medium) var(--style-text-md-font-size)/var(--style-text-md-line-height) var(--font-default);
-  gap: var(--spacing-gap-8);
-  padding: var(--spacing-padding-12);
+  gap: var(--spacing-space-8);
+  padding: var(--spacing-space-12);
 }
 .moon-list.moon-list-lg > .moon-list-item :where(svg, .moon-icon) {
-  width: var(--spacing-height-20);
-  height: var(--spacing-height-20);
+  width: var(--spacing-space-20);
+  height: var(--spacing-space-20);
 }
 .moon-list.moon-list-lg > .moon-list-item :where(.moon-list-meta) {
-  gap: var(--spacing-gap-8);
+  gap: var(--spacing-space-8);
 }
 
 .moon-loader {
   position: relative;
-  width: var(--spacing-width-40);
-  height: var(--spacing-height-40);
+  width: var(--spacing-space-40);
+  height: var(--spacing-space-40);
   border-radius: 50%;
   animation: rotate 1s linear infinite;
   box-shadow: inset 0 0 0 var(--spacing-space-2) var(--component-loader-track);
@@ -2048,20 +2052,20 @@
   animation: prix-clip-fix 2s ease-in-out infinite;
 }
 .moon-loader.moon-loader-2xs {
-  width: var(--spacing-width-16);
-  height: var(--spacing-height-16);
+  width: var(--spacing-space-16);
+  height: var(--spacing-space-16);
 }
 .moon-loader.moon-loader-xs {
-  width: var(--spacing-width-24);
-  height: var(--spacing-height-24);
+  width: var(--spacing-space-24);
+  height: var(--spacing-space-24);
 }
 .moon-loader.moon-loader-sm {
-  width: var(--spacing-width-32);
-  height: var(--spacing-height-32);
+  width: var(--spacing-space-32);
+  height: var(--spacing-space-32);
 }
 .moon-loader.moon-loader-lg {
-  width: var(--spacing-width-48);
-  height: var(--spacing-height-48);
+  width: var(--spacing-space-48);
+  height: var(--spacing-space-48);
 }
 
 @keyframes rotate {
@@ -2090,15 +2094,15 @@
   display: flex;
   width: 100%;
   flex-direction: column;
-  gap: var(--spacing-gap-8);
+  gap: var(--spacing-space-8);
 }
 .moon-menu > .moon-menu-item {
   border-radius: var(--component-menu-radius-md);
   display: flex;
   align-items: center;
-  gap: var(--spacing-gap-8);
-  padding: 0 var(--spacing-padding-10);
-  height: var(--spacing-height-40);
+  gap: var(--spacing-space-8);
+  padding: 0 var(--spacing-space-10);
+  height: var(--spacing-space-40);
   font: var(--font-weight-medium) var(--style-text-md-font-size)/var(--style-text-md-line-height) var(--font-default);
   color: var(--component-list-text-default);
   background-color: var(--color-background-transparent);
@@ -2109,48 +2113,48 @@
   background-color: var(--color-background-hover);
 }
 .moon-menu > .moon-menu-item :where(svg, .moon-icon) {
-  width: var(--spacing-height-20);
-  height: var(--spacing-height-20);
+  width: var(--spacing-space-20);
+  height: var(--spacing-space-20);
   color: var(--color-icon-primary);
 }
 .moon-menu > .moon-menu-item :where(.moon-menu-item-meta) {
   margin-inline-start: auto;
   display: flex;
   align-items: center;
-  gap: var(--spacing-gap-8);
+  gap: var(--spacing-space-8);
   color: var(--color-text-secondary);
 }
 .moon-menu.moon-menu-sm {
-  gap: var(--spacing-gap-6);
+  gap: var(--spacing-space-6);
 }
 .moon-menu.moon-menu-sm > .moon-menu-item {
-  height: var(--spacing-height-32);
+  height: var(--spacing-space-32);
   font: var(--font-weight-medium) var(--style-text-md-font-size)/var(--style-text-md-line-height) var(--font-default);
-  gap: var(--spacing-gap-6);
-  padding: 0 var(--spacing-padding-8);
+  gap: var(--spacing-space-6);
+  padding: 0 var(--spacing-space-8);
 }
 .moon-menu.moon-menu-sm > .moon-menu-item :where(svg, .moon-icon) {
-  width: var(--spacing-height-16);
-  height: var(--spacing-height-16);
+  width: var(--spacing-space-16);
+  height: var(--spacing-space-16);
 }
 .moon-menu.moon-menu-lg {
-  gap: var(--spacing-gap-8);
+  gap: var(--spacing-space-8);
 }
 .moon-menu.moon-menu-lg > .moon-menu-item {
-  height: var(--spacing-height-48);
+  height: var(--spacing-space-48);
   font: var(--font-weight-medium) var(--style-text-md-font-size)/var(--style-text-md-line-height) var(--font-default);
-  gap: var(--spacing-gap-8);
-  padding: 0 var(--spacing-padding-12);
+  gap: var(--spacing-space-8);
+  padding: 0 var(--spacing-space-12);
 }
 .moon-menu.moon-menu-lg > .moon-menu-item :where(svg, .moon-icon) {
-  width: var(--spacing-height-20);
-  height: var(--spacing-height-20);
+  width: var(--spacing-space-20);
+  height: var(--spacing-space-20);
 }
 
 .moon-pagination {
   display: flex;
   align-items: center;
-  gap: var(--spacing-gap-6);
+  gap: var(--spacing-space-6);
 }
 .moon-pagination :where(.moon-pagination-item) {
   font: var(--font-weight-medium) var(--style-text-sm-font-size)/var(--style-text-sm-line-height) var(--font-default);
@@ -2191,8 +2195,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: var(--spacing-width-16);
-  height: var(--spacing-height-16);
+  width: var(--spacing-space-16);
+  height: var(--spacing-space-16);
   box-shadow: inset 0 0 0 var(--component-radio-stroke-default) var(--component-radio-border-default);
   background-color: var(--component-radio-background-default);
   border-radius: var(--radius-9999);
@@ -2220,15 +2224,15 @@
 }
 .moon-radio:disabled {
   cursor: not-allowed;
-  opacity: var(--style-opacity-disabled);
+  opacity: 0.6;
 }
 .moon-radio:checked {
   background-color: var(--component-radio-background-checked);
   box-shadow: none;
 }
 .moon-radio:checked::before {
-  width: var(--spacing-width-8);
-  height: var(--spacing-width-8);
+  width: var(--spacing-space-8);
+  height: var(--spacing-space-8);
 }
 .moon-radio:hover::after {
   background-color: var(--color-background-hover);
@@ -2246,18 +2250,18 @@
 }
 .moon-radio-wrapper:has(:disabled) :where(label) {
   cursor: not-allowed;
-  opacity: var(--style-opacity-disabled);
+  opacity: 0.6;
 }
 
 .moon-segmented-control {
   display: flex;
   width: 100%;
-  height: var(--spacing-height-40);
+  height: var(--spacing-space-40);
   justify-content: stretch;
   border-radius: var(--component-segmented-control-track-radius-md);
   background-color: var(--component-segmented-control-track-background);
-  padding: var(--spacing-padding-4);
-  gap: var(--spacing-gap-4);
+  padding: var(--spacing-space-4);
+  gap: var(--spacing-space-4);
   box-shadow: inset 0 0 0 var(--component-segmented-control-track-stroke) var(--component-segmented-control-track-border);
 }
 .moon-segmented-control :where(.moon-segmented-control-item) {
@@ -2266,7 +2270,7 @@
   overflow: hidden;
   display: inline-flex;
   height: 100%;
-  min-width: var(--spacing-width-40);
+  min-width: var(--spacing-space-40);
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -2280,16 +2284,16 @@
   text-align: center;
   color: var(--component-segmented-control-segment-text-default);
   background-color: var(--component-segmented-control-segment-background-default);
-  padding: 0 var(--spacing-padding-10);
-  gap: var(--spacing-gap-8);
+  padding: 0 var(--spacing-space-10);
+  gap: var(--spacing-space-8);
   border-radius: var(--component-segmented-control-segment-radius-sm);
   font: var(--font-weight-medium) var(--style-text-md-font-size)/var(--style-text-md-line-height) var(--font-default);
   box-shadow: inset 0 0 0 var(--component-segmented-control-segment-stroke-default) var(--component-segmented-control-segment-border-default);
   transition: background-color 150ms ease-in-out, color 150ms ease-in-out, box-shadow 150ms ease-in-out;
 }
 .moon-segmented-control :where(.moon-segmented-control-item) :where(svg, .moon-icon) {
-  width: var(--spacing-height-20);
-  height: var(--spacing-height-20);
+  width: var(--spacing-space-20);
+  height: var(--spacing-space-20);
   color: var(--component-segmented-control-segment-icon-default);
   flex-shrink: 0;
 }
@@ -2303,7 +2307,7 @@
 }
 .moon-segmented-control :where(.moon-segmented-control-item)[disabled] {
   cursor: not-allowed;
-  opacity: var(--style-opacity-disabled);
+  opacity: 0.6;
 }
 .moon-segmented-control :where(.moon-segmented-control-item)::after {
   content: "";
@@ -2318,34 +2322,34 @@
   background-color: var(--color-background-hover);
 }
 .moon-segmented-control.moon-segmented-control-sm {
-  height: var(--spacing-height-32);
+  height: var(--spacing-space-32);
   border-radius: var(--component-segmented-control-track-radius-sm);
 }
 .moon-segmented-control.moon-segmented-control-sm :where(.moon-segmented-control-item) {
-  min-width: var(--spacing-width-32);
-  padding: 0 var(--spacing-padding-8);
-  gap: var(--spacing-gap-6);
+  min-width: var(--spacing-space-32);
+  padding: 0 var(--spacing-space-8);
+  gap: var(--spacing-space-6);
   border-radius: var(--component-segmented-control-segment-radius-xs);
   font: var(--font-weight-medium) var(--style-text-md-font-size)/var(--style-text-md-line-height) var(--font-default);
 }
 .moon-segmented-control.moon-segmented-control-sm :where(.moon-segmented-control-item) :where(svg, .moon-icon) {
-  width: var(--spacing-height-16);
-  height: var(--spacing-height-16);
+  width: var(--spacing-space-16);
+  height: var(--spacing-space-16);
 }
 .moon-segmented-control.moon-segmented-control-lg {
-  height: var(--spacing-height-48);
+  height: var(--spacing-space-48);
   border-radius: var(--component-segmented-control-track-radius-lg);
 }
 .moon-segmented-control.moon-segmented-control-lg :where(.moon-segmented-control-item) {
-  min-width: var(--spacing-width-48);
-  padding: 0 var(--spacing-padding-12);
-  gap: var(--spacing-gap-8);
+  min-width: var(--spacing-space-48);
+  padding: 0 var(--spacing-space-12);
+  gap: var(--spacing-space-8);
   border-radius: var(--component-segmented-control-segment-radius-md);
   font: var(--font-weight-medium) var(--style-text-md-font-size)/var(--style-text-md-line-height) var(--font-default);
 }
 .moon-segmented-control.moon-segmented-control-lg :where(.moon-segmented-control-item) :where(svg, .moon-icon) {
-  width: var(--spacing-height-20);
-  height: var(--spacing-height-20);
+  width: var(--spacing-space-20);
+  height: var(--spacing-space-20);
 }
 
 .moon-select {
@@ -2358,9 +2362,9 @@
   border-color: transparent;
   align-items: center;
   transition: box-shadow 150ms ease-in-out, opacity 150ms ease-in-out, background-color 150ms ease-in-out;
-  min-height: var(--spacing-height-40);
-  padding: 0 var(--spacing-padding-10);
-  gap: var(--spacing-gap-8);
+  min-height: var(--spacing-space-40);
+  padding: 0 var(--spacing-space-10);
+  gap: var(--spacing-space-8);
   border-radius: var(--component-forms-radius-md);
   font: var(--font-weight-medium) var(--style-text-md-font-size)/var(--style-text-md-line-height) var(--font-default);
   box-shadow: inset 0 0 0 var(--component-select-fill-stroke) var(--component-select-fill-border);
@@ -2369,36 +2373,36 @@
 }
 .moon-select:disabled {
   cursor: not-allowed;
-  opacity: var(--style-opacity-disabled);
+  opacity: 0.6;
 }
 .moon-select:not(:disabled):hover {
-  box-shadow: inset 0 0 0 var(--spacing-space-2) var(--color-border-primary);
+  box-shadow: inset 0 0 0 var(--spacing-stroke-1) var(--color-border-primary);
   background-color: var(--color-background-hover);
 }
 .moon-select:not(:disabled):focus {
-  box-shadow: inset 0 0 0 var(--spacing-space-2) var(--color-border-info);
+  box-shadow: inset 0 0 0 var(--spacing-stroke-1) var(--color-border-info);
 }
 .moon-select.moon-select-sm {
-  min-height: var(--spacing-height-32);
-  padding: 0 var(--spacing-padding-8);
-  -moz-column-gap: var(--spacing-gap-6);
-       column-gap: var(--spacing-gap-6);
+  min-height: var(--spacing-space-32);
+  padding: 0 var(--spacing-space-8);
+  -moz-column-gap: var(--spacing-space-6);
+       column-gap: var(--spacing-space-6);
   border-radius: var(--component-forms-radius-sm);
   font: var(--font-weight-medium) var(--style-text-md-font-size)/var(--style-text-md-line-height) var(--font-default);
 }
 .moon-select.moon-select-lg {
-  min-height: var(--spacing-height-48);
-  padding: 0 var(--spacing-padding-12);
-  -moz-column-gap: var(--spacing-gap-8);
-       column-gap: var(--spacing-gap-8);
+  min-height: var(--spacing-space-48);
+  padding: 0 var(--spacing-space-12);
+  -moz-column-gap: var(--spacing-space-8);
+       column-gap: var(--spacing-space-8);
   border-radius: var(--component-forms-radius-lg);
   font: var(--font-weight-medium) var(--style-text-md-font-size)/var(--style-text-md-line-height) var(--font-default);
 }
 .moon-select.moon-select-xl {
-  min-height: var(--spacing-height-56);
-  padding: 0 var(--spacing-padding-16);
-  -moz-column-gap: var(--spacing-gap-12);
-       column-gap: var(--spacing-gap-12);
+  min-height: var(--spacing-space-56);
+  padding: 0 var(--spacing-space-16);
+  -moz-column-gap: var(--spacing-space-12);
+       column-gap: var(--spacing-space-12);
   border-radius: var(--component-forms-radius-xl);
   font: var(--font-weight-medium) var(--style-text-lg-font-size)/var(--style-text-lg-line-height) var(--font-default);
 }
@@ -2408,10 +2412,10 @@
   background-color: var(--component-select-outline-background);
 }
 .moon-select.moon-select-error {
-  box-shadow: inset 0 0 0 var(--spacing-space-2) var(--color-border-negative);
+  box-shadow: inset 0 0 0 var(--spacing-stroke-1) var(--color-border-negative);
 }
 .moon-select.moon-select-error:hover, .moon-select.moon-select-error:focus {
-  box-shadow: inset 0 0 0 var(--spacing-space-2) var(--color-border-negative);
+  box-shadow: inset 0 0 0 var(--spacing-stroke-1) var(--color-border-negative);
 }
 
 .moon-snackbar {
@@ -2425,7 +2429,7 @@
   margin-inline-start: auto;
   display: flex;
   align-items: center;
-  gap: var(--spacing-gap-8);
+  gap: var(--spacing-space-8);
   color: var(--color-text-secondary);
 }
 .moon-snackbar :where(.moon-snackbar-action) {
@@ -2517,63 +2521,63 @@
 }
 
 .moon-switch {
-  height: var(--spacing-height-32);
-  width: calc(var(--spacing-width-32) * 2);
+  height: var(--spacing-space-32);
+  width: calc(var(--spacing-space-32) * 2);
   cursor: pointer;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   border-radius: var(--radius-9999);
-  border-width: var(--spacing-space-1);
+  border-width: var(--spacing-stroke-1);
   border-color: var(--component-switch-border-default);
   background-color: currentcolor;
   color: var(--component-switch-icon-unselected);
   transition: color 150ms ease-in-out, box-shadow 150ms ease-in-out, border-color 150ms ease-in-out;
-  box-shadow: calc(var(--spacing-height-32) * -1) 0 0 var(--spacing-space-1) var(--component-switch-background-default) inset, 0 0 0 var(--spacing-space-1) var(--component-switch-background-default) inset, 0 0;
+  box-shadow: calc(var(--spacing-space-32) * -1) 0 0 var(--spacing-stroke-1) var(--component-switch-background-default) inset, 0 0 0 var(--spacing-stroke-1) var(--component-switch-background-default) inset, 0 0;
 }
 .moon-switch:checked {
   background-image: none;
   color: var(--component-switch-icon-checked);
   border-color: var(--component-switch-background-checked);
-  box-shadow: var(--spacing-height-32) 0 0 var(--spacing-space-1) var(--component-switch-background-checked) inset, 0 0 0 var(--spacing-space-1) var(--component-switch-background-checked) inset, 0 0;
+  box-shadow: var(--spacing-space-32) 0 0 var(--spacing-stroke-1) var(--component-switch-background-checked) inset, 0 0 0 var(--spacing-stroke-1) var(--component-switch-background-checked) inset, 0 0;
 }
 .moon-switch:disabled {
-  opacity: var(--style-opacity-disabled);
+  opacity: 0.6;
   cursor: not-allowed;
 }
 .moon-switch.moon-switch-2xs {
-  height: var(--spacing-height-16);
-  width: calc(var(--spacing-width-16) * 2);
-  box-shadow: calc(var(--spacing-height-16) * -1) 0 0 var(--spacing-space-1) var(--component-switch-background-default) inset, 0 0 0 var(--spacing-space-1) var(--component-switch-background-default) inset, 0 0;
+  height: var(--spacing-space-16);
+  width: calc(var(--spacing-space-16) * 2);
+  box-shadow: calc(var(--spacing-space-16) * -1) 0 0 var(--spacing-stroke-1) var(--component-switch-background-default) inset, 0 0 0 var(--spacing-stroke-1) var(--component-switch-background-default) inset, 0 0;
 }
 .moon-switch.moon-switch-2xs:checked {
-  box-shadow: var(--spacing-height-16) 0 0 var(--spacing-space-1) var(--component-switch-background-checked) inset, 0 0 0 var(--spacing-space-1) var(--component-switch-background-checked) inset, 0 0;
+  box-shadow: var(--spacing-space-16) 0 0 var(--spacing-stroke-1) var(--component-switch-background-checked) inset, 0 0 0 var(--spacing-stroke-1) var(--component-switch-background-checked) inset, 0 0;
 }
 .moon-switch.moon-switch-xs {
-  height: var(--spacing-height-24);
-  width: calc(var(--spacing-width-24) * 2);
-  box-shadow: calc(var(--spacing-height-24) * -1) 0 0 var(--spacing-space-1) var(--component-switch-background-default) inset, 0 0 0 var(--spacing-space-1) var(--component-switch-background-default) inset, 0 0;
+  height: var(--spacing-space-24);
+  width: calc(var(--spacing-space-24) * 2);
+  box-shadow: calc(var(--spacing-space-24) * -1) 0 0 var(--spacing-stroke-1) var(--component-switch-background-default) inset, 0 0 0 var(--spacing-stroke-1) var(--component-switch-background-default) inset, 0 0;
 }
 .moon-switch.moon-switch-xs:checked {
-  box-shadow: var(--spacing-height-24) 0 0 var(--spacing-space-1) var(--component-switch-background-checked) inset, 0 0 0 var(--spacing-space-1) var(--component-switch-background-checked) inset, 0 0;
+  box-shadow: var(--spacing-space-24) 0 0 var(--spacing-stroke-1) var(--component-switch-background-checked) inset, 0 0 0 var(--spacing-stroke-1) var(--component-switch-background-checked) inset, 0 0;
 }
 .moon-switch:dir(rtl) {
-  box-shadow: var(--spacing-height-32) 0 0 var(--spacing-space-1) var(--component-switch-background-default) inset, 0 0 0 var(--spacing-space-1) var(--component-switch-background-default) inset, 0 0;
+  box-shadow: var(--spacing-space-32) 0 0 var(--spacing-stroke-1) var(--component-switch-background-default) inset, 0 0 0 var(--spacing-stroke-1) var(--component-switch-background-default) inset, 0 0;
 }
 .moon-switch:dir(rtl):checked {
-  box-shadow: calc(var(--spacing-height-32) * -1) 0 0 var(--spacing-space-1) var(--component-switch-background-checked) inset, 0 0 0 var(--spacing-space-1) var(--component-switch-background-checked) inset, 0 0;
+  box-shadow: calc(var(--spacing-space-32) * -1) 0 0 var(--spacing-stroke-1) var(--component-switch-background-checked) inset, 0 0 0 var(--spacing-stroke-1) var(--component-switch-background-checked) inset, 0 0;
 }
 .moon-switch:dir(rtl).moon-switch-2xs {
-  box-shadow: var(--spacing-height-16) 0 0 var(--spacing-space-1) var(--component-switch-background-default) inset, 0 0 0 var(--spacing-space-1) var(--component-switch-background-default) inset, 0 0;
+  box-shadow: var(--spacing-space-16) 0 0 var(--spacing-stroke-1) var(--component-switch-background-default) inset, 0 0 0 var(--spacing-stroke-1) var(--component-switch-background-default) inset, 0 0;
 }
 .moon-switch:dir(rtl).moon-switch-2xs:checked {
-  box-shadow: calc(var(--spacing-height-16) * -1) 0 0 var(--spacing-space-1) var(--component-switch-background-checked) inset, 0 0 0 var(--spacing-space-1) var(--component-switch-background-checked) inset, 0 0;
+  box-shadow: calc(var(--spacing-space-16) * -1) 0 0 var(--spacing-stroke-1) var(--component-switch-background-checked) inset, 0 0 0 var(--spacing-stroke-1) var(--component-switch-background-checked) inset, 0 0;
 }
 .moon-switch:dir(rtl).moon-switch-xs {
-  box-shadow: var(--spacing-height-24) 0 0 var(--spacing-space-1) var(--component-switch-background-default) inset, 0 0 0 var(--spacing-space-1) var(--component-switch-background-default) inset, 0 0;
+  box-shadow: var(--spacing-space-24) 0 0 var(--spacing-stroke-1) var(--component-switch-background-default) inset, 0 0 0 var(--spacing-stroke-1) var(--component-switch-background-default) inset, 0 0;
 }
 .moon-switch:dir(rtl).moon-switch-xs:checked {
-  box-shadow: calc(var(--spacing-height-24) * -1) 0 0 var(--spacing-space-1) var(--component-switch-background-checked) inset, 0 0 0 var(--spacing-space-1) var(--component-switch-background-checked) inset, 0 0;
+  box-shadow: calc(var(--spacing-space-24) * -1) 0 0 var(--spacing-stroke-1) var(--component-switch-background-checked) inset, 0 0 0 var(--spacing-stroke-1) var(--component-switch-background-checked) inset, 0 0;
 }
 
 .moon-tab-list {
@@ -2584,8 +2588,8 @@
   position: relative;
   overflow: hidden;
   display: inline-flex;
-  height: var(--spacing-height-40);
-  min-width: var(--spacing-width-40);
+  height: var(--spacing-space-40);
+  min-width: var(--spacing-space-40);
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -2598,8 +2602,8 @@
   text-align: center;
   color: var(--component-tab-list-tab-text-default);
   background-color: var(--component-tab-list-tab-background-default);
-  padding: 0 var(--spacing-padding-10);
-  gap: var(--spacing-gap-8);
+  padding: 0 var(--spacing-space-10);
+  gap: var(--spacing-space-8);
   border-top-left-radius: var(--component-tab-list-tab-radius-md);
   border-top-right-radius: var(--component-tab-list-tab-radius-md);
   border-bottom: var(--component-tab-list-tab-stroke-default) solid var(--component-tab-list-tab-border-default);
@@ -2607,8 +2611,8 @@
   font-weight: var(--font-weight-medium);
 }
 .moon-tab-list .moon-tab-list-item :where(svg, .moon-icon) {
-  width: var(--spacing-height-20);
-  height: var(--spacing-height-20);
+  width: var(--spacing-space-20);
+  height: var(--spacing-space-20);
   color: var(--component-tab-list-tab-icon-default);
 }
 .moon-tab-list .moon-tab-list-item.moon-tab-list-item-active {
@@ -2632,17 +2636,17 @@
   background-color: var(--color-background-hover);
 }
 .moon-tab-list.moon-tab-list-sm .moon-tab-list-item {
-  height: var(--spacing-height-32);
-  min-width: var(--spacing-width-32);
-  padding: 0 var(--spacing-padding-8);
-  gap: var(--spacing-gap-6);
+  height: var(--spacing-space-32);
+  min-width: var(--spacing-space-32);
+  padding: 0 var(--spacing-space-8);
+  gap: var(--spacing-space-6);
   border-top-left-radius: var(--component-tab-list-tab-radius-sm);
   border-top-right-radius: var(--component-tab-list-tab-radius-sm);
   font: var(--font-weight-medium) var(--style-text-md-font-size)/var(--style-text-md-line-height) var(--font-default);
 }
 .moon-tab-list.moon-tab-list-sm .moon-tab-list-item :where(svg, .moon-icon) {
-  width: var(--spacing-height-16);
-  height: var(--spacing-height-16);
+  width: var(--spacing-space-16);
+  height: var(--spacing-space-16);
 }
 
 .moon-table {
@@ -2655,7 +2659,7 @@
   background-color: var(--color-background-secondary);
   font: var(--font-weight-medium) var(--style-text-md-font-size)/var(--style-text-md-line-height) var(--font-default);
   font-weight: var(--font-weight-default);
-  box-shadow: 0 0 0 var(--spacing-space-1) var(--color-border-secondary);
+  box-shadow: 0 0 0 var(--spacing-stroke-1) var(--color-border-secondary);
 }
 .moon-table :where(thead), .moon-table:not(:has(thead)) tr:first-child {
   white-space: nowrap;
@@ -2672,7 +2676,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: var(--spacing-space-1);
+  height: var(--spacing-stroke-1);
   background-color: var(--color-border-secondary);
 }
 .moon-table :where(th) {
@@ -2682,14 +2686,14 @@
   position: relative;
   text-align: start;
   vertical-align: middle;
-  padding: var(--spacing-padding-10);
+  padding: var(--spacing-space-10);
 }
 .moon-table :where(th, td):not(:last-child)::after {
   content: "";
   position: absolute;
   inset-inline-end: 0;
   inset-block: 0;
-  width: var(--spacing-space-1);
+  width: var(--spacing-stroke-1);
   background-color: var(--color-border-secondary);
 }
 .moon-table.moon-table-sm {
@@ -2697,50 +2701,50 @@
   font: var(--font-weight-medium) var(--style-text-md-font-size)/var(--style-text-md-line-height) var(--font-default);
 }
 .moon-table.moon-table-sm :where(th, td) {
-  padding: var(--spacing-padding-8);
+  padding: var(--spacing-space-8);
 }
 .moon-table.moon-table-lg {
   border-radius: var(--component-forms-radius-lg);
   font: var(--font-weight-medium) var(--style-text-md-font-size)/var(--style-text-md-line-height) var(--font-default);
 }
 .moon-table.moon-table-lg :where(th, td) {
-  padding: var(--spacing-padding-12);
+  padding: var(--spacing-space-12);
 }
 .moon-table.moon-table-xl {
   border-radius: var(--component-forms-radius-xl);
   font: var(--font-weight-medium) var(--style-text-lg-font-size)/var(--style-text-lg-line-height) var(--font-default);
 }
 .moon-table.moon-table-xl :where(th, td) {
-  padding: var(--spacing-padding-16);
+  padding: var(--spacing-space-16);
 }
 
 .moon-tag {
   display: inline-flex;
   align-items: center;
-  height: var(--spacing-height-24);
-  padding: 0 var(--spacing-padding-6);
+  height: var(--spacing-space-24);
+  padding: 0 var(--spacing-space-6);
   border-radius: var(--component-tag-radius-xs);
-  gap: var(--spacing-gap-4);
+  gap: var(--spacing-space-4);
   font: var(--font-weight-medium) var(--style-text-sm-font-size)/var(--style-text-sm-line-height) var(--font-default);
   box-shadow: inset 0 0 0 var(--component-tag-fill-stroke) var(--component-tag-fill-border);
   background-color: var(--component-tag-fill-background);
   color: var(--component-tag-fill-text);
 }
 .moon-tag :where(svg, .moon-icon) {
-  width: var(--spacing-height-12);
-  height: var(--spacing-height-12);
+  width: var(--spacing-space-12);
+  height: var(--spacing-space-12);
   color: var(--component-tag-fill-icon);
 }
 .moon-tag.moon-tag-2xs {
-  height: var(--spacing-height-16);
-  padding: 0 var(--spacing-padding-4);
+  height: var(--spacing-space-16);
+  padding: 0 var(--spacing-space-4);
   border-radius: var(--component-tag-radius-2xs);
-  gap: var(--spacing-gap-2);
+  gap: var(--spacing-space-2);
   font: var(--font-weight-medium) var(--style-text-2xs-font-size)/var(--style-text-2xs-line-height) var(--font-default);
 }
 .moon-tag.moon-tag-2xs :where(svg, .moon-icon) {
-  width: var(--spacing-height-10);
-  height: var(--spacing-height-10);
+  width: var(--spacing-space-10);
+  height: var(--spacing-space-10);
 }
 .moon-tag.moon-tag-ghost {
   box-shadow: inset 0 0 0 var(--component-tag-ghost-stroke) var(--component-tag-ghost-border);
@@ -2888,7 +2892,7 @@
   outline: none;
   border-color: transparent;
   transition: box-shadow 150ms ease-in-out, opacity 150ms ease-in-out, background-color 150ms ease-in-out;
-  padding: var(--spacing-padding-10);
+  padding: var(--spacing-space-10);
   border-radius: var(--component-forms-radius-md);
   font: var(--font-weight-medium) var(--style-text-md-font-size)/var(--style-text-md-line-height) var(--font-default);
   box-shadow: inset 0 0 0 var(--component-textarea-fill-stroke) var(--component-textarea-fill-border);
@@ -2908,40 +2912,40 @@
   cursor: not-allowed;
 }
 .moon-textarea:disabled {
-  opacity: var(--style-opacity-disabled);
+  opacity: 0.6;
 }
 .moon-textarea:not(:-moz-read-only, :disabled):hover {
-  box-shadow: inset 0 0 0 var(--spacing-space-2) var(--color-border-primary);
+  box-shadow: inset 0 0 0 var(--spacing-stroke-1) var(--color-border-primary);
   background-color: var(--color-background-hover);
 }
 .moon-textarea:not(:read-only, :disabled):hover {
-  box-shadow: inset 0 0 0 var(--spacing-space-2) var(--color-border-primary);
+  box-shadow: inset 0 0 0 var(--spacing-stroke-1) var(--color-border-primary);
   background-color: var(--color-background-hover);
 }
 .moon-textarea:not(:-moz-read-only, :disabled):focus {
-  box-shadow: inset 0 0 0 var(--spacing-space-2) var(--color-border-info);
+  box-shadow: inset 0 0 0 var(--spacing-stroke-1) var(--color-border-info);
 }
 .moon-textarea:not(:read-only, :disabled):focus {
-  box-shadow: inset 0 0 0 var(--spacing-space-2) var(--color-border-info);
+  box-shadow: inset 0 0 0 var(--spacing-stroke-1) var(--color-border-info);
 }
 .moon-textarea.moon-textarea-error {
-  box-shadow: inset 0 0 0 var(--spacing-space-2) var(--color-border-negative);
+  box-shadow: inset 0 0 0 var(--spacing-stroke-1) var(--color-border-negative);
 }
 .moon-textarea.moon-textarea-error:hover, .moon-textarea.moon-textarea-error:focus {
-  box-shadow: inset 0 0 0 var(--spacing-space-2) var(--color-border-negative);
+  box-shadow: inset 0 0 0 var(--spacing-stroke-1) var(--color-border-negative);
 }
 .moon-textarea.moon-textarea-sm {
-  padding: var(--spacing-padding-8);
+  padding: var(--spacing-space-8);
   border-radius: var(--component-forms-radius-sm);
   font: var(--font-weight-medium) var(--style-text-md-font-size)/var(--style-text-md-line-height) var(--font-default);
 }
 .moon-textarea.moon-textarea-lg {
-  padding: var(--spacing-padding-12);
+  padding: var(--spacing-space-12);
   border-radius: var(--component-forms-radius-lg);
   font: var(--font-weight-medium) var(--style-text-md-font-size)/var(--style-text-md-line-height) var(--font-default);
 }
 .moon-textarea.moon-textarea-xl {
-  padding: var(--spacing-padding-16);
+  padding: var(--spacing-space-16);
   border-radius: var(--component-forms-radius-xl);
   font: var(--font-weight-medium) var(--style-text-lg-font-size)/var(--style-text-lg-line-height) var(--font-default);
 }
@@ -2962,7 +2966,7 @@
   display: inline-block;
   --tt-bg: var(--component-tooltip-background);
   --tt-off: calc(100% + var(--spacing-space-8));
-  --tt-tail: calc(100% + var(--spacing-space-1) + var(--spacing-space-4));
+  --tt-tail: calc(100% + var(--spacing-stroke-1) + var(--spacing-space-4));
 }
 .moon-tooltip > :where(.moon-tooltip-content) {
   position: absolute;
@@ -2970,7 +2974,7 @@
   width: -moz-max-content;
   width: max-content;
   max-width: var(--component-tooltip-max-width);
-  padding: var(--spacing-padding-8);
+  padding: var(--spacing-space-8);
   color: var(--component-tooltip-text);
   border-radius: var(--component-tooltip-radius);
   font: var(--font-weight-medium) var(--style-text-md-font-size)/var(--style-text-md-line-height) var(--font-default);
@@ -2998,8 +3002,8 @@
   position: absolute;
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
-  -webkit-mask-position: calc(var(--spacing-space-1) * -1) 0;
-          mask-position: calc(var(--spacing-space-1) * -1) 0;
+  -webkit-mask-position: calc(var(--spacing-stroke-1) * -1) 0;
+          mask-position: calc(var(--spacing-stroke-1) * -1) 0;
   --mask-tooltip: url("data:image/svg+xml,%3Csvg width='10' height='4' viewBox='0 0 8 4' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.500009 1C3.5 1 3.00001 4 5.00001 4C7 4 6.5 1 9.5 1C10 1 10 0.499897 10 0H0C-1.99338e-08 0.5 0 1 0.500009 1Z' fill='black'/%3E%3C/svg%3E%0A");
   -webkit-mask-image: var(--mask-tooltip);
           mask-image: var(--mask-tooltip);
@@ -3020,7 +3024,7 @@
 }
 .moon-tooltip.moon-tooltip-start.moon-tooltip-pointer::after {
   transform: translateX(var(--tt-pos, var(--spacing-space-4))) translateY(-50%) rotate(-90deg);
-  inset: 50% calc(var(--tt-tail) + var(--spacing-space-1)) auto auto;
+  inset: 50% calc(var(--tt-tail) + var(--spacing-stroke-1)) auto auto;
 }
 .moon-tooltip.moon-tooltip-end > :where(.moon-tooltip-content) {
   transform: translateX(calc(var(--tt-pos, calc(var(--spacing-space-4) * -1)) + var(--spacing-space-4))) translateY(-50%);
@@ -3028,7 +3032,7 @@
 }
 .moon-tooltip.moon-tooltip-end.moon-tooltip-pointer::after {
   transform: translateX(var(--tt-pos, calc(var(--spacing-space-4) * -1))) translateY(-50%) rotate(90deg);
-  inset: 50% auto auto calc(var(--tt-tail) + var(--spacing-space-1));
+  inset: 50% auto auto calc(var(--tt-tail) + var(--spacing-stroke-1));
 }
 
 .moon-tooltip.moon-tooltip-open > :where(.moon-tooltip-content), .moon-tooltip.moon-tooltip-open.moon-tooltip-pointer::after, .moon-tooltip[data-tip]:hover > :where(.moon-tooltip-content), .moon-tooltip[data-tip]:hover.moon-tooltip-pointer::after, .moon-tooltip:hover > :where(.moon-tooltip-content), .moon-tooltip:hover.moon-tooltip-pointer::after, .moon-tooltip:has(:focus-visible) > :where(.moon-tooltip-content), .moon-tooltip:has(:focus-visible).moon-tooltip-pointer::after {

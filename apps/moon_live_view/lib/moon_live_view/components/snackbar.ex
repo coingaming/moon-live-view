@@ -7,13 +7,14 @@ defmodule MoonLiveView.Snackbar do
 
   attr :id, :string, default: nil, doc: "Unique identifier for the snackbar group component"
   attr :max_snackbars, :integer, default: 5, doc: "Maximum number of snackbars to display"
+  attr :icon_path, :string, default: nil, doc: "Path to the icons directory"
   attr :class, :string, default: "", doc: "Additional CSS classes for the snackbar"
   attr :rest, :global, doc: "Additional HTML attributes for the snackbar"
 
   def snackbar_group(assigns) do
     ~H"""
     <div class="moon-snackbar-wrapper moon-snackbar-position-top-center">
-      <div id={@id} class="moon-snackbar-group" data-max-snackbars={@max_snackbars} phx-hook="SnackbarHook"></div>
+      <div id={@id} class="moon-snackbar-group" data-max-snackbars={@max_snackbars} data-icon-path={@icon_path} phx-hook="SnackbarHook"></div>
     </div>
     """
   end
