@@ -1,10 +1,11 @@
 defmodule Storybook.Components.CoreComponents.TabList do
   use PhoenixStorybook.Story, :component
   alias MoonLiveView.TabList
+  alias MoonLiveViewDocs.Icon
 
   def function, do: &TabList.tab_list/1
 
-  def imports, do: [{MoonAssets, icon: 1}, {TabList, tab_item: 1}]
+  def imports, do: [{Icon, icon: 1}, {TabList, tab_item: 1}]
 
   def variations do
     [

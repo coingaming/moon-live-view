@@ -1,6 +1,7 @@
 defmodule Storybook.Components.CoreComponents.Accordion do
   use PhoenixStorybook.Story, :component
   alias MoonLiveView.Accordion
+  alias MoonLiveViewDocs.Icon
 
   def function, do: &Accordion.accordion/1
 
@@ -13,7 +14,7 @@ defmodule Storybook.Components.CoreComponents.Accordion do
          accordion_item_content: 1,
          accordion_item_toggle: 1
        ]},
-      {MoonAssets, icon: 1}
+      {Icon, icon: 1}
     ]
 
   def variations do

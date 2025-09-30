@@ -1,13 +1,14 @@
 defmodule Storybook.Components.CoreComponents.List do
   use PhoenixStorybook.Story, :component
   alias MoonLiveView.List
+  alias MoonLiveViewDocs.Icon
 
   def function, do: &List.list/1
 
   def imports(),
     do: [
       {MoonLiveView.List, list_item: 1},
-      {MoonAssets, icon: 1}
+      {Icon, icon: 1}
     ]
 
   def variations do

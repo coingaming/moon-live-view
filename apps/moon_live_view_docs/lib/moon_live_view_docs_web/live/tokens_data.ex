@@ -1,7 +1,8 @@
 defmodule MoonLiveViewDocsWeb.TokensData do
   @moduledoc "TokensData"
   import MoonLiveView.Utils
-  import MoonAssets
+  import MoonLiveViewDocs.Icon
+
   use Phoenix.Component
 
   attr :class, :string, required: true

@@ -3,7 +3,7 @@ defmodule MoonLiveViewDocsWeb.DocsComponents do
 
   use Phoenix.Component
   use MoonLiveView
-  import MoonAssets
+  import MoonLiveViewDocs.Icon
 
   @doc """
     Main Page Head Component

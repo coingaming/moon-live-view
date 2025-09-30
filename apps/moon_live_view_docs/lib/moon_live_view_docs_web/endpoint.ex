@@ -24,13 +24,13 @@ defmodule MoonLiveViewDocsWeb.Endpoint do
     only: MoonLiveViewDocsWeb.static_paths()
 
   plug Plug.Static,
-    at: "/moon_assets/",
-    from: :moon_assets,
+    at: "/moon_live_view/",
+    from: :moon_live_view,
     gzip: true
 
   plug Plug.Static,
-    at: "/moon_live_view/",
-    from: :moon_live_view,
+    at: "/moon_live_view_docs/",
+    from: :moon_live_view_docs,
     gzip: true
 
   # Code reloading can be explicitly enabled under the

@@ -15,7 +15,8 @@ defmodule MoonLiveViewDocsWeb.CoreComponents do
   use Phoenix.Component
 
   alias Phoenix.LiveView.JS
-  import MoonAssets
+  import MoonLiveViewDocs.Icon
+
   use Gettext, backend: MoonLiveViewDocsWeb.Gettext
 
   # @doc """

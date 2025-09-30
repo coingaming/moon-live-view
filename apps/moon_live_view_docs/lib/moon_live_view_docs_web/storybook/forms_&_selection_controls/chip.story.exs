@@ -1,12 +1,13 @@
 defmodule Storybook.Components.CoreComponents.Chip do
   use PhoenixStorybook.Story, :component
   alias MoonLiveView.Chip
+  alias MoonLiveViewDocs.Icon
 
   def function, do: &Chip.chip/1
 
   def imports,
     do: [
-      {MoonAssets, icon: 1}
+      {Icon, icon: 1}
     ]
 
   def variations do

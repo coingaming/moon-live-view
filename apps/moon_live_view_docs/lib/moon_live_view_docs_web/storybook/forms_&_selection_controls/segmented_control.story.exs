@@ -2,10 +2,11 @@ defmodule Storybook.MoonUIComponents.SegmentedControlStory do
   use PhoenixStorybook.Story, :component
 
   alias MoonLiveView.SegmentedControl
+  alias MoonLiveViewDocs.Icon
 
   def function, do: &SegmentedControl.segmented_control/1
 
-  def imports, do: [{SegmentedControl, [segments_list: 1]}, {MoonAssets, icon: 1}]
+  def imports, do: [{SegmentedControl, [segments_list: 1]}, {Icon, icon: 1}]
 
   def variations do
     [

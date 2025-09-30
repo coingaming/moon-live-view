@@ -6,7 +6,7 @@ defmodule MoonLiveViewDocsWeb.CodePreview do
   use Phoenix.Component
   use MoonLiveView
   alias Makeup
-  import MoonAssets
+  import MoonLiveViewDocs.Icon
 
   def code_preview_styles(assigns) do
     assigns = assign(assigns, :css, Makeup.stylesheet(:monokai_style))

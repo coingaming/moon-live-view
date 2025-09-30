@@ -6,8 +6,7 @@ defmodule Storybook.Components.CoreComponents.Alert do
 
   def imports,
     do: [
-      {Alert, alert_action_button: 1, alert_close_button: 1},
-      {MoonAssets, icon: 1}
+      {Alert, alert_action_button: 1, alert_close_button: 1}
     ]
 
   def variations do

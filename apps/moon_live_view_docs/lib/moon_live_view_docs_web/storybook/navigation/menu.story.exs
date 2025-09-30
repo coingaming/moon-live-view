@@ -1,10 +1,11 @@
 defmodule Storybook.Components.CoreComponents.Menu do
   use PhoenixStorybook.Story, :component
   alias MoonLiveView.Menu
+  alias MoonLiveViewDocs.Icon
 
   def function, do: &Menu.menu/1
 
-  def imports, do: [{MoonAssets, [icon: 1]}, {Menu, [menu_item: 1]}]
+  def imports, do: [{Icon, [icon: 1]}, {Menu, [menu_item: 1]}]
 
   def variations do
     [

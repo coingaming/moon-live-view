@@ -2,7 +2,8 @@ defmodule Storybook.IconButtonStory do
   use PhoenixStorybook.Story, :component
 
   alias MoonLiveView.IconButton
-  def imports, do: [{MoonAssets, [icon: 1]}]
+  alias MoonLiveViewDocs.Icon
+  def imports, do: [{Icon, [icon: 1]}]
 
   def function, do: &IconButton.icon_button/1
 

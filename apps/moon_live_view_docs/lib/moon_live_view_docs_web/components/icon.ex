@@ -10,7 +10,7 @@ defmodule MoonLiveViewDocs.Icon do
   def icon(assigns) do
     ~H"""
     <svg width="20" height="20" viewBox="0 0 20 20" class={join(["inline-block", @class])} {@rest}>
-      <use href={"/moon_live_docs/icons/#{@name}.svg##{@name}"} />
+      <use href={"/moon_live_view_docs/icons/#{@name}.svg##{@name}"} />
     </svg>
     """
   end
