@@ -8,13 +8,10 @@ defmodule Storybook.Components.CoreComponents.Checkbox do
     [
       %Variation{
         id: :default,
-        description: "Default",
-        attributes: %{}
+        description: "Default"
       },
       %Variation{
         id: :with_label,
-        description: "With Label",
-        attributes: %{},
         slots: [
           """
           <:label>With Label</:label>
@@ -23,7 +20,6 @@ defmodule Storybook.Components.CoreComponents.Checkbox do
       },
       %Variation{
         id: :indeterminate,
-        description: "Indeterminate state",
         attributes: %{
           indeterminate: true
         },
