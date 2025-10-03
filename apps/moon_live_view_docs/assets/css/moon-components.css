@@ -1,4 +1,4 @@
-/* Moon UI v3.4.1 */
+/* Moon UI v3.7.0 */
 @layer components {
 .moon-form-hint {
   font: var(--font-weight-medium) var(--style-text-sm-font-size)/var(--style-text-sm-line-height) var(--font-default);
@@ -30,7 +30,7 @@
   color: var(--color-text-negative);
 }
 .moon-form-group:has(:disabled) label, .moon-form-group:has(:disabled) .moon-form-hint {
-  opacity: 0.6;
+  opacity: var(--style-opacity-disabled);
 }
 
 .moon-backdrop {
@@ -44,6 +44,24 @@
 }
 .moon-backdrop button {
   cursor: pointer;
+}
+
+label:has(.moon-checkbox),
+label:has(.moon-radio) {
+  display: flex;
+  width: -moz-fit-content;
+  width: fit-content;
+  gap: var(--spacing-space-8);
+  align-items: center;
+  font: var(--font-weight-medium) var(--style-text-md-font-size)/var(--style-text-md-line-height) var(--font-default);
+  color: var(--color-text-primary);
+  cursor: pointer;
+}
+label:has(.moon-checkbox):has(.moon-checkbox:disabled), label:has(.moon-checkbox):has(.moon-radio:disabled),
+label:has(.moon-radio):has(.moon-checkbox:disabled),
+label:has(.moon-radio):has(.moon-radio:disabled) {
+  cursor: not-allowed;
+  opacity: var(--style-opacity-disabled);
 }
 
 .moon-icon-button, .moon-pagination :where(.moon-pagination-item), .moon-pagination :where(.moon-pagination-control), .moon-drawer-box :where(.moon-drawer-close), .moon-dialog-box :where(.moon-dialog-close), .moon-carousel :where(.moon-carousel-control), .moon-bottom-sheet-box :where(.moon-bottom-sheet-close), .moon-alert :where(.moon-alert-close), .moon-snackbar :where(.moon-alert-close), .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header :where(.moon-accordion-item-toggle) {
@@ -75,7 +93,7 @@
 }
 .moon-icon-button:disabled, .moon-pagination :disabled:where(.moon-pagination-item), .moon-pagination :disabled:where(.moon-pagination-control), .moon-drawer-box :disabled:where(.moon-drawer-close), .moon-dialog-box :disabled:where(.moon-dialog-close), .moon-carousel :disabled:where(.moon-carousel-control), .moon-bottom-sheet-box :disabled:where(.moon-bottom-sheet-close), .moon-alert :disabled:where(.moon-alert-close), .moon-snackbar :disabled:where(.moon-alert-close), .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header :disabled:where(.moon-accordion-item-toggle), .moon-icon-button[aria-disabled=true], .moon-pagination [aria-disabled=true]:where(.moon-pagination-item), .moon-pagination [aria-disabled=true]:where(.moon-pagination-control), .moon-drawer-box [aria-disabled=true]:where(.moon-drawer-close), .moon-dialog-box [aria-disabled=true]:where(.moon-dialog-close), .moon-carousel [aria-disabled=true]:where(.moon-carousel-control), .moon-bottom-sheet-box [aria-disabled=true]:where(.moon-bottom-sheet-close), .moon-alert [aria-disabled=true]:where(.moon-alert-close), .moon-snackbar [aria-disabled=true]:where(.moon-alert-close), .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header [aria-disabled=true]:where(.moon-accordion-item-toggle) {
   cursor: not-allowed;
-  opacity: 0.6;
+  opacity: var(--style-opacity-disabled);
 }
 .moon-icon-button:active, .moon-pagination :active:where(.moon-pagination-item), .moon-pagination :active:where(.moon-pagination-control), .moon-drawer-box :active:where(.moon-drawer-close), .moon-dialog-box :active:where(.moon-dialog-close), .moon-carousel :active:where(.moon-carousel-control), .moon-bottom-sheet-box :active:where(.moon-bottom-sheet-close), .moon-alert :active:where(.moon-alert-close), .moon-snackbar :active:where(.moon-alert-close), .moon-accordion :where(.moon-accordion-item) .moon-accordion-item-header :active:where(.moon-accordion-item-toggle) {
   transform: scale(0.95);
@@ -563,7 +581,7 @@
 }
 .moon-button:disabled, .moon-snackbar :disabled:where(.moon-snackbar-action), .moon-alert :disabled:where(.moon-alert-action), .moon-snackbar :disabled:where(.moon-alert-action), .moon-button[aria-disabled=true], .moon-snackbar [aria-disabled=true]:where(.moon-snackbar-action), .moon-alert [aria-disabled=true]:where(.moon-alert-action), .moon-snackbar [aria-disabled=true]:where(.moon-alert-action) {
   cursor: not-allowed;
-  opacity: 0.6;
+  opacity: var(--style-opacity-disabled);
 }
 .moon-button:active, .moon-snackbar :active:where(.moon-snackbar-action), .moon-alert :active:where(.moon-alert-action), .moon-snackbar :active:where(.moon-alert-action) {
   transform: scale(0.95);
@@ -958,7 +976,7 @@
   cursor: not-allowed;
 }
 .moon-authenticator :where(input):disabled {
-  opacity: 0.6;
+  opacity: var(--style-opacity-disabled);
 }
 .moon-authenticator :where(input):not(:-moz-read-only, :disabled):hover {
   box-shadow: inset 0 0 0 var(--component-authenticator-outline-stroke) var(--component-authenticator-outline-border);
@@ -1205,15 +1223,6 @@
   --component-badge-soft-border: var(--context-info-soft-border);
 }
 
-.moon-badge-wrapper {
-  position: relative;
-}
-.moon-badge-wrapper :where(.moon-badge) {
-  position: absolute;
-  bottom: calc(100% - var(--spacing-space-2));
-  inset-inline-start: calc(100% - var(--spacing-space-2));
-}
-
 .moon-bottom-sheet {
   position: fixed;
   display: grid;
@@ -1234,7 +1243,7 @@
   transition: translate 0.3s ease-out, visibility 0.3s allow-discrete, background-color 0.3s ease-out, opacity 0.1s ease-out;
   overflow-y: hidden;
   overscroll-behavior: contain;
-  z-index: 999;
+  z-index: 3000;
 }
 .moon-bottom-sheet::backdrop {
   display: none;
@@ -1410,7 +1419,7 @@
 }
 .moon-checkbox:disabled {
   cursor: not-allowed;
-  opacity: 0.6;
+  opacity: var(--style-opacity-disabled);
 }
 .moon-checkbox:checked, .moon-checkbox:indeterminate {
   background-color: var(--component-checkbox-background-checked);
@@ -1430,21 +1439,6 @@
 }
 .moon-checkbox:hover::after {
   background-color: var(--color-background-hover);
-}
-
-.moon-checkbox-wrapper {
-  display: flex;
-  gap: var(--spacing-space-8);
-  align-items: center;
-}
-.moon-checkbox-wrapper :where(label) {
-  font: var(--font-weight-medium) var(--style-text-md-font-size)/var(--style-text-md-line-height) var(--font-default);
-  color: var(--color-text-primary);
-  cursor: pointer;
-}
-.moon-checkbox-wrapper:has(:disabled) label {
-  cursor: not-allowed;
-  opacity: 0.6;
 }
 
 .moon-chip {
@@ -1609,7 +1603,7 @@
   transition: translate 0.3s ease-out, visibility 0.3s allow-discrete, background-color 0.3s ease-out, opacity 0.1s ease-out;
   overflow-y: hidden;
   overscroll-behavior: contain;
-  z-index: 999;
+  z-index: 2000;
 }
 .moon-dialog::backdrop {
   display: none;
@@ -1681,7 +1675,7 @@
   transition: translate 0.3s ease-out, visibility 0.3s allow-discrete, background-color 0.3s ease-out, opacity 0.1s ease-out;
   overflow-y: hidden;
   overscroll-behavior: contain;
-  z-index: 999;
+  z-index: 1000;
 }
 .moon-drawer::backdrop {
   display: none;
@@ -1770,7 +1764,7 @@
 }
 .moon-dropdown[popover],
 .moon-dropdown .moon-dropdown-content {
-  z-index: 999;
+  z-index: 100;
 }
 @media (prefers-reduced-motion: no-preference) {
   .moon-dropdown[popover],
@@ -1860,7 +1854,7 @@
   cursor: not-allowed;
 }
 .moon-input:disabled {
-  opacity: 0.6;
+  opacity: var(--style-opacity-disabled);
 }
 .moon-input:not(:-moz-read-only, :disabled):hover {
   box-shadow: inset 0 0 0 var(--spacing-stroke-1) var(--color-border-primary);
@@ -1957,15 +1951,12 @@
   height: var(--spacing-space-16);
 }
 
-.moon-linear-progress-wrapper {
+label:has(.moon-linear-progress) {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-space-2);
-}
-.moon-linear-progress-wrapper :where(label) {
   font: var(--font-weight-medium) var(--style-text-md-font-size)/var(--style-text-md-line-height) var(--font-default);
   color: var(--color-text-primary);
-  font-weight: var(--font-weight-medium);
   text-align: center;
 }
 
@@ -2186,6 +2177,12 @@
     background-position: -50%;
   }
 }
+.moon-radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-space-8);
+}
+
 .moon-radio {
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -2224,7 +2221,7 @@
 }
 .moon-radio:disabled {
   cursor: not-allowed;
-  opacity: 0.6;
+  opacity: var(--style-opacity-disabled);
 }
 .moon-radio:checked {
   background-color: var(--component-radio-background-checked);
@@ -2236,21 +2233,6 @@
 }
 .moon-radio:hover::after {
   background-color: var(--color-background-hover);
-}
-
-.moon-radio-wrapper {
-  display: flex;
-  gap: var(--spacing-space-8);
-  align-items: center;
-}
-.moon-radio-wrapper :where(label) {
-  font: var(--font-weight-medium) var(--style-text-md-font-size)/var(--style-text-md-line-height) var(--font-default);
-  color: var(--color-text-primary);
-  cursor: pointer;
-}
-.moon-radio-wrapper:has(:disabled) :where(label) {
-  cursor: not-allowed;
-  opacity: 0.6;
 }
 
 .moon-segmented-control {
@@ -2307,7 +2289,7 @@
 }
 .moon-segmented-control :where(.moon-segmented-control-item)[disabled] {
   cursor: not-allowed;
-  opacity: 0.6;
+  opacity: var(--style-opacity-disabled);
 }
 .moon-segmented-control :where(.moon-segmented-control-item)::after {
   content: "";
@@ -2373,7 +2355,7 @@
 }
 .moon-select:disabled {
   cursor: not-allowed;
-  opacity: 0.6;
+  opacity: var(--style-opacity-disabled);
 }
 .moon-select:not(:disabled):hover {
   box-shadow: inset 0 0 0 var(--spacing-stroke-1) var(--color-border-primary);
@@ -2418,8 +2400,20 @@
   box-shadow: inset 0 0 0 var(--spacing-stroke-1) var(--color-border-negative);
 }
 
+.moon-snackbar-group {
+  position: fixed;
+  z-index: 300;
+  top: var(--spacing-space-16);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  width: min(100%, var(--component-snackbar-fill-max-width));
+  flex-direction: column;
+  gap: var(--spacing-space-8);
+}
+
 .moon-snackbar {
-  max-width: var(--component-snackbar-fill-max-width);
+  width: 100%;
   font-weight: var(--font-weight-medium);
   color: var(--component-snackbar-fill-text);
   background-color: var(--component-snackbar-fill-background);
@@ -2439,7 +2433,7 @@
   color: var(--component-snackbar-fill-icon);
 }
 .moon-snackbar.moon-snackbar-soft {
-  max-width: var(--component-snackbar-soft-max-width);
+  width: max(100%, var(--component-snackbar-soft-max-width));
   color: var(--component-snackbar-soft-text);
   background-color: var(--component-snackbar-soft-background);
   box-shadow: var(--style-shadow-500-layer-1-x) var(--style-shadow-500-layer-1-y) var(--style-shadow-500-layer-1-blur) var(--style-shadow-500-layer-1-spread) var(--style-shadow-500-layer-1-color), var(--style-shadow-500-layer-2-x) var(--style-shadow-500-layer-2-y) var(--style-shadow-500-layer-2-blur) var(--style-shadow-500-layer-2-spread) var(--style-shadow-500-layer-2-color), inset 0 0 0 var(--component-snackbar-soft-stroke) var(--component-snackbar-soft-border);
@@ -2542,7 +2536,7 @@
   box-shadow: var(--spacing-space-32) 0 0 var(--spacing-stroke-1) var(--component-switch-background-checked) inset, 0 0 0 var(--spacing-stroke-1) var(--component-switch-background-checked) inset, 0 0;
 }
 .moon-switch:disabled {
-  opacity: 0.6;
+  opacity: var(--style-opacity-disabled);
   cursor: not-allowed;
 }
 .moon-switch.moon-switch-2xs {
@@ -2912,7 +2906,7 @@
   cursor: not-allowed;
 }
 .moon-textarea:disabled {
-  opacity: 0.6;
+  opacity: var(--style-opacity-disabled);
 }
 .moon-textarea:not(:-moz-read-only, :disabled):hover {
   box-shadow: inset 0 0 0 var(--spacing-stroke-1) var(--color-border-primary);
@@ -2983,7 +2977,7 @@
   transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1) 75ms, transform 0.2s cubic-bezier(0.4, 0, 0.2, 1) 75ms;
   background-color: var(--tt-bg);
   pointer-events: none;
-  z-index: 1;
+  z-index: 200;
   --tw-content: attr(data-tip);
   content: var(--tw-content);
   transform: translateX(-50%) translateY(var(--tt-pos, var(--spacing-space-4)));

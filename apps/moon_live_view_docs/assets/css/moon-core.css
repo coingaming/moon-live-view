@@ -1,4 +1,4 @@
-/* Moon UI v3.4.1 */
+/* Moon UI v3.7.0 */
 @theme inline {
 --color-background-backdrop: var(--color-gray-alpha-72);
 --color-background-brand-alpha: var(--color-mystic-indigo-alpha-12);
@@ -580,18 +580,29 @@
 --primitives-16: 16px;
 --primitives-18: 18px;
 --primitives-1: 1px;
+--primitives-200: 200px;
 --primitives-20: 20px;
 --primitives-22: 22px;
+--primitives-240: 240px;
 --primitives-24: 24px;
 --primitives-26: 26px;
+--primitives-280: 280px;
 --primitives-28: 28px;
 --primitives-2: 2px;
+--primitives-320: 320px;
 --primitives-32: 32px;
+--primitives-360: 360px;
 --primitives-36: 36px;
+--primitives-400: 400px;
 --primitives-40: 40px;
+--primitives-440: 440px;
+--primitives-480: 480px;
 --primitives-48: 48px;
 --primitives-4: 4px;
+--primitives-520: 520px;
+--primitives-560: 560px;
 --primitives-56: 56px;
+--primitives-600: 600px;
 --primitives-64: 64px;
 --primitives-6: 6px;
 --primitives-72: 72px;
@@ -683,7 +694,7 @@
 --font-weight-bold: 600;
 --font-weight-default: 400;
 --font-weight-medium: 500;
---style-opacity-disabled: var(--primitives-64);
+--style-opacity-disabled: 0.64;
 --style-shadow-100-layer-1-blur: var(--primitives-2);
 --style-shadow-100-layer-1-color: rgb(0 0 0 / 0.06);
 --style-shadow-100-layer-1-spread: var(--primitives-0);
