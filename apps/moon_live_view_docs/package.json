@@ -1,0 +1,30 @@
+{
+  "name": "moon-live-docs",
+  "version": "1.0.0",
+  "description": "To start your Phoenix server:",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "(cd e2e && npx playwright test)",
+    "moon-ui": "npx @heathmont/moon-ui --add-components"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coingaming/moon-live-docs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coingaming/moon-live-docs/issues"
+  },
+  "homepage": "https://github.com/coingaming/moon-live-docs#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.45",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.12"
+  }
+}

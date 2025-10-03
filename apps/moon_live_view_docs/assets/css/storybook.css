@@ -1,0 +1,30 @@
+/* This is your custom storybook stylesheet. */
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap");
+
+@import "tailwindcss";
+
+@source "../../lib/moon_live_view_docs_web/";
+@source "../../../moon_live_view/";
+
+@import "./moon-core.css";
+@import "./moon-components.css";
+@import "./moon-extra-components.css";
+
+@layer components {
+  .psb-sandbox {
+    font-family: var(--font-default);
+  }
+}
+
+* {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+ * Put your component styling within the Tailwind utilities layer. 
+ * See the https://hexdocs.pm/phoenix_storybook/sandboxing.html guide for more info.
+ */

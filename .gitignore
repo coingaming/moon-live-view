@@ -23,6 +23,10 @@
 
 **/*.tar
 
+**/priv/static/assets/
+
+**/priv/static/cache_manifest.json
+
 
 # Temporary files, for example, from tests.
 **/tmp/

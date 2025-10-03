@@ -1,0 +1,23 @@
+{
+  "name": "moon-live-view",
+  "version": "1.0.0",
+  "description": "Moon LiveView Components Library",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coingaming/moon-live-view.git"
+  },
+  "author": "Mario Hernandez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/coingaming/moon-live-view/issues"
+  },
+  "homepage": "https://github.com/coingaming/moon-live-view#readme"
+}

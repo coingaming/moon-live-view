@@ -1,0 +1,66 @@
+.moon-select-wrapper {
+  position: relative;
+  display: block;
+  border-radius: var(--radius-8);
+  width: 100%;
+  max-width: 100%;
+}
+
+.moon-select-wrapper label:has(+ .moon-select-input-container .moon-select-xl) {
+  position: absolute;
+  pointer-events: none;
+  transition: all 200ms ease-in-out;
+  color: var(--color-text-secondary);
+  font-size: var(--text-12);
+  line-height: var(--spacing-space-16);
+  top: var(--spacing-space-10);
+  left: var(--spacing-space-16);
+  z-index: 9;
+}
+
+.moon-select-wrapper .moon-select-xl {
+  position: relative;
+  display: block;
+  padding-top: var(--spacing-space-18);
+  padding-right: var(--spacing-space-16);
+  padding-left: var(--spacing-space-16);
+  padding-bottom: 0;
+  margin: 0;
+  border-radius: var(--radius-8);
+  border-width: 1px;
+  box-sizing: border-box;
+  transition: box-shadow 200ms;
+  outline: none;
+  appearance: none;
+  width: 100%;
+  max-width: 100%;
+  height: var(--spacing-space-56);
+  color: var(--color-text-primary);
+  background-color: var(--color-background-primary);
+  font-family: var(--font-default);
+  font-size: var(--text-16);
+  font-weight: var(--font-weight-default);
+  line-height: var(--spacing-space-24);
+  border-color: var(--color-border-primary);
+  box-shadow: inset 0 0 0 1px var(--color-border-primary);
+}
+
+.moon-select-wrapper .moon-select-xl option {
+  height: 20px;
+}
+
+.moon-select-input-container {
+  position: relative;
+}
+
+.moon-select-expand-icon {
+  position: absolute;
+  top: 50%;
+  right: var(--spacing-space-12);
+  transform: translateY(-50%);
+  z-index: 5;
+  pointer-events: none;
+  color: var(--color-text-secondary);
+  flex-shrink: 0;
+  transition: transform 200ms ease-in-out;
+}

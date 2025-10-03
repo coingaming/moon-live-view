@@ -1,0 +1,245 @@
+/* TBD: Change this - Snackbar styles */
+
+.moon-snackbar-wrapper {
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+  width: 356px;
+  --gap: var(--spacing-space-12);
+  max-width: calc(100vw - var(--spacing-space-32));
+  --front-toast-height: var(--spacing-space-56);
+  --toast-animation-duration: 400ms;
+  gap: var(--gap);
+  display: flex;
+  flex-direction: column;
+}
+
+.moon-snackbar {
+  --index: 0;
+  --z-index: 1;
+  --offset: 0px;
+  --scale: 1;
+  --lift-amount: calc(var(--lift) * var(--spacing-space-14));
+  position: absolute;
+  gap: var(--spacing-space-8);
+  width: 100%;
+  padding: 0 var(--spacing-space-12);
+  line-height: 1.5;
+  pointer-events: auto;
+  user-select: none;
+  will-change: transform, opacity;
+  z-index: var(--z-index);
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: transform var(--toast-animation-duration) ease,
+    opacity var(--toast-animation-duration) ease,
+    height var(--toast-animation-duration) ease;
+  min-height: var(--front-toast-height);
+  max-height: var(--front-toast-height);
+}
+
+.moon-snackbar :where(.moon-snackbar-action) {
+  justify-self: end;
+  color: var(--component-snackbar-fill-text);
+}
+.moon-snackbar :where(.moon-snackbar-action) :where(svg, .moon-icon) {
+  color: var(--component-snackbar-fill-icon);
+}
+.moon-snackbar.moon-snackbar-caution {
+  max-width: var(--component-snackbar-caution-max-width);
+  color: var(--component-snackbar-caution-text);
+  background-color: var(--component-snackbar-caution-background);
+  box-shadow: var(--style-shadow-500-layer-1-x)
+      var(--style-shadow-500-layer-1-y) var(--style-shadow-500-layer-1-blur)
+      var(--style-shadow-500-layer-1-spread)
+      var(--style-shadow-500-layer-1-color),
+    var(--style-shadow-500-layer-2-x) var(--style-shadow-500-layer-2-y)
+      var(--style-shadow-500-layer-2-blur)
+      var(--style-shadow-500-layer-2-spread)
+      var(--style-shadow-500-layer-2-color),
+    inset 0 0 0 var(--component-snackbar-caution-stroke)
+      var(--component-snackbar-caution-border);
+}
+.moon-snackbar.moon-snackbar-caution :where(svg, .moon-icon) {
+  color: var(--component-snackbar-caution-icon);
+}
+.moon-snackbar.moon-snackbar-caution :where(.moon-snackbar-action) {
+  color: var(--component-snackbar-caution-text);
+}
+.moon-snackbar.moon-snackbar-caution
+  :where(.moon-snackbar-action)
+  :where(svg, .moon-icon) {
+  color: var(--component-snackbar-caution-icon);
+}
+.moon-snackbar.moon-snackbar-info {
+  max-width: var(--component-snackbar-info-max-width);
+  color: var(--component-snackbar-info-text);
+  background-color: var(--component-snackbar-info-background);
+  box-shadow: var(--style-shadow-500-layer-1-x)
+      var(--style-shadow-500-layer-1-y) var(--style-shadow-500-layer-1-blur)
+      var(--style-shadow-500-layer-1-spread)
+      var(--style-shadow-500-layer-1-color),
+    var(--style-shadow-500-layer-2-x) var(--style-shadow-500-layer-2-y)
+      var(--style-shadow-500-layer-2-blur)
+      var(--style-shadow-500-layer-2-spread)
+      var(--style-shadow-500-layer-2-color),
+    inset 0 0 0 var(--component-snackbar-info-stroke)
+      var(--component-snackbar-info-border);
+}
+.moon-snackbar.moon-snackbar-info :where(svg, .moon-icon) {
+  color: var(--component-snackbar-info-icon);
+}
+.moon-snackbar.moon-snackbar-info :where(.moon-snackbar-action) {
+  color: var(--component-snackbar-info-text);
+}
+.moon-snackbar.moon-snackbar-info
+  :where(.moon-snackbar-action)
+  :where(svg, .moon-icon) {
+  color: var(--component-snackbar-info-icon);
+}
+.moon-snackbar.moon-snackbar-positive {
+  max-width: var(--component-snackbar-positive-max-width);
+  color: var(--component-snackbar-positive-text);
+  background-color: var(--component-snackbar-positive-background);
+  box-shadow: var(--style-shadow-500-layer-1-x)
+      var(--style-shadow-500-layer-1-y) var(--style-shadow-500-layer-1-blur)
+      var(--style-shadow-500-layer-1-spread)
+      var(--style-shadow-500-layer-1-color),
+    var(--style-shadow-500-layer-2-x) var(--style-shadow-500-layer-2-y)
+      var(--style-shadow-500-layer-2-blur)
+      var(--style-shadow-500-layer-2-spread)
+      var(--style-shadow-500-layer-2-color),
+    inset 0 0 0 var(--component-snackbar-positive-stroke)
+      var(--component-snackbar-positive-border);
+}
+.moon-snackbar.moon-snackbar-positive :where(svg, .moon-icon) {
+  color: var(--component-snackbar-positive-icon);
+}
+.moon-snackbar.moon-snackbar-positive :where(.moon-snackbar-action) {
+  color: var(--component-snackbar-positive-text);
+}
+.moon-snackbar.moon-snackbar-positive
+  :where(.moon-snackbar-action)
+  :where(svg, .moon-icon) {
+  color: var(--component-snackbar-positive-icon);
+}
+
+.moon-snackbar-wrapper:hover .moon-snackbar {
+  --offset: calc(
+    var(--toasts-before, 0) * var(--front-toast-height) + var(--gap) *
+      var(--toasts-before, 0)
+  );
+  transform: scale(1);
+}
+
+.moon-snackbar-wrapper:hover
+  .moon-snackbar[data-mounted="true"][data-front="false"] {
+  position: absolute;
+  transform: translateY(var(--offset));
+  height: auto;
+}
+
+.moon-snackbar > * {
+  transition: opacity var(--toast-animation-duration) ease;
+}
+
+.moon-snackbar-wrapper:hover .moon-snackbar > * {
+  opacity: 1;
+}
+
+.moon-snackbar-wrapper:hover .moon-snackbar::after {
+  content: "";
+  position: absolute;
+  left: -10px;
+  right: -10px;
+  width: calc(100% + 20px);
+  height: 20px;
+  pointer-events: auto;
+  top: 100%;
+}
+
+.moon-snackbar-group {
+  position: relative;
+}
+
+.moon-snackbar-position-top-center {
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.moon-snackbar-position-top-center .moon-snackbar {
+  --lift: 1;
+  transform-origin: center top;
+  top: auto;
+  bottom: auto;
+}
+
+.moon-snackbar-position-top-center
+  .moon-snackbar[data-mounted="true"][data-front="true"] {
+  position: relative;
+  z-index: 9999;
+}
+
+.moon-snackbar-position-top-center
+  .moon-snackbar[data-mounted="true"][data-front="true"]::after {
+  content: "";
+  position: absolute;
+  left: -20px;
+  right: -20px;
+  top: 0;
+  bottom: -20px;
+  pointer-events: auto;
+}
+
+.moon-snackbar-position-top-center
+  .moon-snackbar[data-mounted="true"][data-front="false"] {
+  --toasts-before: calc(var(--toasts-length) - 1 - (var(--toast-index)));
+  position: absolute;
+  top: 0;
+  --stacked-scale: calc(1 - var(--toasts-before) * 0.06);
+  transform: translateY(calc(var(--lift-amount) * var(--toasts-before)))
+    scale(var(--stacked-scale));
+  height: var(--front-toast-height);
+  z-index: var(--toast-index);
+  pointer-events: auto;
+  transition: 400ms cubic-bezier(0.21, 1.02, 0.73, 1);
+  opacity: 1;
+}
+
+.moon-snackbar[data-mounted="true"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.moon-snackbar[data-removed="true"] {
+  opacity: 0;
+  transition: opacity 10ms ease;
+}
+
+.moon-snackbar-title {
+  margin-bottom: 2px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.moon-snackbar-close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-4);
+  opacity: 1;
+  cursor: pointer;
+}
+
+/* ********************************** */
