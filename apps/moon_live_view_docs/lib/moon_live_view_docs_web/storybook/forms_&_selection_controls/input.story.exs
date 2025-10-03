@@ -6,14 +6,9 @@ defmodule Storybook.Components.CoreComponents.Input do
 
   def variations do
     [
-      %Variation{
-        id: :default,
-        description: "Default"
-      },
+      %Variation{id: :default},
       %Variation{
         id: :with_label_and_hint,
-        description: "With label and hint",
-        attributes: %{},
         slots: [
           """
           <:label>label</:label>
