@@ -11,10 +11,6 @@ const DrawerHook = {
     dialog.addEventListener("moon:drawer:close", () => {
       this.close();
     });
-
-    // dialog.addEventListener("cancel", () => {
-    //   this.close();
-    // });
   },
   open() {
     this.el.showModal();
