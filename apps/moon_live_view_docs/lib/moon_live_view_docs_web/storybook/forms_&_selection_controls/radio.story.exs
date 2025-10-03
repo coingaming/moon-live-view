@@ -2,43 +2,43 @@ defmodule Storybook.Components.CoreComponents.Radio do
   use PhoenixStorybook.Story, :component
   alias MoonLiveView.Radio
 
-  def function, do: &Radio.radio/1
+  def function, do: &Radio.radio_group/1
+
+  def imports, do: [{Radio, [radio: 1]}]
 
   def variations do
     [
       %Variation{
         id: :default,
-        description: "Default",
-        attributes: %{
-          name: "default",
-          value: "default"
-        }
-      },
-      %Variation{
-        id: :checked_radio,
-        description: "Checked With Label",
-        attributes: %{
-          name: "checked",
-          value: "checked",
-          checked: true
-        },
         slots: [
           """
-          <:label>Checked</:label>
+          <.radio name="default">
+            <:label>
+              Option 1
+            </:label>
+          </.radio>
+          <.radio name="default">
+            <:label>
+              Option 2
+            </:label>
+          </.radio>
           """
         ]
       },
       %Variation{
-        id: :disabled_radio,
-        description: "Disabled",
-        attributes: %{
-          name: "disabled",
-          value: "disabled",
-          disabled: true
-        },
+        id: :disabled,
         slots: [
           """
-          <:label>Disabled</:label>
+          <.radio name="disabled" disabled>
+            <:label>
+              Option 1
+            </:label>
+          </.radio>
+          <.radio name="disabled" disabled>
+            <:label>
+              Option 2
+            </:label>
+          </.radio>
           """
         ]
       }

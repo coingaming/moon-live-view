@@ -48,7 +48,7 @@ config :moon_live_view_docs, MoonLiveViewDocsWeb.Endpoint,
     patterns: [
       ~r"priv/static/(?!uploads/).*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/moon_live_docs_web/(controllers|live|components)/.*(ex|heex)$",
+      ~r"lib/moon_live_view_docs_web/(controllers|live|components)/.*(ex|heex)$",
       ~r"storybook/.*(exs)$"
     ]
   ],

@@ -18,13 +18,13 @@ defmodule Storybook.Components.CoreComponents.List do
         slots: [
           """
           <.list_item>
-            Label 1
+            Item 1
           </.list_item>
           <.list_item>
-            Label 2
+            Item 2
           </.list_item>
           <.list_item>
-            Label 3
+            Item 3
           </.list_item>
           """
         ]
@@ -35,21 +35,21 @@ defmodule Storybook.Components.CoreComponents.List do
           """
           <.list_item>
             <.icon name="star" />
-            Label 1
+            Item 1
             <:meta>
               <.icon name="star" />
             </:meta>
           </.list_item>
           <.list_item>
             <.icon name="star" />
-            Label 2
+            Item 2
             <:meta>
               <.icon name="star" />
             </:meta>
           </.list_item>
           <.list_item>
             <.icon name="star" />
-            Label 3
+            Item 3
             <:meta>
               <.icon name="star" />
             </:meta>

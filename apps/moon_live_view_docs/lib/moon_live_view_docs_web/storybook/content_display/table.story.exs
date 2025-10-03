@@ -37,6 +37,16 @@ defmodule Storybook.Components.CoreComponents.Table do
               <.table_cell>Cell</.table_cell>
               <.table_cell>Cell</.table_cell>
             </.table_row>
+            <.table_row>
+              <.table_cell>Cell</.table_cell>
+              <.table_cell>Cell</.table_cell>
+              <.table_cell>Cell</.table_cell>
+            </.table_row>
+            <.table_row>
+              <.table_cell>Cell</.table_cell>
+              <.table_cell>Cell</.table_cell>
+              <.table_cell>Cell</.table_cell>
+            </.table_row>
           </.table_body>
           """
         ]
