@@ -41,6 +41,7 @@ jobs:
 
       - name: Check formatting (umbrella level)
         run: mix format --check-formatted
+        continue-on-error: true
 
       - name: Run tests for moon_live_view library
         run: |

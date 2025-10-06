@@ -14,7 +14,14 @@ defmodule MoonLiveView.Snackbar do
   def snackbar_group(assigns) do
     ~H"""
     <div class="moon-snackbar-wrapper moon-snackbar-position-top-center">
-      <div id={@id} class="moon-snackbar-group" data-max-snackbars={@max_snackbars} data-icon-path={@icon_path} phx-hook="SnackbarHook"></div>
+      <div
+        id={@id}
+        class="moon-snackbar-group"
+        data-max-snackbars={@max_snackbars}
+        data-icon-path={@icon_path}
+        phx-hook="SnackbarHook"
+      >
+      </div>
     </div>
     """
   end

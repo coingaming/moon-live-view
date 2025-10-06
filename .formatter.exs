@@ -4,7 +4,7 @@
   plugins: [Phoenix.LiveView.HTMLFormatter],
   inputs: [
     "{mix,.formatter}.exs",
-    "apps/**/*.{ex,exs,heex}"
+    "apps/**/*.{heex,ex,exs}"
   ],
   subdirectories: ["apps/*"],
   line_length: 120

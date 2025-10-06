@@ -26,7 +26,7 @@ defmodule MoonLiveView.Textarea do
     ~H"""
     <div class={join(["moon-form-group", if(@error, do: "moon-form-group-error")])}>
       <%= if @label != [] || @hint != [] do %>
-         <.moon_label :for={label <- @label} :if={@label != []} for={@id} class={label[:class]}>
+        <.moon_label :for={label <- @label} :if={@label != []} for={@id} class={label[:class]}>
           {render_slot(@label)}
         </.moon_label>
         <.textarea_container {@attrs} />

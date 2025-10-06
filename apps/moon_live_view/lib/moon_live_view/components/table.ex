@@ -21,7 +21,7 @@ defmodule MoonLiveView.Table do
   def table_head(assigns) do
     ~H"""
     <thead class={@class} {@rest}>
-        {render_slot(@inner_block)}
+      {render_slot(@inner_block)}
     </thead>
     """
   end
