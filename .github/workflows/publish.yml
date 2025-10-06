@@ -15,7 +15,7 @@ jobs:
     name: Publish moon_live_view library
     runs-on: ubuntu-22.04
     env:
-      HEX_API_KEY: ${{ secrets.HEX_ORGANIZATION_COINGAMING_KEY }}
+      HEX_API_KEY: ${{ secrets.HEX_API_KEY }}
 
     steps:
       - name: Checkout code
