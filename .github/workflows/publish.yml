@@ -1,0 +1,60 @@
+name: Publish MoonLiveView to Hex.pm
+
+on:
+  push:
+    tags:
+      - "v*"
+
+# So only the latest run is executed. Used to avoid concurrency issues.
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    name: Publish moon_live_view library
+    runs-on: ubuntu-22.04
+    env:
+      HEX_API_KEY: ${{ secrets.HEX_ORGANIZATION_COINGAMING_KEY }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Erlang/OTP and Elixir
+        uses: erlef/setup-beam@v1
+        with:
+          otp-version: 27
+          elixir-version: 1.18.0
+
+      - name: Restore dependencies cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            deps
+            _build
+          key: ${{ runner.os }}-mix-${{ hashFiles('**/mix.lock') }}
+          restore-keys: ${{ runner.os }}-mix-
+
+      - name: Install umbrella dependencies
+        run: mix deps.get
+
+      - name: Check formatting (umbrella level)
+        run: mix format --check-formatted
+
+      - name: Run tests for moon_live_view library
+        run: |
+          cd apps/moon_live_view
+          mix test
+
+      - name: Verify library package can be built
+        run: |
+          cd apps/moon_live_view
+          mix hex.build
+
+      - name: Publish moon_live_view library to Hex.pm
+        run: |
+          cd apps/moon_live_view
+          mix hex.publish --yes
+        env:
+          HEX_API_KEY: ${{ env.HEX_API_KEY }}

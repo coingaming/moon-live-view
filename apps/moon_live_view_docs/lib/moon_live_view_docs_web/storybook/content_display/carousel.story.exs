@@ -15,27 +15,27 @@ defmodule Storybook.Components.CoreComponents.Carousel do
         slots: [
           """
           <:carousel_item>
-            <div class="flex items-center justify-center h-space-160 w-width-288 bg-brand-subtle text-brand">
+            <div class="flex items-center justify-center h-40 w-2xs bg-brand-subtle text-brand">
               Item 1
             </div>
           </:carousel_item>
           <:carousel_item>
-            <div class="flex items-center justify-center h-space-160 w-width-288 bg-brand-subtle text-brand">
+            <div class="flex items-center justify-center h-40 w-2xs bg-brand-subtle text-brand">
               Item 2
             </div>
           </:carousel_item>
           <:carousel_item>
-            <div class="flex items-center justify-center h-space-160 w-width-288 bg-brand-subtle text-brand">
+            <div class="flex items-center justify-center h-40 w-2xs bg-brand-subtle text-brand">
               Item 3
             </div>
           </:carousel_item>
           <:carousel_item>
-            <div class="flex items-center justify-center h-space-160 w-width-288 bg-brand-subtle text-brand">
+            <div class="flex items-center justify-center h-40 w-2xs bg-brand-subtle text-brand">
               Item 4
             </div>
           </:carousel_item>
           <:carousel_item>
-            <div class="flex items-center justify-center h-space-160 w-width-288 bg-brand-subtle text-brand">
+            <div class="flex items-center justify-center h-40 w-2xs bg-brand-subtle text-brand">
               Item 5
             </div>
           </:carousel_item>
@@ -52,27 +52,27 @@ defmodule Storybook.Components.CoreComponents.Carousel do
         slots: [
           """
           <:carousel_item>
-            <div class="flex items-center justify-center h-space-160 w-72 bg-brand-subtle text-brand">
+            <div class="flex items-center justify-center h-40 w-2xs bg-brand-subtle text-brand">
               Item 1
             </div>
           </:carousel_item>
           <:carousel_item>
-            <div class="flex items-center justify-center h-space-160 w-72 bg-brand-subtle text-brand">
+            <div class="flex items-center justify-center h-40 w-2xs bg-brand-subtle text-brand">
               Item 2
             </div>
           </:carousel_item>
           <:carousel_item>
-            <div class="flex items-center justify-center h-space-160 w-72 bg-brand-subtle text-brand">
+            <div class="flex items-center justify-center h-40 w-2xs bg-brand-subtle text-brand">
               Item 3
             </div>
           </:carousel_item>
           <:carousel_item>
-            <div class="flex items-center justify-center h-space-160 w-72 bg-brand-subtle text-brand">
+            <div class="flex items-center justify-center h-40 w-2xs bg-brand-subtle text-brand">
               Item 4
             </div>
           </:carousel_item>
           <:carousel_item>
-            <div class="flex items-center justify-center h-space-160 w-72 bg-brand-subtle text-brand">
+            <div class="flex items-center justify-center h-40 w-2xs bg-brand-subtle text-brand">
               Item 5
             </div>
           </:carousel_item>

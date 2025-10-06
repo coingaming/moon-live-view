@@ -26,6 +26,7 @@ defmodule MoonLiveView.Input do
     ~H"""
     <%= if (@label != [] || @hint != []) && @type != "hidden" do %>
       <div class="moon-form-group">
+        <label :if={@label != []} for={@id}>{render_slot(@label)}</label>
         <.input_field {@attrs} />
         <p :if={@hint != []} class="moon-form-hint">{render_slot(@hint)}</p>
       </div>
@@ -54,17 +55,14 @@ defmodule MoonLiveView.Input do
 
   defp input_field(assigns) do
     ~H"""
-    <div class="moon-input-wrapper">
-      <label :if={@label != []} for={@id}>{render_slot(@label)}</label>
-      <input
-        id={@id}
-        type={@type}
-        class={join(["moon-input", get_size(@size), get_variant(@variant), get_error(@error), @class])}
-        placeholder={@placeholder}
-        disabled={@disabled}
-        {@rest}
-      />
-    </div>
+    <input
+      id={@id}
+      type={@type}
+      class={join(["moon-input", get_size(@size), get_variant(@variant), get_error(@error), @class])}
+      placeholder={@placeholder}
+      disabled={@disabled}
+      {@rest}
+    />
     """
   end
 
