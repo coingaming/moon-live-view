@@ -1,0 +1,53 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 18
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Create Release Pull Request or Publish to npm
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          # This expects you to have a script called release which does a build for your packages and calls changeset publish
+          version: npm run version
+          publish: echo "Publishing would happen here"
+          title: "Version Packages"
+          commit: "Version Packages"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update Elixir mix.exs version
+        if: steps.changesets.outputs.hasChangesets == 'false'
+        run: |
+          # Extract version from package.json
+          VERSION=$(node -p "require('./apps/moon_live_view/package.json').version")
+          echo "Updating mix.exs to version $VERSION"
+
+          # Update mix.exs version
+          sed -i.bak "s/version: \".*\"/version: \"$VERSION\"/" apps/moon_live_view/mix.exs
+
+          # Commit the changes
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add apps/moon_live_view/mix.exs
+          git commit -m "Update mix.exs version to $VERSION" || exit 0
+          git push
