@@ -30,7 +30,7 @@ defmodule MoonLiveView.MixProject do
         "GitHub" => "https://github.com/coingaming/moon-live-view"
       },
       description: "Moon Design System written in phoenix_live_view",
-      files: ~w(lib .formatter.exs mix.exs README* CHANGELOG* priv assets)
+      files: ~w(lib ../../.formatter.exs mix.exs README* CHANGELOG* priv assets)
     ]
   end
 

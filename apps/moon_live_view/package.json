@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Moon LiveView Components Library",
   "main": "index.js",
+  "private": false,
   "directories": {
     "lib": "lib",
     "test": "test"
