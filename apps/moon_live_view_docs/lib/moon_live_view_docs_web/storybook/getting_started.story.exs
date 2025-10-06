@@ -59,16 +59,13 @@ defmodule Storybook.Installation do
         <:code>
           {code_block(~c'defp deps do
         [
-          {:moon_live_view, "~> #{version()}", organization: "coingaming"},
+          {:moon_live_view, "~> #{version()}"},
         ]
       end')}
         </:code>
       </.step>
 
       <.step title="Step 2: Install dependencies">
-        <:description>
-          Ensure you are authenticated on {code_inline("hex")} under the {code_inline("coingaming")} organization. Install dependencies:
-        </:description>
         <:code>
           {code_block(~c'mix deps.get')}
         </:code>

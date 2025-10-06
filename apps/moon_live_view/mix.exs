@@ -4,7 +4,7 @@ defmodule MoonLiveView.MixProject do
   def project do
     [
       app: :moon_live_view,
-      version: "0.1.0",
+      version: "1.0.0-beta.0",
       build_path: "../../_build",
       config_path: "../../config/config.exs",
       deps_path: "../../deps",
@@ -25,7 +25,6 @@ defmodule MoonLiveView.MixProject do
 
   defp package do
     [
-      organization: "coingaming",
       licenses: ["MIT"],
       links: %{
         "GitHub" => "https://github.com/coingaming/moon-live-view"

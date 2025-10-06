@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/coingaming/moon-live-docs.git"
+    "url": "git+https://github.com/coingaming/moon-live-view.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/coingaming/moon-live-docs/issues"
+    "url": "https://github.com/coingaming/moon-live-view/issues"
   },
-  "homepage": "https://github.com/coingaming/moon-live-docs#readme",
+  "homepage": "https://github.com/coingaming/moon-live-view#readme",
   "devDependencies": {
     "@playwright/test": "^1.45",
     "autoprefixer": "^10.4.21",
