@@ -11,8 +11,7 @@ defmodule MoonLiveViewDocs.Application do
       # Start TwMerge cache
       TwMerge.Cache,
       MoonLiveViewDocsWeb.Telemetry,
-      {DNSCluster,
-       query: Application.get_env(:moon_live_view_docs, :dns_cluster_query) || :ignore},
+      {DNSCluster, query: Application.get_env(:moon_live_view_docs, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: MoonLiveViewDocs.PubSub},
       # Start the Finch HTTP client for sending emails
       {Finch, name: MoonLiveViewDocs.Finch},
