@@ -1,7 +1,15 @@
-ARG BUILDER_IMAGE="hexpm/elixir:1.15.7-erlang-26.1.2-debian-bookworm-20231009-slim"
-ARG RUNNER_IMAGE="debian:bookworm-20231009-slim"
+# ARG BUILDER_IMAGE="hexpm/elixir:1.15.7-erlang-26.1.2-debian-bookworm-20231009-slim"
+# ARG RUNNER_IMAGE="debian:bookworm-20231009-slim"
+
+ARG ELIXIR_VERSION=1.18.4
+ARG OTP_VERSION=27.3.4.2
+ARG DEBIAN_VERSION=bookworm-20250811-slim
+
+ARG BUILDER_IMAGE="hexpm/elixir:${ELIXIR_VERSION}-erlang-${OTP_VERSION}-debian-${DEBIAN_VERSION}"
+ARG RUNNER_IMAGE="debian:${DEBIAN_VERSION}"
 
 FROM ${BUILDER_IMAGE} AS builder
+
 
 # install build dependencies
 RUN apt-get update -y && apt-get install -y build-essential ca-certificates git wget curl gnupg \
@@ -23,32 +31,32 @@ ENV MIX_ENV="prod"
 ARG SECRET_KEY_BASE
 
 # install mix dependencies
-COPY mix.exs mix.lock ./
+COPY apps/moon_live_view_docs/mix.exs mix.lock ./
+# RUN mix deps.get --only $MIX_ENV
+# RUN mkdir config
+
+COPY apps/moon_live_view_docs/config/config.exs apps/moon_live_view_docs/config/${MIX_ENV}.exs /config/
+COPY apps/moon_live_view_docs/lib/moon_live_view_docs_web/storybook storybook
+COPY apps/moon_live_view /moon_live_view
+
 RUN mix deps.get --only $MIX_ENV
-RUN mkdir config
 
-# copy compile-time config files before we compile dependencies
-# to ensure any relevant config change will trigger the dependencies
-# to be re-compiled.
-COPY config/config.exs config/${MIX_ENV}.exs config/
-
-COPY lib/moon_live_docs_web/storybook storybook
 
 RUN mix dev.storybook
 RUN mix compile
 RUN mix deps.compile
 
-# Ensure the icons are included
 RUN mkdir assets
 
-COPY . .
+COPY apps/moon_live_view_docs .
 
+# Navigate to assets directory and run npm install
 RUN npm install
 
-RUN mix deps.get --only $MIX_ENV
-
+# Go back to app root for mix commands
 RUN mix compile
-
+# RUN mix deps.compile
+RUN ln -s /app/assets /assets
 # compile assets
 RUN mix assets.deploy
 
@@ -56,8 +64,6 @@ RUN mix assets.deploy
 # RUN mix compile
 
 # Changes to config/runtime.exs don't require recompiling the code
-# COPY config/runtime.exs config/
-# COPY rel rel
 
 RUN mix release
 
@@ -75,21 +81,18 @@ ENV LANG="en_US.UTF-8"
 ENV LANGUAGE="en_US:en"
 ENV LC_ALL="en_US.UTF-8"
 
-WORKDIR "/app"
+WORKDIR /app
+
 RUN chown nobody /app
 
 EXPOSE 4000
 
-# set runner ENV
 ENV MIX_ENV="prod"
 
-# Only copy the final release from the build stage
-COPY --from=builder --chown=nobody:root /app/_build/prod/rel/moon_live_docs ./
-COPY --from=builder --chown=nobody:root /app/VERSION ./VERSION
-COPY --from=builder --chown=nobody:root /app/deps/moon_assets/priv/static/icons ./assets/icons
 
-COPY lib/moon_live_docs_web/storybook storybook
+COPY --from=builder --chown=nobody:root /app/_build/prod/rel/moon_live_view_docs ./
+COPY --from=builder --chown=nobody:root /app/VERSION ./VERSION
 
 USER nobody
 
-CMD ["/app/bin/moon_live_docs", "start"]
+CMD ["/app/bin/moon_live_view_docs", "start"]
