@@ -6,7 +6,6 @@ on:
     tags:
       - "v*"
 
-# So only the latest run is executed. Used to avoid concurrency issues.
 concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true
@@ -100,8 +99,8 @@ jobs:
       - name: Build and push Docs Image
         uses: docker/build-push-action@v6
         with:
-          context: ./apps/moon_live_view_docs # Root context
-          file: ./apps/moon_live_view_docs/Dockerfile # Root Dockerfile
+          context: .
+          file: ./Dockerfile
           push: true
           tags: ${{ env.IMAGE }}
           no-cache: true
