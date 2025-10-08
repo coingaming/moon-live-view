@@ -7,9 +7,9 @@ defmodule MoonLiveView.Pagination do
   @default_base_param "page"
 
   attr :id, :string, doc: "Id for the Pagination.", required: true
-  attr :total_steps, :integer, default: 1, doc: "Number of steps in the Pagination"
+  attr :total_items, :integer, default: 1, doc: "Number of steps in the Pagination"
   attr :has_controls, :boolean, default: false, doc: "Defines whether the Pagination has arrows or not."
-  attr :active_item, :integer, default: nil, doc: "Active item in the Pagination."
+  attr :active_item, :integer, default: 1, doc: "Active item in the Pagination."
   attr :base_param, :string, default: @default_base_param, doc: "Base parameter name for pagination"
 
   attr :class, :string, default: "", doc: "Additional CSS classes for the Pagination "
@@ -25,7 +25,7 @@ defmodule MoonLiveView.Pagination do
       role="pagination"
       phx-hook="PaginationHook"
       data-active-item={@active_item}
-      data-total-steps={@total_steps}
+      data-total-steps={@total_items}
       {@rest}
     >
       <.icon_button
@@ -38,7 +38,7 @@ defmodule MoonLiveView.Pagination do
         <.component_icon name="chevron-left" />
       </.icon_button>
       <li
-        :for={item <- 1..@total_steps}
+        :for={item <- 1..@total_items}
         class={join(["moon-pagination-item", is_active_item(item, @active_item)])}
         phx-click={on_item_click(@id, item, @base_param)}
         data-item={item}

@@ -30,24 +30,21 @@ defmodule Storybook.Components.CoreComponents.Menu do
         slots: [
           """
           <.menu_item>
-            <.icon name='star' />
             Item 1
             <:meta>
-              <.icon name='chevron-right' />
+              <.icon name='star' />
             </:meta>
           </.menu_item>
           <.menu_item>
-            <.icon name='star' />
             Item 2
             <:meta>
-              <.icon name='chevron-right' />
+              <.icon name='star' />
             </:meta>
           </.menu_item>
           <.menu_item>
-            <.icon name='star' />
             Item 3
             <:meta>
-              <.icon name='chevron-right' />
+              <.icon name='star' />
             </:meta>
           </.menu_item>
           """
