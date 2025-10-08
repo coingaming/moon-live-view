@@ -1,5 +1,6 @@
 name: Publish MoonLiveView to Hex.pm
-
+permissions:
+  contents: read
 on:
   push:
     tags:
@@ -17,7 +18,7 @@ jobs:
     env:
       HEX_API_KEY: ${{ secrets.HEX_API_KEY }}
 
-    if: ${{ !endsWith(github.ref, '-docs')}}
+    if: ${{ !endsWith(github.ref, '-docs') }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -112,6 +113,8 @@ jobs:
     name: Update Stacks Docker Compose and trigger Deployment
     runs-on: ubuntu-latest
     needs: [publish-docs]
+    permissions:
+      contents: write
     if: always() && needs.publish-docs.result == 'success'
     steps:
       - name: Set IMAGE from successful job
