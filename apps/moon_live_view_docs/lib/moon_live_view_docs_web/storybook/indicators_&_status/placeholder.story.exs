@@ -6,7 +6,7 @@ defmodule Storybook.Components.CoreComponents.Placeholder do
 
   def template do
     """
-    <div class="w-space-160 h-space-80">
+    <div class="w-40 h-20">
         <.psb-variation />
     </div>
     """

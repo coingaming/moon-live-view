@@ -5,7 +5,11 @@ defmodule Storybook.Components.CoreComponents.Drawer do
   def function, do: &Drawer.drawer/1
 
   def imports,
-    do: [{MoonLiveView.Button, button: 1}, {MoonLiveView.Drawer, show_drawer: 1}]
+    do: [
+      {MoonLiveView.Button, button: 1},
+      {MoonLiveView.Drawer, show_drawer: 1},
+      {MoonLiveView.Drawer, drawer_close: 1}
+    ]
 
   def variations do
     [
@@ -25,13 +29,11 @@ defmodule Storybook.Components.CoreComponents.Drawer do
       },
       %Variation{
         id: :full_featured,
-        attributes: %{
-          has_close_button: true
-        },
         slots: [
           """
           <:header>
             Drawer
+            <.drawer_close />
           </:header>
           """,
           """

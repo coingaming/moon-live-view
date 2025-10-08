@@ -15,10 +15,10 @@ defmodule MoonLiveView.LinearProgress do
 
     ~H"""
     <%= if @label != [] do %>
-      <div class="moon-linear-progress-wrapper">
+      <label>
         <.progress_bar {@attrs} id={@id} />
-        <label for={@id}>{render_slot(@label)}</label>
-      </div>
+        <span>{render_slot(@label)}</span>
+      </label>
     <% else %>
       <.progress_bar {@attrs} />
     <% end %>

@@ -12,11 +12,11 @@ defmodule Storybook.Components.CoreComponents.Breadcrumb do
         attributes: %{},
         slots: [
           """
-          <:breadcrumb_item><.link> Page 1 </.link></:breadcrumb_item>
-          <:breadcrumb_item><.link> Page 2 </.link></:breadcrumb_item>
-          <:breadcrumb_item><.link> Page 3 </.link></:breadcrumb_item>
-          <:breadcrumb_item><.link> Page 4 </.link></:breadcrumb_item>
-          <:breadcrumb_item is_active={true}><.link> Page 5 </.link></:breadcrumb_item>
+          <:breadcrumb_item><.link>Page 1</.link></:breadcrumb_item>
+          <:breadcrumb_item><.link>Page 2</.link></:breadcrumb_item>
+          <:breadcrumb_item><.link>Page 3</.link></:breadcrumb_item>
+          <:breadcrumb_item><.link>Page 4</.link></:breadcrumb_item>
+          <:breadcrumb_item is_active>Page 5</:breadcrumb_item>
           """
         ]
       }

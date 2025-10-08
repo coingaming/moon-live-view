@@ -3,7 +3,6 @@ defmodule MoonLiveView.Dialog do
   alias Phoenix.LiveView.JS
 
   attr :id, :string, default: nil, doc: "Unique identifier for the Dialog component."
-  attr :has_close_button, :boolean, default: false, doc: "Whether the Dialog has a close button."
   attr :class, :string, default: "", doc: "Additional CSS classes for the Dialog"
   attr :rest, :global, doc: "Additional HTML attributes for the Dialog"
 
@@ -17,15 +16,6 @@ defmodule MoonLiveView.Dialog do
       <div id={"#{@id}-dialog-box"} class="moon-dialog-box">
         <div :if={@header != []} class="moon-dialog-header">
           {render_slot(@header)}
-          <form :if={@has_close_button || @custom_close_icon != []} method="dialog" class="moon-dialog-close">
-            <button class="moon-dialog-close">
-              <%= if @custom_close_icon != [] do %>
-                {render_slot(@custom_close_icon)}
-              <% else %>
-                <.component_icon name="close" />
-              <% end %>
-            </button>
-          </form>
         </div>
         {render_slot(@inner_block)}
       </div>
@@ -33,6 +23,20 @@ defmodule MoonLiveView.Dialog do
         <button></button>
       </form>
     </dialog>
+    """
+  end
+
+  attr :id, :string, default: nil, doc: "ID of the dialog to close (optional)"
+
+  def dialog_close(assigns) do
+    ~H"""
+    <button
+      class="moon-dialog-close"
+      phx-click={JS.dispatch("moon:dialog:close", to: @id && "##{@id}")}
+      type="button"
+    >
+      <.component_icon name="close" />
+    </button>
     """
   end
 

@@ -20,10 +20,11 @@ defmodule Storybook.Components.CoreComponents.Dropdown do
           <:trigger>
             Open Dropdown
           </:trigger>
-          <div class="w-full flex items-center justify-center h-space-80 bg-brand-subtle text-brand">
-            Content
-          </div>
-
+          <:content>
+            <div class="w-full flex items-center justify-center h-20 bg-brand-subtle text-brand">
+              Content
+            </div>
+          </:content>
           """
         ]
       }

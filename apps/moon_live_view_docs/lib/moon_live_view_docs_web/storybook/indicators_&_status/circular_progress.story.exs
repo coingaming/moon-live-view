@@ -11,7 +11,7 @@ defmodule Storybook.CircularProgressStory do
       %Variation{
         id: :progress_bar,
         attributes: %{
-          value: 70
+          style: "--value:25"
         }
       }
     ]

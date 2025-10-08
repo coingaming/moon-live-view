@@ -3,7 +3,7 @@ defmodule MoonLiveView.Button do
 
   attr :variant, :string, default: "fill", values: ~w"fill soft outline ghost", doc: "Variant of button"
   attr :size, :string, default: "md", values: ~w(xs sm md lg xl), doc: "Size of button"
-  attr :full_width, :boolean, default: false, doc: "Whether the button should take the full width of its container."
+  attr :is_full_width, :boolean, default: false, doc: "Whether the button should take the full width of its container."
 
   attr :context, :string,
     values: ~w"brand neutral positive negative caution info",
@@ -27,7 +27,7 @@ defmodule MoonLiveView.Button do
           get_size(@size),
           get_variant(@variant),
           get_context(@context),
-          get_full_width(@full_width),
+          get_full_width(@is_full_width),
           @class
         ])
       }

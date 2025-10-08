@@ -18,15 +18,6 @@ defmodule MoonLiveView.Drawer do
       <div id={"#{@id}-modal-box"} class="moon-drawer-box">
         <div :if={@header != []} class="moon-drawer-header">
           {render_slot(@header)}
-          <form :if={@has_close_button || @custom_close_icon != []} method="dialog" class="moon-drawer-close">
-            <button class="moon-drawer-close">
-              <%= if @custom_close_icon != [] do %>
-                {render_slot(@custom_close_icon)}
-              <% else %>
-                <.component_icon name="close" />
-              <% end %>
-            </button>
-          </form>
         </div>
         {render_slot(@inner_block)}
       </div>
@@ -34,6 +25,20 @@ defmodule MoonLiveView.Drawer do
         <button></button>
       </form>
     </dialog>
+    """
+  end
+
+  attr :id, :string, default: nil, doc: "ID of the drawer to close (optional)"
+
+  def drawer_close(assigns) do
+    ~H"""
+    <button
+      class="moon-drawer-close"
+      phx-click={JS.dispatch("moon:drawer:close", to: @id && "##{@id}")}
+      type="button"
+    >
+      <.component_icon name="close" />
+    </button>
     """
   end
 
