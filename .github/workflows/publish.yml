@@ -1,4 +1,6 @@
 name: Publish MoonLiveView to Hex.pm
+permissions:
+  contents: read
 
 on:
   push:

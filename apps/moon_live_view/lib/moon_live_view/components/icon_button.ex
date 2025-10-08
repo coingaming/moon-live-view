@@ -1,8 +1,7 @@
 defmodule MoonLiveView.IconButton do
   use MoonLiveView.Component
 
-  attr :rounded, :boolean, default: false, doc: "Whether the button should be rounded or not"
-  attr :disabled, :boolean, default: false, doc: "Disables the button, default is false"
+  attr :is_rounded, :boolean, default: false, doc: "Whether the button should be rounded or not"
 
   attr :class, :string, default: nil, doc: "Tailwind class for the button"
   attr :rest, :global, doc: "Additional global attributes for the button. form | name | value"
@@ -40,7 +39,7 @@ defmodule MoonLiveView.IconButton do
           get_size(assigns.size),
           get_variant(assigns.variant),
           get_context(assigns.context),
-          get_rounded(assigns.rounded)
+          get_rounded(assigns.is_rounded)
         ],
         " "
       )
@@ -76,7 +75,7 @@ defmodule MoonLiveView.IconButton do
 
   defp render_button_content(%{link_type: "button"} = assigns) do
     ~H"""
-    <button class={join([@variant_class, @class])} disabled={@disabled} {@rest}>
+    <button class={join([@variant_class, @class])} {@rest}>
       {render_slot(@inner_block)}
     </button>
     """
