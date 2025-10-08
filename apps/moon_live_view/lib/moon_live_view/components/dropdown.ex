@@ -5,8 +5,8 @@ defmodule MoonLiveView.Dropdown do
   attr :class, :string, default: "", doc: "Additional CSS classes for the dropdown"
   attr :rest, :global, doc: "Additional HTML attributes for the dropdown"
 
-  slot :trigger, doc: "Content of the dropdown trigger"
-  slot :inner_block, doc: "Inner block of the dropdown"
+  slot :trigger, doc: "Dropdown trigger"
+  slot :content, doc: "Dropdown content"
 
   def dropdown(assigns) do
     ~H"""
@@ -15,7 +15,7 @@ defmodule MoonLiveView.Dropdown do
         {render_slot(@trigger)}
       </.button>
       <div tabindex="0" class="moon-dropdown-content">
-        {render_slot(@inner_block)}
+        {render_slot(@content)}
       </div>
     </div>
     """
