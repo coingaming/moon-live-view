@@ -2,7 +2,9 @@ defmodule MoonLiveView.BottomSheet do
   use MoonLiveView.Component
   alias Phoenix.LiveView.JS
 
-  attr :id, :string, doc: "Unique identifier for the bottom sheet component. Required for the close button to work if present"
+  attr :id, :string,
+    doc: "Unique identifier for the bottom sheet component. Required for the close button to work if present"
+
   attr :has_handle, :boolean, default: false, doc: "Whether the bottom sheet has a handle for dragging."
   attr :class, :string, default: "", doc: "Additional classes to add to the component."
   slot :header, doc: "Title content of the bottom sheet."

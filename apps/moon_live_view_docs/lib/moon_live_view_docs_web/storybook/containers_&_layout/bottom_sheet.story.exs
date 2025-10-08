@@ -5,7 +5,11 @@ defmodule Storybook.Components.CoreComponents.BottomSheet do
   def function, do: &BottomSheet.bottom_sheet/1
 
   def imports,
-    do: [{MoonLiveView.Button, button: 1}, {MoonLiveView.BottomSheet, show_bottom_sheet: 1}, {MoonLiveView.BottomSheet, bottom_sheet_close: 1}]
+    do: [
+      {MoonLiveView.Button, button: 1},
+      {MoonLiveView.BottomSheet, show_bottom_sheet: 1},
+      {MoonLiveView.BottomSheet, bottom_sheet_close: 1}
+    ]
 
   def variations do
     [
@@ -28,7 +32,7 @@ defmodule Storybook.Components.CoreComponents.BottomSheet do
       %Variation{
         id: :full_featured,
         attributes: %{
-          has_handle: true,
+          has_handle: true
         },
         slots: [
           """

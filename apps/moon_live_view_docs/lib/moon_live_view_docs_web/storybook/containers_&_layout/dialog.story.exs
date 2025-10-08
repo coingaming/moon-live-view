@@ -5,7 +5,11 @@ defmodule Storybook.Components.CoreComponents.Dialog do
   def function, do: &Dialog.dialog/1
 
   def imports,
-    do: [{MoonLiveView.Button, button: 1}, {MoonLiveView.Dialog, show_dialog: 1}, {MoonLiveView.Dialog, dialog_close: 1}]
+    do: [
+      {MoonLiveView.Button, button: 1},
+      {MoonLiveView.Dialog, show_dialog: 1},
+      {MoonLiveView.Dialog, dialog_close: 1}
+    ]
 
   def variations do
     [

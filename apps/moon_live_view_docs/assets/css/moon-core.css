@@ -1,4 +1,4 @@
-/* Moon UI v3.7.0 */
+/* Moon UI v3.7.2 */
 @theme inline {
 --color-background-backdrop: var(--color-gray-alpha-72);
 --color-background-brand-alpha: var(--color-mystic-indigo-alpha-12);
@@ -265,7 +265,6 @@
 --component-dropdown-max-height: var(--container-height-480);
 --component-dropdown-max-width: var(--container-width-320);
 --component-dropdown-min-width: var(--container-width-256);
---component-dropdown-radius: var(--radius-10);
 --component-dropdown-radius: var(--radius-8);
 --component-dropdown-stroke: var(--spacing-stroke-1);
 --component-forms-radius-lg: var(--radius-8);

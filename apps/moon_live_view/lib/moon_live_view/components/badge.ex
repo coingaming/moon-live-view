@@ -15,10 +15,12 @@ defmodule MoonLiveView.Badge do
 
   def badge(assigns) do
     ~H"""
-    <div class={join(["moon-badge", get_variant(@variant), get_context(@context), @class])} {@rest}>
-      {render_slot(@inner_block)}
-    </div>
+    <div class={get_badge_class(assigns)} {@rest}>{render_slot(@inner_block)}</div>
     """
+  end
+
+  defp get_badge_class(assigns) do
+    join(["moon-badge", get_variant(assigns.variant), get_context(assigns.context), assigns.class])
   end
 
   defp get_variant("fill"), do: ""
