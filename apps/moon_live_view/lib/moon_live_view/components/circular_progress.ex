@@ -34,5 +34,4 @@ defmodule MoonLiveView.CircularProgress do
 
   defp get_size("md"), do: ""
   defp get_size(size), do: "moon-circular-progress-#{size}"
-
 end
