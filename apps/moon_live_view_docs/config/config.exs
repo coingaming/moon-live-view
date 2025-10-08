@@ -18,7 +18,7 @@ config :moon_live_view_docs, MoonLiveViewDocsWeb.Endpoint,
     formats: [html: MoonLiveViewDocsWeb.ErrorHTML, json: MoonLiveViewDocsWeb.ErrorJSON],
     layout: false
   ],
-  pubsub_server: MoonLiveDocs.PubSub,
+  pubsub_server: MoonLiveViewDocs.PubSub,
   live_view: [signing_salt: "85VTCOIF"]
 
 # Configures the mailer
@@ -28,7 +28,7 @@ config :moon_live_view_docs, MoonLiveViewDocsWeb.Endpoint,
 #
 # For production it's recommended to configure a different adapter
 # at the `config/runtime.exs`.
-config :moon_live_view_docs, MoonLiveDocs.Mailer, adapter: Swoosh.Adapters.Local
+config :moon_live_view_docs, MoonLiveViewDocs.Mailer, adapter: Swoosh.Adapters.Local
 
 # Configure esbuild (the version is required)
 config :esbuild,
