@@ -1,7 +1,6 @@
 name: Publish MoonLiveView to Hex.pm
 permissions:
   contents: read
-
 on:
   push:
     tags:
@@ -19,6 +18,7 @@ jobs:
     env:
       HEX_API_KEY: ${{ secrets.HEX_API_KEY }}
 
+    if: ${{ !endsWith(github.ref, '-docs') }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -69,3 +69,73 @@ jobs:
           mix hex.publish --yes
         env:
           HEX_API_KEY: ${{ env.HEX_API_KEY }}
+
+  publish-docs:
+    name: Publish moon_live_view docs
+    runs-on: ubuntu-latest
+    outputs:
+      IMAGE: ${{ env.IMAGE }}
+
+    if: endsWith(github.ref, '-docs')
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Get tag version
+        id: get_version
+        run: echo "TAG_VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+
+      - name: Create Docs Image Name
+        run: echo "IMAGE=heathmont/moon-live-docs:${{ env.TAG_VERSION }}" >> $GITHUB_ENV
+
+      - name: Set up Docker Build
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.MOON_DOCKER_USERNAME }}
+          password: ${{ secrets.MOON_DOCKER_TOKEN }}
+
+      - name: Build and push Docs Image
+        uses: docker/build-push-action@v6
+        with:
+          context: ./apps/moon_live_view_docs # Root context
+          file: ./apps/moon_live_view_docs/Dockerfile # Root Dockerfile
+          push: true
+          tags: ${{ env.IMAGE }}
+          no-cache: true
+          build-args: |
+            HEX_API_KEY=${{ secrets.HEX_API_KEY }}
+            SECRET_KEY_BASE=${{ secrets.SECRET_KEY_BASE }}
+
+  deployment:
+    name: Update Stacks Docker Compose and trigger Deployment
+    runs-on: ubuntu-latest
+    needs: [publish-docs]
+    permissions:
+      contents: write
+    if: always() && needs.publish-docs.result == 'success'
+    steps:
+      - name: Set IMAGE from successful job
+        run: |
+          echo "IMAGE=${{ needs.publish-docs.outputs.IMAGE }}" >> $GITHUB_ENV
+      - name: Checkout Stacks Repo
+        uses: actions/checkout@v4
+        with:
+          repository: coingaming/stacks
+          token: ${{ secrets.MOON_GH_TOKEN }}
+          ref: sportsbet-t2
+          path: stacks
+      - name: Update Docker Compose with New Image
+        working-directory: stacks
+        run: |
+          yq -i '.services.moon-live-docs.image = "${{ env.IMAGE }}"' docker-compose.moon.yml
+
+      - name: Commit and Push Changes to docker-compose file
+        working-directory: stacks
+        run: |
+          git config user.email "${{ env.ROBOT_EMAIL }}"
+          git config user.name "${{ env.ROBOT_NAME }}"
+          git commit -am "Updated Docker image to ${{ env.IMAGE }}"
+          git push origin sportsbet-t2
