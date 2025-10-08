@@ -30,42 +30,37 @@ RUN mix local.hex --force && \
 ENV MIX_ENV="prod"
 ARG SECRET_KEY_BASE
 
-# install mix dependencies
-COPY apps/moon_live_view_docs/mix.exs mix.lock ./
-# RUN mix deps.get --only $MIX_ENV
-# RUN mkdir config
+# Copy umbrella project structure
+COPY mix.exs mix.lock ./
+COPY config ./config
+# COPY VERSION ./VERSION
 
-COPY apps/moon_live_view_docs/config/config.exs apps/moon_live_view_docs/config/${MIX_ENV}.exs /config/
-COPY apps/moon_live_view_docs/lib/moon_live_view_docs_web/storybook storybook
-COPY apps/moon_live_view /moon_live_view
+# Copy only needed apps (skip installer)
+RUN mkdir -p apps
+COPY apps/moon_live_view ./apps/moon_live_view
+COPY apps/moon_live_view_docs ./apps/moon_live_view_docs
 
+# Install umbrella dependencies  
 RUN mix deps.get --only $MIX_ENV
 
-
+# Compile umbrella project
 RUN mix dev.storybook
 RUN mix compile
 RUN mix deps.compile
 
-RUN mkdir assets
-
-COPY apps/moon_live_view_docs .
-
-# Navigate to assets directory and run npm install
+# Navigate to docs app for npm install
+WORKDIR /app/apps/moon_live_view_docs
 RUN npm install
 
-# Go back to app root for mix commands
 RUN mix compile
-# RUN mix deps.compile
-RUN ln -s /app/assets /assets
-# compile assets
 RUN mix assets.deploy
 
-# Compile the release
-# RUN mix compile
-
-# Changes to config/runtime.exs don't require recompiling the code
-
 RUN mix release
+
+# Go back to umbrella root for asset compilation
+WORKDIR /app
+
+# Build release from the docs app directory
 
 # start a new build stage so that the final image will only contain
 # the compiled release and other runtime necessities
@@ -91,7 +86,6 @@ ENV MIX_ENV="prod"
 
 
 COPY --from=builder --chown=nobody:root /app/_build/prod/rel/moon_live_view_docs ./
-COPY --from=builder --chown=nobody:root /app/VERSION ./VERSION
 
 USER nobody
 
