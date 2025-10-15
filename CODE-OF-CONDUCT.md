@@ -1,7 +1,8 @@
 # Code of Conduct
+
 ## Preamble
 
-Moon is Yolo Group's product design system that helps us maintain the integrity of our user experience and optimize design and development resources. This is made possible by the support and hard work of Moon Live's core team, including those who contribute to and use the Moon Design system.
+Moon Design System helps companies maintain the integrity of our user experience and optimize design and development resources. This is made possible by the support and hard work of Moon Live's core team, including those who contribute to and use the Moon Design system.
 
 This document offers some guidance to ensure everyone can cooperate effectively in a positive and inspiring atmosphere and to explain how to support each other.
 
@@ -9,7 +10,7 @@ This code of conduct is mandatory for users who engage with Moon Live's core tea
 
 ## Overview
 
-This Code of Conduct presents a summary of Yolo's values and "common sense". The basic social ingredients that hold our project together include:
+This Code of Conduct presents a summary of Moon Design System's values and "common sense". The basic social ingredients that hold our project together include:
 
 - Be respectful
 - Be collaborative

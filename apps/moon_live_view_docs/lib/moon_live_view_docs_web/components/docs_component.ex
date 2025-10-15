@@ -129,21 +129,9 @@ defmodule MoonLiveViewDocsWeb.DocsComponents do
   def doc_footer(assigns) do
     ~H"""
     <footer class="flex flex-col gap-space-16 pt-space-32 pb-space-24 lg:pb-space-48 items-center text-body-300 text-primary">
-      <p>
-        With the help of&nbsp;
-        <a
-          href="https://yolo.com/"
-          class="hover:underline font-medium"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Yolo Group
-        </a>
-        ❤️
-      </p>
       <div class="flex gap-x-space-16 gap-y-space-24 flex-wrap justify-center items-center text-secondary">
         <a
-          href="https://github.com/coingaming/moon-design"
+          href="https://github.com/moondesignsystem/liveview"
           class="hover:underline"
           target="_blank"
           rel="noreferrer"

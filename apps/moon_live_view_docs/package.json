@@ -9,18 +9,18 @@
   },
   "scripts": {
     "test": "(cd e2e && npx playwright test)",
-    "moon-ui": "npx @heathmont/moon-ui --add-components"
+    "moon-ui": "npx @moondesignsystem/ui --add-components"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/coingaming/moon-live-view.git"
+    "url": "git+https://github.com/moondesignsystem/liveview.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/coingaming/moon-live-view/issues"
+    "url": "https://github.com/moondesignsystem/liveview/issues"
   },
-  "homepage": "https://github.com/coingaming/moon-live-view#readme",
+  "homepage": "https://github.com/moondesignsystem/liveview#readme",
   "devDependencies": {
     "@playwright/test": "^1.45",
     "autoprefixer": "^10.4.21",

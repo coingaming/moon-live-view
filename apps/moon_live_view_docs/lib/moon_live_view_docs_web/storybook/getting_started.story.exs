@@ -30,7 +30,7 @@ defmodule Storybook.Installation do
             <li>
               Before getting into work, we encourage you to use
               <.link
-                href="https://ui.moon.io/?path=/docs/getting-started--docs"
+                href="https://ui.moondesignsystem.com"
                 target="_blank"
                 class="text-link"
               >

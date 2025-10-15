@@ -13,12 +13,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/coingaming/moon-live-view.git"
+    "url": "git+https://github.com/moondesignsystem/liveview.git"
   },
   "author": "Mario Hernandez",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/coingaming/moon-live-view/issues"
+    "url": "https://github.com/moondesignsystem/liveview/issues"
   },
-  "homepage": "https://github.com/coingaming/moon-live-view#readme"
+  "homepage": "https://github.com/moondesignsystem/liveview#readme"
 }
