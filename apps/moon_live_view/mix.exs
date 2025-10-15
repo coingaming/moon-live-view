@@ -27,7 +27,7 @@ defmodule MoonLiveView.MixProject do
     [
       licenses: ["MIT"],
       links: %{
-        "GitHub" => "https://github.com/coingaming/moon-live-view"
+        "GitHub" => "https://github.com/moondesignsystem/liveview"
       },
       description: "Moon Design System written in phoenix_live_view",
       files: ~w(lib ../../.formatter.exs mix.exs README* CHANGELOG* priv assets)
