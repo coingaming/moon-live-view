@@ -17,6 +17,12 @@ defmodule MoonLiveViewDocsWeb.Router do
     plug(:accepts, ["json"])
   end
 
+  scope "/api", MoonLiveViewDocsWeb do
+    pipe_through :api
+
+    get "/health", HealthController, :index
+  end
+
   scope "/" do
     pipe_through :browser
     storybook_assets()
