@@ -22,7 +22,7 @@ defmodule MoonLiveViewUmbrella.MixProject do
   # project and cannot be accessed from applications inside
   # the apps folder.
   #
-  # Run "mix help deps" for examples and options.
+  # Run "mix help deps" for examples and options.asdf asdf
   defp deps do
     [
       {:bandit, "~> 1.6"},
