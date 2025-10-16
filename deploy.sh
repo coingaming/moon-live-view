@@ -23,9 +23,27 @@ if ! gigalixir auth &> /dev/null; then
     exit 1
 fi
 
+# Get dependencies for production
+echo "📦 Getting production dependencies..."
+MIX_ENV=prod mix deps.get
+
+# Clean and compile
+echo "🧹 Cleaning and compiling..."
+MIX_ENV=prod mix deps.clean --all
+MIX_ENV=prod mix deps.get
+MIX_ENV=prod mix compile
+
 # Build assets before deployment
 echo "📦 Building assets..."
 mix assets.deploy
+
+# Make sure all files are committed
+echo "📝 Checking git status..."
+git add .
+if [ -n "$(git status --porcelain)" ]; then
+    echo "📝 Committing changes..."
+    git commit -m "Deploy: Updated dependencies and assets"
+fi
 
 # Deploy to Gigalixir
 echo "🌟 Deploying to Gigalixir..."

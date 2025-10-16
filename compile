@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# Build script for Phoenix static assets
+
+cd $phoenix_dir/apps/moon_live_view_docs
+
+# Install npm dependencies if package.json exists
+if [ -f package.json ]; then
+  npm install
+fi
+
+# Install tailwind and esbuild
+mix tailwind.install --if-missing
+mix esbuild.install --if-missing
+
+# Build assets for production
+mix assets.deploy
