@@ -23,10 +23,6 @@ if ! gigalixir auth &> /dev/null; then
     exit 1
 fi
 
-# Get dependencies for production
-echo "📦 Getting production dependencies..."
-MIX_ENV=prod mix deps.get
-
 # Clean and compile
 echo "🧹 Cleaning and compiling..."
 MIX_ENV=prod mix deps.clean --all
