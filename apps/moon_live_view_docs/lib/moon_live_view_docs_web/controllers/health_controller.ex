@@ -8,9 +8,9 @@ defmodule MoonLiveViewDocsWeb.HealthController do
     |> put_status(:ok)
     |> json(%{
       status: "ok",
-      timestamp: DateTime.utc_now(),
+      timestamp: DateTime.utc_now() |> DateTime.to_iso8601(),
       version: Application.spec(:moon_live_view_docs, :vsn) |> to_string(),
-      uptime: System.uptime(:millisecond)
+      uptime: :erlang.statistics(:wall_clock) |> elem(0)
     })
   end
 end

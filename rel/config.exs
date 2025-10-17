@@ -12,7 +12,10 @@ end
 environment :prod do
   set include_erts: true
   set include_src: false
-  set cookie: System.get_env("ERLANG_COOKIE") || :moon_live_view_docs
+  set cookie: case System.get_env("ERLANG_COOKIE") do
+    nil -> raise "ERLANG_COOKIE environment variable must be set in production for distribution security"
+    cookie -> cookie
+  end
   set vm_args: "rel/vm.args"
 end
 
