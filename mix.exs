@@ -10,7 +10,9 @@ defmodule MoonLiveViewUmbrella.MixProject do
       deps: deps(),
       releases: [
         moon_live_view_docs: [
-          applications: [moon_live_view_docs: :permanent]
+          applications: [moon_live_view_docs: :permanent],
+          include_executables_for: [:unix],
+          steps: [:assemble, :tar]
         ]
       ]
     ]

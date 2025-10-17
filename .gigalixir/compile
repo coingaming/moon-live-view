@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# buildpack script for umbrella apps with custom configuration
+
+echo "-----> Installing umbrella dependencies for production"
+
+# Install hex and rebar
+mix local.hex --force
+mix local.rebar --force
+
+# Get all dependencies for production environment
+MIX_ENV=prod mix deps.get --only=prod
+
+echo "-----> Dependencies installed successfully"
