@@ -50,7 +50,7 @@ if config_env() == :prod do
     ],
     check_origin: [
       "https://liveview.moondesignsystem.com",
-      "https://moon-live-view.gigalixirapp.com/"
+      "https://moon-live-view.gigalixirapp.com"
     ],
     secret_key_base: secret_key_base
 
