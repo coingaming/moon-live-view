@@ -5,6 +5,28 @@
 import Hooks from "./hooks";
 
 (function () {
+  function initGoogleAnalytics() {
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = "https://www.googletagmanager.com/gtag/js?id=G-QBJ97ZRCSY";
+    document.head.appendChild(script);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      window.dataLayer.push(arguments);
+    }
+    window.gtag = gtag;
+    gtag("js", new Date());
+    gtag("config", "G-QBJ97ZRCSY");
+  }
+
+  if (
+    window.location.hostname !== "localhost" &&
+    window.location.hostname !== "127.0.0.1"
+  ) {
+    initGoogleAnalytics();
+  }
+
   window.storybook = { Hooks };
   document.documentElement.dir = "ltr";
 
